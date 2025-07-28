@@ -40,6 +40,8 @@ export type Person = {
     saturday: Sleeping,
     sunday: Sleeping,
   };
+  arrival?: Date;
+  departure?: Date;
 }
 
 const defaultData: Person[] = [
@@ -54,6 +56,8 @@ const defaultData: Person[] = [
       saturday: Sleeping.tuRoom,
       sunday: Sleeping.tuRoom,
     },
+    arrival: new Date('2025-08-29T17:00:00'),
+    departure: new Date('2025-09-01T12:00:00'),
   },
   {
     id: 2,
@@ -66,6 +70,8 @@ const defaultData: Person[] = [
       saturday: Sleeping.tuRoom,
       sunday: Sleeping.tuRoom,
     },
+    arrival: new Date('2025-08-29T17:00:00'),
+    departure: new Date('2025-09-01T12:00:00'),
   },
   {
     id: 3,
@@ -78,6 +84,8 @@ const defaultData: Person[] = [
       saturday: Sleeping.tuRoom,
       sunday: Sleeping.tuRoom,
     },
+    arrival: new Date('2025-08-29T17:00:00'),
+    departure: new Date('2025-09-01T12:00:00'),
   },
   {
     id: 4,
@@ -90,6 +98,8 @@ const defaultData: Person[] = [
       saturday: Sleeping.tuRoom,
       sunday: Sleeping.tuRoom,
     },
+    arrival: new Date('2025-08-29T17:00:00'),
+    departure: new Date('2025-09-01T12:00:00'),
   },
   {
     id: 5,
@@ -102,6 +112,8 @@ const defaultData: Person[] = [
       saturday: Sleeping.tuRoom,
       sunday: Sleeping.tuRoom,
     },
+    arrival: new Date('2025-08-29T17:00:00'),
+    departure: new Date('2025-09-01T12:00:00'),
   },
   {
     id: 6,
@@ -114,6 +126,8 @@ const defaultData: Person[] = [
       saturday: Sleeping.edRoom,
       sunday: Sleeping.edRoom,
     },
+    arrival: new Date('2025-08-29T08:00:00'),
+    departure: new Date('2025-09-01T23:59:59'),
   },
   {
     id: 7,
@@ -126,6 +140,8 @@ const defaultData: Person[] = [
       saturday: Sleeping.edRoom,
       sunday: Sleeping.edRoom,
     },
+    arrival: new Date('2025-08-29T08:00:00'),
+    departure: new Date('2025-09-01T23:59:59'),
   },
   {
     id: 8,
@@ -138,6 +154,8 @@ const defaultData: Person[] = [
       saturday: Sleeping.ydRoom,
       sunday: Sleeping.ydRoom,
     },
+    arrival: new Date('2025-08-30T12:00:00'),
+    departure: new Date('2025-09-01T12:00:00'),
   },
   {
     id: 9,
@@ -150,6 +168,8 @@ const defaultData: Person[] = [
       saturday: Sleeping.ydRoom,
       sunday: Sleeping.ydRoom,
     },
+    arrival: new Date('2025-08-30T12:00:00'),
+    departure: new Date('2025-09-01T12:00:00'),
   },
   {
     id: 10,
@@ -162,6 +182,8 @@ const defaultData: Person[] = [
       saturday: Sleeping.ydRoom,
       sunday: Sleeping.ydRoom,
     },
+    arrival: new Date('2025-08-30T12:00:00'),
+    departure: new Date('2025-09-01T12:00:00'),
   },
   {
     id: 11,
@@ -174,6 +196,8 @@ const defaultData: Person[] = [
       saturday: Sleeping.basement,
       sunday: Sleeping.basement
     },
+    arrival: new Date('2025-08-30T12:00:00'),
+    departure: new Date('2025-09-01T12:00:00'),
   },
   {
     id: 12,
@@ -186,6 +210,8 @@ const defaultData: Person[] = [
       saturday: Sleeping.basement,
       sunday: Sleeping.basement
     },
+    arrival: new Date('2025-08-30T12:00:00'),
+    departure: new Date('2025-09-01T12:00:00'),
   },
   {
     id: 13,
@@ -198,6 +224,8 @@ const defaultData: Person[] = [
       saturday: Sleeping.office,
       sunday: Sleeping.office
     },
+    arrival: new Date('2025-08-30T14:00:00'),
+    departure: new Date('2025-09-01T12:00:00'),
   },
   {
     id: 14,
@@ -210,6 +238,8 @@ const defaultData: Person[] = [
       saturday: Sleeping.none,
       sunday: Sleeping.none
     },
+    arrival: new Date('2025-08-31T08:00:00'),
+    departure: new Date('2025-08-31T18:00:00'),
   },
   {
     id: 15,

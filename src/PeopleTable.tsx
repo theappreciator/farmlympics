@@ -9,6 +9,7 @@ import {
   useReactTable,
   type SortingState,
 } from '@tanstack/react-table'
+import { format } from 'date-fns'
 
 import type { Person } from './App'
 import { emptyHelper, sleepingDisplay } from './helpers/tableUtility';
@@ -39,6 +40,20 @@ const columns = [
   columnHelper.accessor('team', {
     header: () => <span>Team</span>,
     cell: info => info.getValue(),
+  }),
+  columnHelper.accessor('arrival', {
+    header: () => <span>Arrive</span>,
+    cell: info => {
+      const value = info.getValue()
+      return value ? format(new Date(value), 'eee, haaaaa') : '?'
+    }
+  }),
+  columnHelper.accessor('departure', {
+    header: () => <span>Depart</span>,
+    cell: info => {
+      const value = info.getValue()
+      return value ? format(new Date(value), 'eee, haaaaa') : '?'
+    }
   }),
   columnHelper.accessor('sleeping.friday', {
     header: () => <span>Friday</span>,
