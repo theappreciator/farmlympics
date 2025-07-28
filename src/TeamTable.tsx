@@ -100,7 +100,7 @@ const TeamTable: React.FC<TeamTableProps> = ({ team, people }) => {
       <>
       <h2>TEAM {team}</h2>
         <table className={styles.container}>
-          <thead>
+          <thead className={styles.header}>
             {table.getHeaderGroups().map(headerGroup => (
               <tr key={headerGroup.id}>
                 {headerGroup.headers.map(header => (
@@ -156,7 +156,7 @@ const TeamTable: React.FC<TeamTableProps> = ({ team, people }) => {
                   <td key={header.id} className={styles.footer}>
                     {flexRender(
                       header.column.columnDef.footer,
-                      header.getContext()
+                      header.getContext(),
                     )}
                   </td>
                 ))}

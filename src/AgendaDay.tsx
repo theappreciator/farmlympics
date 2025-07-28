@@ -46,7 +46,7 @@ const AgendaDay: React.FC<AgendaDayProps> = ({ day, agenda }) => {
       <>
       <h2>Day {day}</h2>
         <table className={styles.container}>
-          <thead>
+          <thead className={styles.header}>
             {table.getHeaderGroups().map(headerGroup => (
               <tr key={headerGroup.id}>
                 {headerGroup.headers.map(header => (
