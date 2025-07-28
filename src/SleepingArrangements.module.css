@@ -1,14 +1,13 @@
 .container {
     min-width: 800px;
-    table-layout: fixed;
 }
 
 .header th {
     border-bottom: thin solid;
 }
 
-.header th:first-child {
-    width: 200px;
+.container tbody td:first-child {
+    text-align: left;
 }
 
 .footer td {

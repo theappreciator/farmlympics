@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './TeamTable.module.css'
+import styles from './SleepingArrangements.module.css'
 
 import {
   createColumnHelper,
@@ -10,37 +10,62 @@ import {
   type SortingState,
 } from '@tanstack/react-table'
 
-import type { Person, Teams } from './App'
+import { Sleeping, type Person } from './App';
 
-type TeamTableProps = {
-  team: Teams;
-  people: Person[];
+type SleepingRoomByDay = {
+  room: Sleeping;
+  days: {
+    friday: Person[],
+    saturday: Person[],
+    sunday: Person[],
+  }
+}
+
+type SleepingArrangementsProps = {
+    people: Person[];
 };
 
-const columnHelper = createColumnHelper<Person>()
+const columnHelper = createColumnHelper<SleepingRoomByDay>()
 
 const columns = [
-  columnHelper.accessor('id', {
-    header: () => <span>#</span>,
-    cell: info => info.row.index + 1,
-  }),
-  columnHelper.accessor('name', {
-    header: () => <div style={{textAlign: "left"}}>Name</div>,
-    cell: info => <div style={{textAlign: "left"}}>{info.getValue()}</div>,
-  }),
-  columnHelper.accessor('generation', {
-    header: () => <span>Generation</span>,
+  columnHelper.accessor('room', {
+    header: () => <span>Room</span>,
     cell: info => info.getValue(),
   }),
-  columnHelper.accessor('team', {
-    header: () => <span>Team</span>,
-    cell: info => info.getValue(),
+  columnHelper.accessor('days.friday', {
+    header: () => <span>Friday</span>,
+    cell: info => info.getValue().length,
   }),
+  columnHelper.accessor('days.saturday', {
+    header: () => <span>Saturday</span>,
+    cell: info => info.getValue().length,
+  }),
+  columnHelper.accessor('days.sunday', {
+    header: () => <span>Sunday</span>,
+    cell: info => info.getValue().length,
+  })
 ]
 
-const TeamTable: React.FC<TeamTableProps> = ({ team, people }) => {
+const SleepingArrangements: React.FC<SleepingArrangementsProps> = ({ people }) => {
 
-  const [data, _setData] = React.useState(() => [...people])
+  const allRooms = Object.entries(Sleeping);
+
+  const peopleInRoomsByDay: SleepingRoomByDay[] = allRooms.map(room => {
+    const peopleInRoomFriday: Person[] = people.filter(p => p.sleeping.friday === room[1]);
+    const peopleInRoomSaturday: Person[] = people.filter(p => p.sleeping.saturday === room[1]);
+    const peopleInRoomSunday: Person[] = people.filter(p => p.sleeping.sunday === room[1]);
+
+    return {
+      room: Sleeping[room[0] as keyof typeof Sleeping],
+      days: {
+        friday: peopleInRoomFriday,
+        saturday: peopleInRoomSaturday,
+        sunday: peopleInRoomSunday,
+      }
+    }
+  });
+
+  const [data, _setData] = React.useState(() => [...peopleInRoomsByDay])
 
   const [sorting, setSorting] = React.useState<SortingState>([])
 
@@ -51,16 +76,14 @@ const TeamTable: React.FC<TeamTableProps> = ({ team, people }) => {
     getSortedRowModel: getSortedRowModel(),
     onSortingChange: setSorting,
     state: {
-      sorting,
+        sorting,
     },
-  })
+  });
 
   return (
     <>
-    {data.length > 0 && (
-      <>
-      <h2>TEAM {team}</h2>
-        <table className={styles.container}>
+      <h2>Sleeping Arrangements</h2>
+      <table className={styles.container}>
           <thead className={styles.header}>
             {table.getHeaderGroups().map(headerGroup => (
               <tr key={headerGroup.id}>
@@ -125,10 +148,8 @@ const TeamTable: React.FC<TeamTableProps> = ({ team, people }) => {
             ))}
           </tfoot>
         </table>
-      </>
-    )}
     </>
   )
 }
 
-export default TeamTable
+export default SleepingArrangements

@@ -8,10 +8,10 @@ import {
   useReactTable,
 } from '@tanstack/react-table'
 
-import type { DaysType, Event } from './Agenda'
+import type { Days, Event } from './Agenda'
 
 type AgendaDayProps = {
-  day: DaysType,
+  day: Days,
   agenda: Event[]
 };
 
@@ -31,7 +31,6 @@ const columns = [
 const AgendaDay: React.FC<AgendaDayProps> = ({ day, agenda }) => {
 
   const [data, _setData] = React.useState(() => [...agenda])
-  // const rerender = React.useReducer(() => ({}), {})[1]
 
   const table = useReactTable({
     data,

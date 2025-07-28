@@ -5,3 +5,7 @@
 .header th {
     border-bottom: thin solid;
 }
+
+.footer td {
+    border-top: thin solid;
+}

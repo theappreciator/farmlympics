@@ -1,17 +1,31 @@
 import Agenda from './Agenda';
 import './App.css'
+import { makeBrandedType } from './helpers/brandedType';
+import PeopleTable from './PeopleTable';
+import SleepingArrangements from './SleepingArrangements';
 import TeamTable from './TeamTable';
 
-export const Teams = {
-  TeamA: "A",
-  TeamB: "B",
-  TeamU: "TBD",
-} as const;
-export type Teams = typeof Teams[keyof typeof Teams];
+export const Teams = makeBrandedType({
+    TeamA: "A",
+    TeamB: "B",
+    TeamU: "TBD",
+}, 'teams')  ;
+export type Teams = (typeof Teams)[keyof typeof Teams];
 
 export type Generation = "Silent Gen" | "Baby Boomers" | "Gen X" | "Millennials" | "Gen Z" | "Gen Alpha" | "Little One";
 
-export type Sleeping = "farm room" | "the office" | "basement" | "camper" | "none" | "Nana J's" | undefined;
+export const Sleeping = makeBrandedType({
+    tuRoom: "TU Room",
+    ydRoom: "Young D Room",
+    edRoom: "Elder D Room",
+    office: "The Office",
+    basement: "Basement",
+    camper: "Camper",
+    none: "None",
+    NanaJs: "Nana J's",
+    unknown: "?",
+}, 'sleeping')  ;
+export type Sleeping = (typeof Sleeping)[keyof typeof Sleeping];
 
 export type Shirt = "Kid" | "S" | "M" | "L" | "XL" | "XLT" | "XXL" | "XXXL" | undefined;
 
@@ -36,9 +50,9 @@ const defaultData: Person[] = [
     shirt: "XLT",
     team: Teams.TeamB,
     sleeping: {
-      friday: 'farm room',
-      saturday: 'farm room',
-      sunday: 'farm room',
+      friday: Sleeping.tuRoom,
+      saturday: Sleeping.tuRoom,
+      sunday: Sleeping.tuRoom,
     },
   },
   {
@@ -48,9 +62,9 @@ const defaultData: Person[] = [
     shirt: "XL",
     team: Teams.TeamA,
     sleeping: {
-      friday: 'farm room',
-      saturday: 'farm room',
-      sunday: 'farm room',
+      friday: Sleeping.tuRoom,
+      saturday: Sleeping.tuRoom,
+      sunday: Sleeping.tuRoom,
     },
   },
   {
@@ -60,9 +74,9 @@ const defaultData: Person[] = [
     shirt: "S",
     team: Teams.TeamB,
     sleeping: {
-      friday: 'farm room',
-      saturday: 'farm room',
-      sunday: 'farm room',
+      friday: Sleeping.tuRoom,
+      saturday: Sleeping.tuRoom,
+      sunday: Sleeping.tuRoom,
     },
   },
   {
@@ -72,9 +86,9 @@ const defaultData: Person[] = [
     shirt: "Kid",
     team: Teams.TeamA,
     sleeping: {
-      friday: 'farm room',
-      saturday: 'farm room',
-      sunday: 'farm room',
+      friday: Sleeping.tuRoom,
+      saturday: Sleeping.tuRoom,
+      sunday: Sleeping.tuRoom,
     },
   },
   {
@@ -84,33 +98,33 @@ const defaultData: Person[] = [
     shirt: "Kid",
     team: Teams.TeamA,
     sleeping: {
-      friday: 'farm room',
-      saturday: 'farm room',
-      sunday: 'farm room',
+      friday: Sleeping.tuRoom,
+      saturday: Sleeping.tuRoom,
+      sunday: Sleeping.tuRoom,
     },
   },
   {
     id: 6,
     name: 'Gr D.',
-    generation: 'Gen X',
+    generation: 'Baby Boomers',
     shirt: "L",
     team: Teams.TeamA,
     sleeping: {
-      friday: 'farm room',
-      saturday: 'farm room',
-      sunday: 'farm room',
+      friday: Sleeping.edRoom,
+      saturday: Sleeping.edRoom,
+      sunday: Sleeping.edRoom,
     },
   },
   {
     id: 7,
     name: 'De D.',
-    generation: 'Gen X',
+    generation: 'Baby Boomers',
     shirt: "L",
     team: Teams.TeamB,
     sleeping: {
-      friday: 'farm room',
-      saturday: 'farm room',
-      sunday: 'farm room',
+      friday: Sleeping.edRoom,
+      saturday: Sleeping.edRoom,
+      sunday: Sleeping.edRoom,
     },
   },
   {
@@ -120,9 +134,9 @@ const defaultData: Person[] = [
     shirt: "L",
     team: Teams.TeamB,
     sleeping: {
-      friday: 'none',
-      saturday: 'farm room',
-      sunday: 'farm room',
+      friday: Sleeping.none,
+      saturday: Sleeping.ydRoom,
+      sunday: Sleeping.ydRoom,
     },
   },
   {
@@ -132,9 +146,9 @@ const defaultData: Person[] = [
     shirt: "XL",
     team: Teams.TeamA,
     sleeping: {
-      friday: 'none',
-      saturday: 'farm room',
-      sunday: 'farm room',
+      friday: Sleeping.none,
+      saturday: Sleeping.ydRoom,
+      sunday: Sleeping.ydRoom,
     },
   },
   {
@@ -144,9 +158,9 @@ const defaultData: Person[] = [
     shirt: "S",
     team: Teams.TeamA,
     sleeping: {
-      friday: 'none',
-      saturday: 'farm room',
-      sunday: 'farm room',
+      friday: Sleeping.none,
+      saturday: Sleeping.ydRoom,
+      sunday: Sleeping.ydRoom,
     },
   },
   {
@@ -156,9 +170,9 @@ const defaultData: Person[] = [
     shirt: "XLT",
     team: Teams.TeamB,
     sleeping: {
-      friday: undefined,
-      saturday: undefined,
-      sunday: undefined
+      friday: Sleeping.none,
+      saturday: Sleeping.basement,
+      sunday: Sleeping.basement
     },
   },
   {
@@ -168,9 +182,9 @@ const defaultData: Person[] = [
     shirt: "XL",
     team: Teams.TeamB,
     sleeping: {
-      friday: undefined,
-      saturday: undefined,
-      sunday: undefined
+      friday: Sleeping.none,
+      saturday: Sleeping.basement,
+      sunday: Sleeping.basement
     },
   },
   {
@@ -180,9 +194,9 @@ const defaultData: Person[] = [
     shirt: "XXXL",
     team: Teams.TeamA,
     sleeping: {
-      friday: "none",
-      saturday: undefined,
-      sunday: undefined
+      friday: Sleeping.none,
+      saturday: Sleeping.office,
+      sunday: Sleeping.office
     },
   },
   {
@@ -192,9 +206,9 @@ const defaultData: Person[] = [
     shirt: "XXL",
     team: Teams.TeamU,
     sleeping: {
-      friday: "none",
-      saturday: "none",
-      sunday: "none",
+      friday: Sleeping.none,
+      saturday: Sleeping.none,
+      sunday: Sleeping.none
     },
   },
   {
@@ -204,9 +218,9 @@ const defaultData: Person[] = [
     shirt: "XL",
     team: Teams.TeamA,
     sleeping: {
-      friday: undefined,
-      saturday: undefined,
-      sunday: undefined
+      friday: Sleeping.unknown,
+      saturday: Sleeping.unknown,
+      sunday: Sleeping.unknown
     },
   },
   {
@@ -216,9 +230,9 @@ const defaultData: Person[] = [
     shirt: "XXL",
     team: Teams.TeamB,
     sleeping: {
-      friday: undefined,
-      saturday: undefined,
-      sunday: undefined
+      friday: Sleeping.unknown,
+      saturday: Sleeping.unknown,
+      sunday: Sleeping.unknown
     },
   },
   {
@@ -228,9 +242,9 @@ const defaultData: Person[] = [
     shirt: "XL",
     team: Teams.TeamA,
     sleeping: {
-      friday: undefined,
-      saturday: undefined,
-      sunday: undefined
+      friday: Sleeping.unknown,
+      saturday: Sleeping.unknown,
+      sunday: Sleeping.unknown
     },
   },
   {
@@ -240,9 +254,9 @@ const defaultData: Person[] = [
     shirt: "M",
     team: Teams.TeamB,
     sleeping: {
-      friday: undefined,
-      saturday: undefined,
-      sunday: undefined
+      friday: Sleeping.unknown,
+      saturday: Sleeping.unknown,
+      sunday: Sleeping.unknown
     },
   },
   {
@@ -252,9 +266,9 @@ const defaultData: Person[] = [
     shirt: "Kid",
     team: Teams.TeamB,
     sleeping: {
-      friday: undefined,
-      saturday: undefined,
-      sunday: undefined
+      friday: Sleeping.unknown,
+      saturday: Sleeping.unknown,
+      sunday: Sleeping.unknown
     },
   },
   {
@@ -264,9 +278,9 @@ const defaultData: Person[] = [
     shirt: "M",
     team: Teams.TeamB,
     sleeping: {
-      friday: "Nana J's",
-      saturday: "Nana J's",
-      sunday: "Nana J's",
+      friday: Sleeping.NanaJs,
+      saturday: Sleeping.NanaJs,
+      sunday: Sleeping.NanaJs,
     },
   },
   {
@@ -276,9 +290,9 @@ const defaultData: Person[] = [
     shirt: 'M',
     team: Teams.TeamA,
     sleeping: {
-      friday: undefined,
-      saturday: undefined,
-      sunday: undefined
+      friday: Sleeping.unknown,
+      saturday: Sleeping.unknown,
+      sunday: Sleeping.unknown
     },
   },
   {
@@ -288,9 +302,9 @@ const defaultData: Person[] = [
     shirt: 'S',
     team: Teams.TeamB,
     sleeping: {
-      friday: undefined,
-      saturday: undefined,
-      sunday: undefined
+      friday: Sleeping.unknown,
+      saturday: Sleeping.unknown,
+      sunday: Sleeping.unknown
     },
   },
   {
@@ -300,9 +314,9 @@ const defaultData: Person[] = [
     shirt: "L",
     team: Teams.TeamU,
     sleeping: {
-      friday: undefined,
-      saturday: undefined,
-      sunday: undefined
+      friday: Sleeping.unknown,
+      saturday: Sleeping.unknown,
+      sunday: Sleeping.unknown
     },
   },
   {
@@ -312,9 +326,9 @@ const defaultData: Person[] = [
     shirt: undefined,
     team: Teams.TeamA,
     sleeping: {
-      friday: undefined,
-      saturday: undefined,
-      sunday: undefined
+      friday: Sleeping.unknown,
+      saturday: Sleeping.unknown,
+      sunday: Sleeping.unknown
     },
   },
   {
@@ -324,9 +338,9 @@ const defaultData: Person[] = [
     shirt: undefined,
     team: Teams.TeamB,
     sleeping: {
-      friday: undefined,
-      saturday: undefined,
-      sunday: undefined
+      friday: Sleeping.unknown,
+      saturday: Sleeping.unknown,
+      sunday: Sleeping.unknown
     },
   },
   {
@@ -336,38 +350,37 @@ const defaultData: Person[] = [
     shirt: undefined,
     team: Teams.TeamB,
     sleeping: {
-      friday: undefined,
-      saturday: undefined,
-      sunday: undefined
+      friday: Sleeping.unknown,
+      saturday: Sleeping.unknown,
+      sunday: Sleeping.unknown
     },
   },
   {
     id: 27,
     name: 'Gr S.',
     generation: 'Little One',
-    shirt: undefined,
+    shirt: "Kid",
     team: Teams.TeamA,
     sleeping: {
-      friday: undefined,
-      saturday: undefined,
-      sunday: undefined
+      friday: Sleeping.unknown,
+      saturday: Sleeping.unknown,
+      sunday: Sleeping.unknown
     },
   },
 ]
 
-
-
 function App() {
-
-  
-
   return (
     <>
       <h1>Farmlympics 2025</h1>
 
+      <PeopleTable people={defaultData} />
+
       <TeamTable team={Teams.TeamA} people={defaultData.filter(p => p.team === Teams.TeamA)}/>
       <TeamTable team={Teams.TeamB} people={defaultData.filter(p => p.team === Teams.TeamB)}/>
       <TeamTable team={Teams.TeamU} people={defaultData.filter(p => p.team === Teams.TeamU)}/>
+
+      <SleepingArrangements people={defaultData} />
 
       <Agenda />
     </>

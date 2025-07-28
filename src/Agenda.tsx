@@ -1,20 +1,21 @@
 import React from 'react'
-import './Agenda.module.css'
+// import styles from './Agenda.module.css'
 
 import AgendaDay from './AgendaDay'
+import { makeBrandedType } from './helpers/brandedType';
 
-export const Days = {
+export const Days = makeBrandedType({
   Friday: "Friday, Aug 29",
   Saturday: "Saturday, Aug 30",
   Sunday: "Sunday, Aug 31",
   Monday: "Monday, Sep 1",
-}
-export type DaysType = typeof Days[keyof typeof Days];
+}, 'days')  ;
+export type Days = (typeof Days)[keyof typeof Days];
 
 export type Event = {
     name: string;
     start: string;
-    day: DaysType
+    day: Days
 }
 
 type AgendaProps = {

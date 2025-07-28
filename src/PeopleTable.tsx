@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './TeamTable.module.css'
+import styles from './PeopleTable.module.css'
 
 import {
   createColumnHelper,
@@ -10,10 +10,10 @@ import {
   type SortingState,
 } from '@tanstack/react-table'
 
-import type { Person, Teams } from './App'
+import type { Person } from './App'
+import { emptyHelper, sleepingDisplay } from './helpers/tableUtility';
 
-type TeamTableProps = {
-  team: Teams;
+type PeopleTableProps = {
   people: Person[];
 };
 
@@ -32,13 +32,29 @@ const columns = [
     header: () => <span>Generation</span>,
     cell: info => info.getValue(),
   }),
+  columnHelper.accessor('shirt', {
+    header: () => <span>Shirt</span>,
+    cell: info => emptyHelper(info.getValue()),
+  }),
   columnHelper.accessor('team', {
     header: () => <span>Team</span>,
     cell: info => info.getValue(),
   }),
+  columnHelper.accessor('sleeping.friday', {
+    header: () => <span>Friday</span>,
+    cell: info => sleepingDisplay(info.getValue()),
+  }),
+  columnHelper.accessor('sleeping.saturday', {
+    header: () => <span>Saturday</span>,
+    cell: info => sleepingDisplay(info.getValue()),
+  }),
+  columnHelper.accessor('sleeping.sunday', {
+    header: () => <span>Sunday</span>,
+    cell: info => sleepingDisplay(info.getValue()),
+  }),
 ]
 
-const TeamTable: React.FC<TeamTableProps> = ({ team, people }) => {
+const PeopleTable: React.FC<PeopleTableProps> = ({ people }) => {
 
   const [data, _setData] = React.useState(() => [...people])
 
@@ -59,7 +75,7 @@ const TeamTable: React.FC<TeamTableProps> = ({ team, people }) => {
     <>
     {data.length > 0 && (
       <>
-      <h2>TEAM {team}</h2>
+      <h2>PEOPLE</h2>
         <table className={styles.container}>
           <thead className={styles.header}>
             {table.getHeaderGroups().map(headerGroup => (
@@ -110,20 +126,6 @@ const TeamTable: React.FC<TeamTableProps> = ({ team, people }) => {
               </tr>
             ))}
           </tbody>
-          <tfoot className={styles.footer}>
-            {table.getFooterGroups().map(footerGroup => (
-              <tr key={footerGroup.id}>  
-                {footerGroup.headers.map(header => (
-                  <td key={header.id} className={styles.footer}>
-                    {flexRender(
-                      header.column.columnDef.footer,
-                      header.getContext(),
-                    )}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tfoot>
         </table>
       </>
     )}
@@ -131,4 +133,4 @@ const TeamTable: React.FC<TeamTableProps> = ({ team, people }) => {
   )
 }
 
-export default TeamTable
+export default PeopleTable
