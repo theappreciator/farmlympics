@@ -22,9 +22,13 @@ const columns = [
     header: () => <span>Time</span>,
     cell: info => info.getValue(),
   }),
-  columnHelper.accessor('name', {
-    header: () => <span>Name</span>,
-    cell: info => info.getValue(),
+  columnHelper.accessor('lines', {
+    header: () => <div style={{textAlign: "left"}}>Activity</div>,
+    cell: info => info.getValue().map((l, i) => 
+      <div key={i} style={{textAlign: "left"}}>
+        {l}
+      </div>
+    ),
   }),
 ]
 

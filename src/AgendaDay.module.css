@@ -3,6 +3,15 @@
     table-layout: fixed;
 }
 
+.container td {
+    vertical-align: top;
+    padding-bottom: 20px;
+}
+
+.container td:first-child {
+    font-weight: 700;
+}
+
 .header th {
     border-bottom: thin solid;
 }

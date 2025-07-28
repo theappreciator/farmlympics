@@ -13,7 +13,7 @@ export const Days = makeBrandedType({
 export type Days = (typeof Days)[keyof typeof Days];
 
 export type Event = {
-    name: string;
+    lines: string[];
     start: string;
     day: Days
 }
@@ -23,27 +23,87 @@ type AgendaProps = {
 
 const defaultData: Event[] = [
   {
-    name: 'Setup Activities',
+    lines: ['Setup Activities'],
     start: 'all day',
     day: Days.Saturday,
   },
   {
-    name: 'Opening Ceremony',
+    lines: ['Breakfast', '* CFA Chicken Minis', '* Fruit', '* Coffee', '* Juice'],
+    start: '8:00a',
+    day: Days.Sunday,
+  },
+  {
+    lines: ['Opening Ceremony'],
     start: '9:00a',
     day: Days.Sunday,
   },
   {
-    name: 'Closing Ceremony',
+    lines: ['Game 1'],
+    start: '9:15a',
+    day: Days.Sunday,
+  },
+  {
+    lines: ['Game 2'],
+    start: '10:00a',
+    day: Days.Sunday,
+  },
+  {
+    lines: ['Game 3'],
+    start: '10:45a',
+    day: Days.Sunday,
+  },
+  {
+    lines: ['Game 4'],
+    start: '11:30a',
+    day: Days.Sunday,
+  },
+  {
+    lines: ['Lunch', '* CFA Chicken Sandwich', '* CFA Chicken Nuggets', '* Chicken salad', '* chips', '* fruit'],
+    start: '12:15p',
+    day: Days.Sunday,
+  },
+  {
+    lines: ['Game 5'],
+    start: '1:00p',
+    day: Days.Sunday,
+  },
+  {
+    lines: ['Game 6'],
+    start: '1:45p',
+    day: Days.Sunday,
+  },
+  {
+    lines: ['Game 7'],
+    start: '2:30p',
+    day: Days.Sunday,
+  },
+  {
+    lines: ['Game 8'],
+    start: '3:15p',
+    day: Days.Sunday,
+  },
+  {
+    lines: ['Closing Ceremony'],
     start: '4:00p',
     day: Days.Sunday,
   },
   {
-    name: 'Dinner',
+    lines: ['Break'],
+    start: '4:30p',
+    day: Days.Sunday,
+  },
+  {
+    lines: ['Dinner', "* CFA Leftovers", "* Chips", "* Fruit"],
     start: '6:00p',
     day: Days.Sunday,
   },
   {
-    name: 'Clean Up Activities',
+    lines: ['Campfire', '* S\'mores', '* Milkshakes'],
+    start: '7:00p',
+    day: Days.Sunday,
+  },
+  {
+    lines: ['Clean Up Activities'],
     start: 'AM',
     day: Days.Monday,
   },

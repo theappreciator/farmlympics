@@ -369,19 +369,45 @@ const defaultData: Person[] = [
   },
 ]
 
+interface AnchorLink {
+  anchor: string;
+  displayText: string;
+}
+
+const anchorLinks: AnchorLink[] = [
+  { anchor: "people", displayText: "People" },
+  { anchor: "teama", displayText: "Team A" },
+  { anchor: "teamb", displayText: "Team B" },
+  { anchor: "teamu", displayText: "Team TBD" },
+  { anchor: "sleeping", displayText: "Sleeping Arrangements" },
+  { anchor: "agenda", displayText: "Agenda" },
+];
+
 function App() {
   return (
     <>
       <h1>Farmlympics 2025</h1>
 
+      {anchorLinks.map((link, i) => (
+        <a key={link.anchor} href={`#${link.anchor}`} style={{ }}>
+          {link.displayText}{i < anchorLinks.length - 1 ? ' | ' : ''}
+        </a>
+      ))}
+
+      <a id="people" />
       <PeopleTable people={defaultData} />
 
+      <a id="teama" />
       <TeamTable team={Teams.TeamA} people={defaultData.filter(p => p.team === Teams.TeamA)}/>
+      <a id="teamb" />
       <TeamTable team={Teams.TeamB} people={defaultData.filter(p => p.team === Teams.TeamB)}/>
+      <a id="teamu" />
       <TeamTable team={Teams.TeamU} people={defaultData.filter(p => p.team === Teams.TeamU)}/>
 
+      <a id="sleeping" />
       <SleepingArrangements people={defaultData} />
 
+      <a id="agenda" />
       <Agenda />
     </>
   )
