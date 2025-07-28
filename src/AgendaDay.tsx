@@ -8,60 +8,30 @@ import {
   useReactTable,
 } from '@tanstack/react-table'
 
-import type { Person, Sleeping, Teams } from './App'
+import type { Days } from './Agenda'
+import type { Event } from './Agenda'
 
-type TeamTableProps = {
-  team: Teams;
-  people: Person[];
+type AgendaDayProps = {
+  day: Days,
+  agenda: Event[]
 };
 
-const columnHelper = createColumnHelper<Person>()
+const columnHelper = createColumnHelper<Event>()
 
 const columns = [
+  columnHelper.accessor('start', {
+    header: () => <span>Time</span>,
+    cell: info => info.getValue(),
+  }),
   columnHelper.accessor('name', {
     header: () => <span>Name</span>,
     cell: info => info.getValue(),
   }),
-  columnHelper.accessor('generation', {
-    header: () => <span>Generation</span>,
-    cell: info => info.getValue(),
-  }),
-  columnHelper.accessor('shirt', {
-    header: () => <span>Shirt</span>,
-    cell: info => info.getValue(),
-  }),
-  columnHelper.accessor('team', {
-    header: () => <span>Team</span>,
-    cell: info => info.getValue(),
-  }),
-  columnHelper.accessor('sleeping.friday', {
-    header: () => <span>Friday</span>,
-    cell: info => sleepingDisplay(info.getValue()),
-  }),
-  columnHelper.accessor('sleeping.saturday', {
-    header: () => <span>Saturday</span>,
-    cell: info => sleepingDisplay(info.getValue()),
-  }),
-  columnHelper.accessor('sleeping.sunday', {
-    header: () => <span>Sunday</span>,
-    cell: info => sleepingDisplay(info.getValue()),
-  }),
 ]
 
-const sleepingDisplay = (sleeping: Sleeping) => {
-  if (sleeping === undefined) {
-    return "?";
-  }
-  else if (sleeping === "none") {
-    return "no";
-  }
-  
-  return sleeping;
-}
+const AgendaDay: React.FC<AgendaDayProps> = ({ day, agenda }) => {
 
-const TeamTable: React.FC<TeamTableProps> = ({ team, people }) => {
-
-  const [data, _setData] = React.useState(() => [...people])
+  const [data, _setData] = React.useState(() => [...agenda])
   // const rerender = React.useReducer(() => ({}), {})[1]
 
   const table = useReactTable({
@@ -74,12 +44,11 @@ const TeamTable: React.FC<TeamTableProps> = ({ team, people }) => {
     <>
     {data.length > 0 && (
       <>
-      <h2>TEAM {team}</h2>
+      <h2>Day {day}</h2>
         <table>
           <thead>
             {table.getHeaderGroups().map(headerGroup => (
               <tr key={headerGroup.id}>
-                <th key='number_header'>#</th>
                 {headerGroup.headers.map(header => (
                   <th key={header.id}>
                     {header.isPlaceholder
@@ -96,9 +65,6 @@ const TeamTable: React.FC<TeamTableProps> = ({ team, people }) => {
           <tbody>
             {table.getRowModel().rows.map(row => (
               <tr key={row.id}>
-                <td>
-                  {row.index + 1}
-                </td>
                 {row.getVisibleCells().map(cell => (
                   <td key={cell.id}>
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
@@ -115,4 +81,4 @@ const TeamTable: React.FC<TeamTableProps> = ({ team, people }) => {
   )
 }
 
-export default TeamTable
+export default AgendaDay
