@@ -1,5 +1,5 @@
 import React from 'react'
-import './TeamTable.css'
+import './Agenda.module.css'
 
 import AgendaDay from './AgendaDay'
 

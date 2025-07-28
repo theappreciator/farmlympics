@@ -1,5 +1,5 @@
 import React from 'react'
-import './TeamTable.css'
+import styles from './AgendaDay.module.css'
 
 import {
   createColumnHelper,
@@ -45,7 +45,7 @@ const AgendaDay: React.FC<AgendaDayProps> = ({ day, agenda }) => {
     {data.length > 0 && (
       <>
       <h2>Day {day}</h2>
-        <table>
+        <table className={styles.container}>
           <thead>
             {table.getHeaderGroups().map(headerGroup => (
               <tr key={headerGroup.id}>

@@ -16,6 +16,7 @@ export type Sleeping = "farm room" | "the office" | "basement" | "camper" | "non
 export type Shirt = "Kid" | "S" | "M" | "L" | "XL" | "XLT" | "XXL" | "XXXL" | undefined;
 
 export type Person = {
+  id?: number;
   name: string;
   generation: Generation;
   shirt: Shirt;
@@ -29,6 +30,7 @@ export type Person = {
 
 const defaultData: Person[] = [
   {
+    id: 1,
     name: 'Je T.',
     generation: 'Millennials',
     shirt: "XLT",
@@ -40,6 +42,7 @@ const defaultData: Person[] = [
     },
   },
   {
+    id: 2,
     name: 'Am T.',
     generation: 'Millennials',
     shirt: "XL",
@@ -51,6 +54,7 @@ const defaultData: Person[] = [
     },
   },
   {
+    id: 3,
     name: 'Ja T.',
     generation: 'Gen Alpha',
     shirt: "S",
@@ -62,6 +66,7 @@ const defaultData: Person[] = [
     },
   },
   {
+    id: 4,
     name: 'Gu T.',
     generation: 'Gen Alpha',
     shirt: "Kid",
@@ -73,6 +78,7 @@ const defaultData: Person[] = [
     },
   },
   {
+    id: 5,
     name: 'Bo T.',
     generation: 'Little One',
     shirt: "Kid",
@@ -84,6 +90,7 @@ const defaultData: Person[] = [
     },
   },
   {
+    id: 6,
     name: 'Gr D.',
     generation: 'Gen X',
     shirt: "L",
@@ -95,6 +102,7 @@ const defaultData: Person[] = [
     },
   },
   {
+    id: 7,
     name: 'De D.',
     generation: 'Gen X',
     shirt: "L",
@@ -106,6 +114,7 @@ const defaultData: Person[] = [
     },
   },
   {
+    id: 8,
     name: 'Ru D.',
     generation: 'Millennials',
     shirt: "L",
@@ -117,6 +126,7 @@ const defaultData: Person[] = [
     },
   },
   {
+    id: 9,
     name: 'Cr D.',
     generation: 'Millennials',
     shirt: "XL",
@@ -128,6 +138,7 @@ const defaultData: Person[] = [
     },
   },
   {
+    id: 10,
     name: 'Rh D.',
     generation: 'Gen Alpha',
     shirt: "S",
@@ -139,6 +150,7 @@ const defaultData: Person[] = [
     },
   },
   {
+    id: 11,
     name: 'Ma F.',
     generation: 'Millennials',
     shirt: "XLT",
@@ -150,6 +162,7 @@ const defaultData: Person[] = [
     },
   },
   {
+    id: 12,
     name: 'Ja F.',
     generation: 'Gen Z',
     shirt: "XL",
@@ -161,6 +174,7 @@ const defaultData: Person[] = [
     },
   },
   {
+    id: 13,
     name: 'Ri L.',
     generation: 'Millennials',
     shirt: "XXXL",
@@ -172,6 +186,7 @@ const defaultData: Person[] = [
     },
   },
   {
+    id: 14,
     name: 'Li T.',
     generation: 'Silent Gen',
     shirt: "XXL",
@@ -183,6 +198,7 @@ const defaultData: Person[] = [
     },
   },
   {
+    id: 15,
     name: 'An J.',
     generation: 'Millennials',
     shirt: "XL",
@@ -194,6 +210,7 @@ const defaultData: Person[] = [
     },
   },
   {
+    id: 16,
     name: 'Ma J.',
     generation: 'Millennials',
     shirt: "XXL",
@@ -205,6 +222,7 @@ const defaultData: Person[] = [
     },
   },
   {
+    id: 17,
     name: 'Ga J.',
     generation: 'Gen Z',
     shirt: "XL",
@@ -216,6 +234,7 @@ const defaultData: Person[] = [
     },
   },
   {
+    id: 18,
     name: 'Ha J.',
     generation: 'Gen Z',
     shirt: "M",
@@ -227,6 +246,7 @@ const defaultData: Person[] = [
     },
   },
   {
+    id: 19,
     name: 'Ma J.',
     generation: 'Little One',
     shirt: "Kid",
@@ -238,6 +258,7 @@ const defaultData: Person[] = [
     },
   },
   {
+    id: 20,
     name: 'La J.',
     generation: 'Baby Boomers',
     shirt: "M",
@@ -249,6 +270,7 @@ const defaultData: Person[] = [
     },
   },
   {
+    id: 21,
     name: 'Ta D.',
     generation: 'Millennials',
     shirt: 'M',
@@ -260,6 +282,7 @@ const defaultData: Person[] = [
     },
   },
   {
+    id: 22,
     name: 'Le D.',
     generation: 'Gen Z',
     shirt: 'S',
@@ -271,6 +294,7 @@ const defaultData: Person[] = [
     },
   },
   {
+    id: 23,
     name: 'Me J.',
     generation: 'Baby Boomers',
     shirt: "L",
@@ -282,6 +306,7 @@ const defaultData: Person[] = [
     },
   },
   {
+    id: 24,
     name: 'La S.',
     generation: 'Millennials',
     shirt: undefined,
@@ -293,6 +318,7 @@ const defaultData: Person[] = [
     },
   },
   {
+    id: 25,
     name: 'Ja S.',
     generation: 'Millennials',
     shirt: undefined,
@@ -304,6 +330,7 @@ const defaultData: Person[] = [
     },
   },
   {
+    id: 26,
     name: 'Ta S.',
     generation: 'Gen Alpha',
     shirt: undefined,
@@ -315,6 +342,7 @@ const defaultData: Person[] = [
     },
   },
   {
+    id: 27,
     name: 'Gr S.',
     generation: 'Little One',
     shirt: undefined,
