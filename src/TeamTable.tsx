@@ -26,6 +26,10 @@ const columns = [
     header: () => <span>Generation</span>,
     cell: info => info.getValue(),
   }),
+  columnHelper.accessor('shirt', {
+    header: () => <span>Shirt</span>,
+    cell: info => info.getValue(),
+  }),
   columnHelper.accessor('team', {
     header: () => <span>Team</span>,
     cell: info => info.getValue(),
