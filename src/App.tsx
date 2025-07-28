@@ -27,7 +27,7 @@ export type Person = {
 
 const defaultData: Person[] = [
   {
-    name: 'J. T.',
+    name: 'Je. T.',
     generation: 'Millennials',
     team: Teams.TeamA,
     sleeping: {
@@ -37,7 +37,7 @@ const defaultData: Person[] = [
     },
   },
   {
-    name: 'A. T.',
+    name: 'Am. T.',
     generation: 'Millennials',
     team: Teams.TeamA,
     sleeping: {
@@ -47,7 +47,7 @@ const defaultData: Person[] = [
     },
   },
   {
-    name: 'J. T.',
+    name: 'Ja. T.',
     generation: 'Gen Alpha',
     team: Teams.TeamB,
     sleeping: {
@@ -57,7 +57,7 @@ const defaultData: Person[] = [
     },
   },
   {
-    name: 'G. T.',
+    name: 'Gu. T.',
     generation: 'Gen Alpha',
     team: Teams.TeamA,
     sleeping: {
@@ -67,7 +67,7 @@ const defaultData: Person[] = [
     },
   },
   {
-    name: 'B. T.',
+    name: 'Bo. T.',
     generation: 'Little One',
     team: Teams.TeamA,
     sleeping: {
@@ -77,7 +77,7 @@ const defaultData: Person[] = [
     },
   },
   {
-    name: 'G. D.',
+    name: 'Gr. D.',
     generation: 'Gen X',
     team: Teams.TeamA,
     sleeping: {
@@ -87,7 +87,7 @@ const defaultData: Person[] = [
     },
   },
   {
-    name: 'D. D.',
+    name: 'De. D.',
     generation: 'Gen X',
     team: Teams.TeamA,
     sleeping: {
@@ -97,7 +97,7 @@ const defaultData: Person[] = [
     },
   },
   {
-    name: 'R. D.',
+    name: 'Ru. D.',
     generation: 'Millennials',
     team: Teams.TeamB,
     sleeping: {
@@ -107,7 +107,7 @@ const defaultData: Person[] = [
     },
   },
   {
-    name: 'C. D.',
+    name: 'Cr. D.',
     generation: 'Millennials',
     team: Teams.TeamA,
     sleeping: {
@@ -117,7 +117,7 @@ const defaultData: Person[] = [
     },
   },
   {
-    name: 'R. D.',
+    name: 'Rh. D.',
     generation: 'Gen Alpha',
     team: Teams.TeamA,
     sleeping: {
@@ -127,7 +127,7 @@ const defaultData: Person[] = [
     },
   },
   {
-    name: 'M. F.',
+    name: 'Ma. F.',
     generation: 'Millennials',
     team: Teams.TeamB,
     sleeping: {
@@ -137,7 +137,7 @@ const defaultData: Person[] = [
     },
   },
   {
-    name: 'J. F.',
+    name: 'Ja. F.',
     generation: 'Gen Z',
     team: Teams.TeamB,
     sleeping: {
@@ -147,7 +147,7 @@ const defaultData: Person[] = [
     },
   },
   {
-    name: 'R. L.',
+    name: 'Ri. L.',
     generation: 'Millennials',
     team: Teams.TeamA,
     sleeping: {
