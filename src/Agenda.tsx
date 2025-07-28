@@ -9,12 +9,12 @@ export const Days = {
   Sunday: "Sunday, Aug 31",
   Monday: "Monday, Sep 1",
 }
-export type Days = typeof Days[keyof typeof Days];
+export type DaysType = typeof Days[keyof typeof Days];
 
 export type Event = {
     name: string;
     start: string;
-    day: Days
+    day: DaysType
 }
 
 type AgendaProps = {
@@ -51,10 +51,10 @@ const defaultData: Event[] = [
 const Agenda: React.FC<AgendaProps> = ({ }) => {
   return (
     <>
-      <AgendaDay day="Friday" agenda={defaultData.filter(e => e.day === Days.Friday)} />
-      <AgendaDay day="Saturday" agenda={defaultData.filter(e => e.day === Days.Saturday)} />
-      <AgendaDay day="Sunday" agenda={defaultData.filter(e => e.day === Days.Sunday)} />  
-      <AgendaDay day="Monday" agenda={defaultData.filter(e => e.day === Days.Monday)} />  
+      <AgendaDay day={Days.Friday} agenda={defaultData.filter(e => e.day === Days.Friday)} />
+      <AgendaDay day={Days.Saturday} agenda={defaultData.filter(e => e.day === Days.Saturday)} />
+      <AgendaDay day={Days.Sunday} agenda={defaultData.filter(e => e.day === Days.Sunday)} />  
+      <AgendaDay day={Days.Monday} agenda={defaultData.filter(e => e.day === Days.Monday)} />  
     </>
   )
 }
