@@ -29,7 +29,7 @@ export type Person = {
 
 const defaultData: Person[] = [
   {
-    name: 'Je. T.',
+    name: 'Je T.',
     generation: 'Millennials',
     shirt: "XLT",
     team: Teams.TeamA,
@@ -40,7 +40,7 @@ const defaultData: Person[] = [
     },
   },
   {
-    name: 'Am. T.',
+    name: 'Am T.',
     generation: 'Millennials',
     shirt: "XL",
     team: Teams.TeamA,
@@ -51,7 +51,7 @@ const defaultData: Person[] = [
     },
   },
   {
-    name: 'Ja. T.',
+    name: 'Ja T.',
     generation: 'Gen Alpha',
     shirt: "S",
     team: Teams.TeamB,
@@ -62,7 +62,7 @@ const defaultData: Person[] = [
     },
   },
   {
-    name: 'Gu. T.',
+    name: 'Gu T.',
     generation: 'Gen Alpha',
     shirt: "Kid",
     team: Teams.TeamA,
@@ -73,7 +73,7 @@ const defaultData: Person[] = [
     },
   },
   {
-    name: 'Bo. T.',
+    name: 'Bo T.',
     generation: 'Little One',
     shirt: "Kid",
     team: Teams.TeamA,
@@ -84,7 +84,7 @@ const defaultData: Person[] = [
     },
   },
   {
-    name: 'Gr. D.',
+    name: 'Gr D.',
     generation: 'Gen X',
     shirt: "L",
     team: Teams.TeamA,
@@ -95,7 +95,7 @@ const defaultData: Person[] = [
     },
   },
   {
-    name: 'De. D.',
+    name: 'De D.',
     generation: 'Gen X',
     shirt: "L",
     team: Teams.TeamA,
@@ -106,7 +106,7 @@ const defaultData: Person[] = [
     },
   },
   {
-    name: 'Ru. D.',
+    name: 'Ru D.',
     generation: 'Millennials',
     shirt: "L",
     team: Teams.TeamB,
@@ -117,7 +117,7 @@ const defaultData: Person[] = [
     },
   },
   {
-    name: 'Cr. D.',
+    name: 'Cr D.',
     generation: 'Millennials',
     shirt: "XL",
     team: Teams.TeamA,
@@ -128,7 +128,7 @@ const defaultData: Person[] = [
     },
   },
   {
-    name: 'Rh. D.',
+    name: 'Rh D.',
     generation: 'Gen Alpha',
     shirt: "S",
     team: Teams.TeamA,
@@ -139,7 +139,7 @@ const defaultData: Person[] = [
     },
   },
   {
-    name: 'Ma. F.',
+    name: 'Ma F.',
     generation: 'Millennials',
     shirt: "XLT",
     team: Teams.TeamB,
@@ -150,7 +150,7 @@ const defaultData: Person[] = [
     },
   },
   {
-    name: 'Ja. F.',
+    name: 'Ja F.',
     generation: 'Gen Z',
     shirt: "XL",
     team: Teams.TeamB,
@@ -161,7 +161,7 @@ const defaultData: Person[] = [
     },
   },
   {
-    name: 'Ri. L.',
+    name: 'Ri L.',
     generation: 'Millennials',
     shirt: "XXXL",
     team: Teams.TeamA,
@@ -172,7 +172,7 @@ const defaultData: Person[] = [
     },
   },
   {
-    name: 'Li. T.',
+    name: 'Li T.',
     generation: 'Silent Gen',
     shirt: "XXL",
     team: Teams.TeamU,
@@ -183,7 +183,7 @@ const defaultData: Person[] = [
     },
   },
   {
-    name: 'An. J.',
+    name: 'An J.',
     generation: 'Millennials',
     shirt: "XL",
     team: Teams.TeamA,
@@ -194,7 +194,7 @@ const defaultData: Person[] = [
     },
   },
   {
-    name: 'Ma. J.',
+    name: 'Ma J.',
     generation: 'Millennials',
     shirt: "XXL",
     team: Teams.TeamB,
@@ -205,7 +205,7 @@ const defaultData: Person[] = [
     },
   },
   {
-    name: 'Ga. J.',
+    name: 'Ga J.',
     generation: 'Gen Z',
     shirt: "XL",
     team: Teams.TeamA,
@@ -216,7 +216,7 @@ const defaultData: Person[] = [
     },
   },
   {
-    name: 'Ha. J.',
+    name: 'Ha J.',
     generation: 'Gen Z',
     shirt: "M",
     team: Teams.TeamB,
@@ -227,7 +227,7 @@ const defaultData: Person[] = [
     },
   },
   {
-    name: 'Ma. J.',
+    name: 'Ma J.',
     generation: 'Little One',
     shirt: "Kid",
     team: Teams.TeamB,
@@ -238,7 +238,7 @@ const defaultData: Person[] = [
     },
   },
   {
-    name: 'La. J.',
+    name: 'La J.',
     generation: 'Baby Boomers',
     shirt: "M",
     team: Teams.TeamB,
@@ -249,9 +249,9 @@ const defaultData: Person[] = [
     },
   },
   {
-    name: 'Ta. D.',
+    name: 'Ta D.',
     generation: 'Millennials',
-    shirt: undefined,
+    shirt: 'M',
     team: Teams.TeamA,
     sleeping: {
       friday: undefined,
@@ -260,9 +260,9 @@ const defaultData: Person[] = [
     },
   },
   {
-    name: 'Le. D.',
+    name: 'Le D.',
     generation: 'Gen Z',
-    shirt: undefined,
+    shirt: 'S',
     team: Teams.TeamB,
     sleeping: {
       friday: undefined,
@@ -271,7 +271,7 @@ const defaultData: Person[] = [
     },
   },
   {
-    name: 'Me. J.',
+    name: 'Me J.',
     generation: 'Baby Boomers',
     shirt: "L",
     team: Teams.TeamU,
@@ -282,7 +282,7 @@ const defaultData: Person[] = [
     },
   },
   {
-    name: 'La. S.',
+    name: 'La S.',
     generation: 'Millennials',
     shirt: undefined,
     team: Teams.TeamA,
@@ -293,7 +293,7 @@ const defaultData: Person[] = [
     },
   },
   {
-    name: 'Ja. S.',
+    name: 'Ja S.',
     generation: 'Millennials',
     shirt: undefined,
     team: Teams.TeamB,
@@ -304,7 +304,7 @@ const defaultData: Person[] = [
     },
   },
   {
-    name: 'Ta. S.',
+    name: 'Ta S.',
     generation: 'Gen Alpha',
     shirt: undefined,
     team: Teams.TeamB,
@@ -315,7 +315,7 @@ const defaultData: Person[] = [
     },
   },
   {
-    name: 'Gr. S.',
+    name: 'Gr S.',
     generation: 'Little One',
     shirt: undefined,
     team: Teams.TeamA,
