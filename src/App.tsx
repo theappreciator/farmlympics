@@ -32,7 +32,7 @@ const defaultData: Person[] = [
     name: 'Je T.',
     generation: 'Millennials',
     shirt: "XLT",
-    team: Teams.TeamA,
+    team: Teams.TeamB,
     sleeping: {
       friday: 'farm room',
       saturday: 'farm room',
@@ -98,7 +98,7 @@ const defaultData: Person[] = [
     name: 'De D.',
     generation: 'Gen X',
     shirt: "L",
-    team: Teams.TeamA,
+    team: Teams.TeamB,
     sleeping: {
       friday: 'farm room',
       saturday: 'farm room',
