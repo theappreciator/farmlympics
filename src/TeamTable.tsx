@@ -55,7 +55,7 @@ const sleepingDisplay = (sleeping: Sleeping) => {
 const TeamTable: React.FC<TeamTableProps> = ({ team, people }) => {
 
   const [data, _setData] = React.useState(() => [...people])
-  const rerender = React.useReducer(() => ({}), {})[1]
+  // const rerender = React.useReducer(() => ({}), {})[1]
 
   const table = useReactTable({
     data,
