@@ -23,62 +23,72 @@ type AgendaProps = {
 
 const defaultData: Event[] = [
   {
-    lines: ['Setup Activities'],
+    lines: ['Setup Activities', '* setup tents', '* setup games', '* setup music and audio'],
     start: 'all day',
     day: Days.Saturday,
   },
   {
-    lines: ['Breakfast', '* CFA Chicken Minis', '* Fruit', '* Coffee', '* Juice'],
-    start: '8:00a',
+    lines: ['Dry Run/Walkthrough'],
+    start: '4:00p',
+    day: Days.Saturday,
+  },
+  {
+    lines: ['Last Minute Setup Activities', '* get ice', '* game setup', '* drink station setup', '* last minute questions'],
+    start: '7:00a',
     day: Days.Sunday,
   },
   {
-    lines: ['Opening Ceremony'],
+    lines: ['Breakfast', '* CFA Chicken Minis', '* Fruit', '* Coffee', '* Juice'],
+    start: '7:00a',
+    day: Days.Sunday,
+  },
+  {
+    lines: ['Opening Ceremony (15 min)'],
     start: '9:00a',
     day: Days.Sunday,
   },
   {
-    lines: ['Game 1'],
+    lines: ['Game 1 (45 min)'],
     start: '9:15a',
     day: Days.Sunday,
   },
   {
-    lines: ['Game 2'],
+    lines: ['Game 2 (45 min)'],
     start: '10:00a',
     day: Days.Sunday,
   },
   {
-    lines: ['Game 3'],
+    lines: ['Game 3 (45 min)'],
     start: '10:45a',
     day: Days.Sunday,
   },
   {
-    lines: ['Game 4'],
+    lines: ['Game 4 (45 min)'],
     start: '11:30a',
     day: Days.Sunday,
   },
   {
-    lines: ['Lunch', '* CFA Chicken Sandwich', '* CFA Chicken Nuggets', '* Chicken salad', '* chips', '* fruit'],
+    lines: ['Lunch (45 min)', '* CFA Chicken Sandwich', '* CFA Chicken Nuggets', '* Chicken salad', '* chips', '* fruit'],
     start: '12:15p',
     day: Days.Sunday,
   },
   {
-    lines: ['Game 5'],
+    lines: ['Game 5 (45 min)'],
     start: '1:00p',
     day: Days.Sunday,
   },
   {
-    lines: ['Game 6'],
+    lines: ['Game 6 (45 min)'],
     start: '1:45p',
     day: Days.Sunday,
   },
   {
-    lines: ['Game 7'],
+    lines: ['Game 7 (45 min)'],
     start: '2:30p',
     day: Days.Sunday,
   },
   {
-    lines: ['Game 8'],
+    lines: ['Game 8 (45 min)'],
     start: '3:15p',
     day: Days.Sunday,
   },
@@ -88,7 +98,7 @@ const defaultData: Event[] = [
     day: Days.Sunday,
   },
   {
-    lines: ['Break'],
+    lines: ['Cocktail Hour', '* formal attire'],
     start: '4:30p',
     day: Days.Sunday,
   },

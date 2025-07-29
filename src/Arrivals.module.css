@@ -1,0 +1,12 @@
+.container {
+    min-width: 800px;
+    table-layout: fixed;
+}
+
+.header th {
+    border-bottom: thin solid;
+}
+
+.footer th {
+    border-top: thin solid;
+}

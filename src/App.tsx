@@ -1,5 +1,6 @@
-import Agenda from './Agenda';
+import Agenda, { Days } from './Agenda';
 import './App.css'
+import Arrivals from './Arrivals';
 import { makeBrandedType } from './helpers/brandedType';
 import PeopleTable from './PeopleTable';
 import SleepingArrangements from './SleepingArrangements';
@@ -126,8 +127,8 @@ const defaultData: Person[] = [
       saturday: Sleeping.edRoom,
       sunday: Sleeping.edRoom,
     },
-    arrival: new Date('2025-08-29T08:00:00'),
-    departure: new Date('2025-09-01T23:59:59'),
+    arrival: new Date('2025-08-28T08:00:00'),
+    departure: new Date('2025-09-02T23:59:59'),
   },
   {
     id: 7,
@@ -140,8 +141,8 @@ const defaultData: Person[] = [
       saturday: Sleeping.edRoom,
       sunday: Sleeping.edRoom,
     },
-    arrival: new Date('2025-08-29T08:00:00'),
-    departure: new Date('2025-09-01T23:59:59'),
+    arrival: new Date('2025-08-28T08:00:00'),
+    departure: new Date('2025-09-02T23:59:59'),
   },
   {
     id: 8,
@@ -342,7 +343,7 @@ const defaultData: Person[] = [
     name: 'Me J.',
     generation: 'Baby Boomers',
     shirt: "L",
-    team: Teams.TeamU,
+    team: Teams.TeamA,
     sleeping: {
       friday: Sleeping.unknown,
       saturday: Sleeping.unknown,
@@ -409,6 +410,7 @@ const anchorLinks: AnchorLink[] = [
   { anchor: "teama", displayText: "Team A" },
   { anchor: "teamb", displayText: "Team B" },
   { anchor: "teamu", displayText: "Team TBD" },
+  { anchor: "arrivals", displayText: "Arrivals" },
   { anchor: "sleeping", displayText: "Sleeping Arrangements" },
   { anchor: "agenda", displayText: "Agenda" },
 ];
@@ -434,11 +436,23 @@ function App() {
       <a id="teamu" />
       <TeamTable team={Teams.TeamU} people={defaultData.filter(p => p.team === Teams.TeamU)}/>
 
+      <a id="arrivals" />
+      <Arrivals people={defaultData} />
+
       <a id="sleeping" />
       <SleepingArrangements people={defaultData} />
 
       <a id="agenda" />
       <Agenda />
+
+      <div style={{width: '300px', margin: '0 auto'}}>
+        <h2>What to Wear/Bring</h2>
+        <ul style={{ listStyleType: 'disc', paddingLeft: '20px'}}>
+          <li>comfy clothes and shoes to get sweaty and dirty</li>
+          <li>water</li>
+          <li>sunscreen</li>
+        </ul>
+      </div>
     </>
   )
 }
