@@ -1,4 +1,4 @@
-import Agenda, { Days } from './Agenda';
+import Agenda from './Agenda';
 import './App.css'
 import Arrivals from './Arrivals';
 import { makeBrandedType } from './helpers/brandedType';
@@ -249,9 +249,9 @@ const defaultData: Person[] = [
     shirt: "XL",
     team: Teams.TeamA,
     sleeping: {
-      friday: Sleeping.unknown,
-      saturday: Sleeping.unknown,
-      sunday: Sleeping.unknown
+      friday: Sleeping.none,
+      saturday: Sleeping.NanaJs,
+      sunday: Sleeping.NanaJs
     },
   },
   {
@@ -261,9 +261,9 @@ const defaultData: Person[] = [
     shirt: "XXL",
     team: Teams.TeamB,
     sleeping: {
-      friday: Sleeping.unknown,
-      saturday: Sleeping.unknown,
-      sunday: Sleeping.unknown
+      friday: Sleeping.none,
+      saturday: Sleeping.NanaJs,
+      sunday: Sleeping.NanaJs
     },
   },
   {
@@ -273,9 +273,9 @@ const defaultData: Person[] = [
     shirt: "XL",
     team: Teams.TeamA,
     sleeping: {
-      friday: Sleeping.unknown,
-      saturday: Sleeping.unknown,
-      sunday: Sleeping.unknown
+      friday: Sleeping.none,
+      saturday: Sleeping.NanaJs,
+      sunday: Sleeping.NanaJs
     },
   },
   {
@@ -285,9 +285,9 @@ const defaultData: Person[] = [
     shirt: "M",
     team: Teams.TeamB,
     sleeping: {
-      friday: Sleeping.unknown,
-      saturday: Sleeping.unknown,
-      sunday: Sleeping.unknown
+      friday: Sleeping.none,
+      saturday: Sleeping.NanaJs,
+      sunday: Sleeping.NanaJs
     },
   },
   {
@@ -297,9 +297,9 @@ const defaultData: Person[] = [
     shirt: "Kid",
     team: Teams.TeamB,
     sleeping: {
-      friday: Sleeping.unknown,
-      saturday: Sleeping.unknown,
-      sunday: Sleeping.unknown
+      friday: Sleeping.none,
+      saturday: Sleeping.NanaJs,
+      sunday: Sleeping.NanaJs
     },
   },
   {
@@ -345,9 +345,9 @@ const defaultData: Person[] = [
     shirt: "L",
     team: Teams.TeamA,
     sleeping: {
-      friday: Sleeping.unknown,
-      saturday: Sleeping.unknown,
-      sunday: Sleeping.unknown
+      friday: Sleeping.none,
+      saturday: Sleeping.NanaJs,
+      sunday: Sleeping.NanaJs
     },
   },
   {
@@ -409,10 +409,10 @@ const anchorLinks: AnchorLink[] = [
   { anchor: "people", displayText: "People" },
   { anchor: "teama", displayText: "Team A" },
   { anchor: "teamb", displayText: "Team B" },
-  { anchor: "teamu", displayText: "Team TBD" },
   { anchor: "arrivals", displayText: "Arrivals" },
   { anchor: "sleeping", displayText: "Sleeping Arrangements" },
   { anchor: "agenda", displayText: "Agenda" },
+  { anchor: "tobring", displayText: "Wear/Bring" },
 ];
 
 function App() {
@@ -447,7 +447,7 @@ function App() {
 
       <div style={{width: '300px', margin: '0 auto'}}>
         <h2>What to Wear/Bring</h2>
-        <ul style={{ listStyleType: 'disc', paddingLeft: '20px'}}>
+        <ul style={{ listStyleType: 'disc', paddingLeft: '20px', textAlign: 'left' }}>
           <li>comfy clothes and shoes to get sweaty and dirty</li>
           <li>water</li>
           <li>sunscreen</li>

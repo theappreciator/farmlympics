@@ -12,6 +12,10 @@
     font-weight: 700;
 }
 
+.container th:first-child {
+    font-weight: 700;
+}
+
 .header th {
     border-bottom: thin solid;
 }

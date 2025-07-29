@@ -35,14 +35,17 @@ const columns = [
   columnHelper.accessor('days.friday', {
     header: () => <span>Friday</span>,
     cell: info => info.getValue().length,
+    footer: info => `Total: ${info.table.getFilteredRowModel().rows.filter(r => r.original.days.friday !== undefined).length} people`
   }),
   columnHelper.accessor('days.saturday', {
     header: () => <span>Saturday</span>,
     cell: info => info.getValue().length,
+    footer: info => `Total: ${info.table.getFilteredRowModel().rows.filter(r => r.original.days.saturday !== undefined).length} people`
   }),
   columnHelper.accessor('days.sunday', {
     header: () => <span>Sunday</span>,
     cell: info => info.getValue().length,
+    footer: info => `Total: ${info.table.getFilteredRowModel().rows.filter(r => r.original.days.sunday !== undefined).length} people`
   })
 ]
 
@@ -137,12 +140,12 @@ const SleepingArrangements: React.FC<SleepingArrangementsProps> = ({ people }) =
             {table.getFooterGroups().map(footerGroup => (
               <tr key={footerGroup.id}>  
                 {footerGroup.headers.map(header => (
-                  <td key={header.id} className={styles.footer}>
+                  <th key={header.id} className={styles.footer}>
                     {flexRender(
                       header.column.columnDef.footer,
                       header.getContext(),
                     )}
-                  </td>
+                  </th>
                 ))}
               </tr>
             ))}
