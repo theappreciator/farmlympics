@@ -33,6 +33,11 @@ const defaultData: Event[] = [
     day: Days.Saturday,
   },
   {
+    lines: ['Dinner', '* TBD'],
+    start: '6:00p',
+    day: Days.Saturday,
+  },
+  {
     lines: ['Last Minute Setup Activities', '* get ice', '* game setup', '* drink station setup', '* last minute questions'],
     start: '7:00a',
     day: Days.Sunday,
@@ -115,6 +120,11 @@ const defaultData: Event[] = [
   {
     lines: ['Clean Up Activities'],
     start: 'AM',
+    day: Days.Monday,
+  },
+  {
+    lines: ['Breakfast', '* Biscuits', '* Sausage', '* Eggs', '* Fruit', '* Coffee'],
+    start: '9:00a',
     day: Days.Monday,
   },
 ]

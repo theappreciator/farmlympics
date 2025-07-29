@@ -28,7 +28,7 @@ export const Sleeping = makeBrandedType({
 }, 'sleeping')  ;
 export type Sleeping = (typeof Sleeping)[keyof typeof Sleeping];
 
-export type Shirt = "Kid" | "S" | "M" | "L" | "XL" | "XLT" | "XXL" | "XXXL" | undefined;
+export type Shirt = "Kid" | "Kid S" | "Kid M" | "S" | "M" | "L" | "LT" | "XL" | "XLT" | "XXL" | "XXXL" | undefined;
 
 export type Person = {
   id?: number;
@@ -106,7 +106,7 @@ const defaultData: Person[] = [
     id: 5,
     name: 'Bo T.',
     generation: 'Little One',
-    shirt: "Kid",
+    shirt: "Kid S",
     team: Teams.TeamA,
     sleeping: {
       friday: Sleeping.tuRoom,
@@ -294,7 +294,7 @@ const defaultData: Person[] = [
     id: 19,
     name: 'Ma J.',
     generation: 'Little One',
-    shirt: "Kid",
+    shirt: "Kid S",
     team: Teams.TeamB,
     sleeping: {
       friday: Sleeping.none,
@@ -354,7 +354,7 @@ const defaultData: Person[] = [
     id: 24,
     name: 'La S.',
     generation: 'Millennials',
-    shirt: undefined,
+    shirt: "M",
     team: Teams.TeamA,
     sleeping: {
       friday: Sleeping.unknown,
@@ -366,7 +366,7 @@ const defaultData: Person[] = [
     id: 25,
     name: 'Ja S.',
     generation: 'Millennials',
-    shirt: undefined,
+    shirt: "LT",
     team: Teams.TeamB,
     sleeping: {
       friday: Sleeping.unknown,
@@ -378,7 +378,7 @@ const defaultData: Person[] = [
     id: 26,
     name: 'Ta S.',
     generation: 'Gen Alpha',
-    shirt: undefined,
+    shirt: "Kid M",
     team: Teams.TeamB,
     sleeping: {
       friday: Sleeping.unknown,
@@ -390,7 +390,7 @@ const defaultData: Person[] = [
     id: 27,
     name: 'Gr S.',
     generation: 'Little One',
-    shirt: "Kid",
+    shirt: "Kid S",
     team: Teams.TeamA,
     sleeping: {
       friday: Sleeping.unknown,
