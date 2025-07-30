@@ -55,9 +55,11 @@ type ArrivalsByDay = {
     }
 }
 
-const arrivalHelper = (day: Days, arrivalDate?: Date, departDate?: Date): string | undefined => {
+const arrivalHelper = (day: Days, arrivalDate?: Date | 'all', departDate?: Date | 'all'): string | undefined => {
   if (!arrivalDate || !departDate) return undefined;
-  
+   
+  if (arrivalDate === 'all') return arrivalDate;
+
   let arriveToday = false;
   let departToday = false;
   let arrivedBeforeToday = false;

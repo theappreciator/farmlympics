@@ -9,6 +9,7 @@ import TeamTable from './TeamTable';
 export const Teams = makeBrandedType({
     TeamA: "A",
     TeamB: "B",
+    TeamS: "Spectator",
     TeamU: "TBD",
 }, 'teams')  ;
 export type Teams = (typeof Teams)[keyof typeof Teams];
@@ -22,8 +23,10 @@ export const Sleeping = makeBrandedType({
     office: "The Office",
     basement: "Basement",
     camper: "Camper",
-    none: "None",
-    NanaJs: "Nana J's",
+    none: "no need",
+    nanaJs: "Nana J's",
+    waynes: "Wayne's",
+    needs: "Need a Place",
     unknown: "?",
 }, 'sleeping')  ;
 export type Sleeping = (typeof Sleeping)[keyof typeof Sleeping];
@@ -41,8 +44,8 @@ export type Person = {
     saturday: Sleeping,
     sunday: Sleeping,
   };
-  arrival?: Date;
-  departure?: Date;
+  arrival?: Date | 'all',
+  departure?: Date | 'all',
 }
 
 const defaultData: Person[] = [
@@ -127,13 +130,13 @@ const defaultData: Person[] = [
       saturday: Sleeping.edRoom,
       sunday: Sleeping.edRoom,
     },
-    arrival: new Date('2025-08-28T08:00:00'),
-    departure: new Date('2025-09-02T23:59:59'),
+    arrival: 'all',
+    departure: 'all',
   },
   {
     id: 7,
     name: 'De D.',
-    generation: 'Baby Boomers',
+    generation: 'Gen X',
     shirt: "L",
     team: Teams.TeamB,
     sleeping: {
@@ -141,8 +144,8 @@ const defaultData: Person[] = [
       saturday: Sleeping.edRoom,
       sunday: Sleeping.edRoom,
     },
-    arrival: new Date('2025-08-28T08:00:00'),
-    departure: new Date('2025-09-02T23:59:59'),
+    arrival: 'all',
+    departure: 'all',
   },
   {
     id: 8,
@@ -194,8 +197,8 @@ const defaultData: Person[] = [
     team: Teams.TeamB,
     sleeping: {
       friday: Sleeping.none,
-      saturday: Sleeping.basement,
-      sunday: Sleeping.basement
+      saturday: Sleeping.needs,
+      sunday: Sleeping.needs
     },
     arrival: new Date('2025-08-30T12:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
@@ -208,8 +211,8 @@ const defaultData: Person[] = [
     team: Teams.TeamB,
     sleeping: {
       friday: Sleeping.none,
-      saturday: Sleeping.basement,
-      sunday: Sleeping.basement
+      saturday: Sleeping.needs,
+      sunday: Sleeping.needs
     },
     arrival: new Date('2025-08-30T12:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
@@ -222,8 +225,8 @@ const defaultData: Person[] = [
     team: Teams.TeamA,
     sleeping: {
       friday: Sleeping.none,
-      saturday: Sleeping.office,
-      sunday: Sleeping.office
+      saturday: Sleeping.needs,
+      sunday: Sleeping.needs
     },
     arrival: new Date('2025-08-30T14:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
@@ -233,7 +236,7 @@ const defaultData: Person[] = [
     name: 'Li T.',
     generation: 'Silent Gen',
     shirt: "XXL",
-    team: Teams.TeamU,
+    team: Teams.TeamS,
     sleeping: {
       friday: Sleeping.none,
       saturday: Sleeping.none,
@@ -250,8 +253,8 @@ const defaultData: Person[] = [
     team: Teams.TeamA,
     sleeping: {
       friday: Sleeping.none,
-      saturday: Sleeping.NanaJs,
-      sunday: Sleeping.NanaJs
+      saturday: Sleeping.nanaJs,
+      sunday: Sleeping.nanaJs
     },
   },
   {
@@ -262,8 +265,8 @@ const defaultData: Person[] = [
     team: Teams.TeamB,
     sleeping: {
       friday: Sleeping.none,
-      saturday: Sleeping.NanaJs,
-      sunday: Sleeping.NanaJs
+      saturday: Sleeping.nanaJs,
+      sunday: Sleeping.nanaJs
     },
   },
   {
@@ -274,8 +277,8 @@ const defaultData: Person[] = [
     team: Teams.TeamA,
     sleeping: {
       friday: Sleeping.none,
-      saturday: Sleeping.NanaJs,
-      sunday: Sleeping.NanaJs
+      saturday: Sleeping.nanaJs,
+      sunday: Sleeping.nanaJs
     },
   },
   {
@@ -286,8 +289,8 @@ const defaultData: Person[] = [
     team: Teams.TeamB,
     sleeping: {
       friday: Sleeping.none,
-      saturday: Sleeping.NanaJs,
-      sunday: Sleeping.NanaJs
+      saturday: Sleeping.nanaJs,
+      sunday: Sleeping.nanaJs
     },
   },
   {
@@ -298,8 +301,8 @@ const defaultData: Person[] = [
     team: Teams.TeamB,
     sleeping: {
       friday: Sleeping.none,
-      saturday: Sleeping.NanaJs,
-      sunday: Sleeping.NanaJs
+      saturday: Sleeping.nanaJs,
+      sunday: Sleeping.nanaJs
     },
   },
   {
@@ -309,9 +312,9 @@ const defaultData: Person[] = [
     shirt: "M",
     team: Teams.TeamB,
     sleeping: {
-      friday: Sleeping.NanaJs,
-      saturday: Sleeping.NanaJs,
-      sunday: Sleeping.NanaJs,
+      friday: Sleeping.nanaJs,
+      saturday: Sleeping.nanaJs,
+      sunday: Sleeping.nanaJs,
     },
   },
   {
@@ -321,10 +324,12 @@ const defaultData: Person[] = [
     shirt: 'M',
     team: Teams.TeamA,
     sleeping: {
-      friday: Sleeping.unknown,
-      saturday: Sleeping.unknown,
-      sunday: Sleeping.unknown
+      friday: Sleeping.none,
+      saturday: Sleeping.needs,
+      sunday: Sleeping.needs
     },
+    arrival: new Date('2025-08-30T12:00:00'),
+    departure: new Date('2025-09-01T12:00:00'),
   },
   {
     id: 22,
@@ -333,10 +338,12 @@ const defaultData: Person[] = [
     shirt: 'S',
     team: Teams.TeamB,
     sleeping: {
-      friday: Sleeping.unknown,
-      saturday: Sleeping.unknown,
-      sunday: Sleeping.unknown
+      friday: Sleeping.none,
+      saturday: Sleeping.needs,
+      sunday: Sleeping.needs
     },
+    arrival: new Date('2025-08-30T12:00:00'),
+    departure: new Date('2025-09-01T12:00:00'),
   },
   {
     id: 23,
@@ -346,9 +353,11 @@ const defaultData: Person[] = [
     team: Teams.TeamA,
     sleeping: {
       friday: Sleeping.none,
-      saturday: Sleeping.NanaJs,
-      sunday: Sleeping.NanaJs
+      saturday: Sleeping.nanaJs,
+      sunday: Sleeping.nanaJs
     },
+    arrival: new Date('2025-08-30T12:00:00'),
+    departure: new Date('2025-09-01T12:00:00'),
   },
   {
     id: 24,
@@ -398,6 +407,120 @@ const defaultData: Person[] = [
       sunday: Sleeping.unknown
     },
   },
+  {
+    id: 28,
+    name: 'Je R.',
+    generation: 'Millennials',
+    shirt: 'L',
+    team: Teams.TeamA,
+    sleeping: {
+      friday: Sleeping.unknown,
+      saturday: Sleeping.unknown,
+      sunday: Sleeping.unknown
+    },
+  },
+  {
+    id: 29,
+    name: 'Ed R.',
+    generation: 'Millennials',
+    shirt: 'XL',
+    team: Teams.TeamB,
+    sleeping: {
+      friday: Sleeping.unknown,
+      saturday: Sleeping.unknown,
+      sunday: Sleeping.unknown
+    },
+  },
+  {
+    id: 30,
+    name: 'Vi R.',
+    generation: 'Gen Alpha',
+    shirt: 'XL',
+    team: Teams.TeamA,
+    sleeping: {
+      friday: Sleeping.unknown,
+      saturday: Sleeping.unknown,
+      sunday: Sleeping.unknown
+    },
+  },
+  {
+    id: 31,
+    name: 'Sh D',
+    generation: 'Baby Boomers',
+    shirt: undefined,
+    team: Teams.TeamS,
+    sleeping: {
+      friday: Sleeping.none,
+      saturday: Sleeping.office,
+      sunday: Sleeping.office
+    },
+    arrival: new Date('2025-08-30T12:00:00'),
+    departure: new Date('2025-09-01T12:00:00'),
+  },
+  {
+    id: 32,
+    name: 'Ch W.',
+    generation: 'Baby Boomers',
+    shirt: undefined,
+    team: Teams.TeamS,
+    sleeping: {
+      friday: Sleeping.none,
+      saturday: Sleeping.waynes,
+      sunday: Sleeping.waynes
+    },
+  },
+  {
+    id: 33,
+    name: 'Pa W.',
+    generation: 'Baby Boomers',
+    shirt: undefined,
+    team: Teams.TeamS,
+    sleeping: {
+      friday: Sleeping.none,
+      saturday: Sleeping.waynes,
+      sunday: Sleeping.waynes
+    },
+  },
+  {
+    id: 34,
+    name: 'Ch W.',
+    generation: 'Baby Boomers',
+    shirt: undefined,
+    team: Teams.TeamS,
+    sleeping: {
+      friday: Sleeping.none,
+      saturday: Sleeping.waynes,
+      sunday: Sleeping.waynes
+    },
+  },
+  {
+    id: 35,
+    name: 'Wa D.',
+    generation: 'Baby Boomers',
+    shirt: undefined,
+    team: Teams.TeamS,
+    sleeping: {
+      friday: Sleeping.waynes,
+      saturday: Sleeping.waynes,
+      sunday: Sleeping.waynes
+    },
+    arrival: new Date('2025-08-31T10:00:00'),
+    departure: new Date('2025-08-31T17:00:00'),
+  },
+  {
+    id: 36,
+    name: 'Ly D.',
+    generation: 'Baby Boomers',
+    shirt: undefined,
+    team: Teams.TeamS,
+    sleeping: {
+      friday: Sleeping.waynes,
+      saturday: Sleeping.waynes,
+      sunday: Sleeping.waynes
+    },
+    arrival: new Date('2025-08-31T10:00:00'),
+    departure: new Date('2025-08-31T17:00:00'),
+  },
 ]
 
 interface AnchorLink {
@@ -433,7 +556,9 @@ function App() {
       <TeamTable team={Teams.TeamA} people={defaultData.filter(p => p.team === Teams.TeamA)}/>
       <a id="teamb" />
       <TeamTable team={Teams.TeamB} people={defaultData.filter(p => p.team === Teams.TeamB)}/>
-      <a id="teamu" />
+      <a id="TeamS" />
+      <TeamTable team={Teams.TeamS} people={defaultData.filter(p => p.team === Teams.TeamS)}/>
+      <a id="TeamU" />
       <TeamTable team={Teams.TeamU} people={defaultData.filter(p => p.team === Teams.TeamU)}/>
 
       <a id="arrivals" />

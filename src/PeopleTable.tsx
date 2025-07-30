@@ -34,7 +34,7 @@ const columns = [
     cell: info => info.getValue(),
   }),
   columnHelper.accessor('shirt', {
-    header: () => <span>Shirt</span>,
+    header: () => <span>Shirt<br/>Size</span>,
     cell: info => emptyHelper(info.getValue()),
   }),
   columnHelper.accessor('team', {
@@ -42,29 +42,29 @@ const columns = [
     cell: info => info.getValue(),
   }),
   columnHelper.accessor('arrival', {
-    header: () => <span>Arrive</span>,
+    header: () => <span>Arrive<br/>Time</span>,
     cell: info => {
       const value = info.getValue()
-      return value ? format(new Date(value), 'eee, haaaaa') : '?'
+      return !value ? '?' : value === 'all' ? value : format(new Date(value), 'eee, haaaaa')
     }
   }),
   columnHelper.accessor('departure', {
-    header: () => <span>Depart</span>,
+    header: () => <span>Depart<br/>Time</span>,
     cell: info => {
       const value = info.getValue()
-      return value ? format(new Date(value), 'eee, haaaaa') : '?'
+      return !value ? '?' : value === 'all' ? value : format(new Date(value), 'eee, haaaaa')
     }
   }),
   columnHelper.accessor('sleeping.friday', {
-    header: () => <span>Friday</span>,
+    header: () => <span>Friday<br/>Sleep</span>,
     cell: info => sleepingDisplay(info.getValue()),
   }),
   columnHelper.accessor('sleeping.saturday', {
-    header: () => <span>Saturday</span>,
+    header: () => <span>Saturday<br/>Sleep</span>,
     cell: info => sleepingDisplay(info.getValue()),
   }),
   columnHelper.accessor('sleeping.sunday', {
-    header: () => <span>Sunday</span>,
+    header: () => <span>Sunday<br/>Sleep</span>,
     cell: info => sleepingDisplay(info.getValue()),
   }),
 ]

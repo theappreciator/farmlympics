@@ -4,9 +4,6 @@ export const sleepingDisplay = (sleeping: Sleeping) => {
   if (sleeping === undefined) {
     return "?";
   }
-  else if (sleeping === "None") {
-    return "no";
-  }
   
   return sleeping;
 }
