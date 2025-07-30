@@ -113,7 +113,11 @@ const arrivalHelper = (day: Days, arrivalDate?: Date | 'all', departDate?: Date 
       arrivalString += ' - ';
     }
     arrivalString += format(departDate, 'haaaaa');
-  } 
+  }
+
+  if (arrivalString === '') {
+    arrivalString = '༚';
+  }
 
   return arrivalString ? arrivalString : undefined;
 }

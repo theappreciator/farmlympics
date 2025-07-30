@@ -27,6 +27,8 @@ export const Sleeping = makeBrandedType({
     nanaJs: "Nana J's",
     waynes: "Wayne's",
     needs: "Need a Place",
+    treehouseB: "B Treehouse",
+    treehouseG: "G Treehouse",
     unknown: "?",
 }, 'sleeping')  ;
 export type Sleeping = (typeof Sleeping)[keyof typeof Sleeping];
@@ -95,7 +97,7 @@ const defaultData: Person[] = [
     id: 4,
     name: 'Gu T.',
     generation: 'Gen Alpha',
-    shirt: "Kid",
+    shirt: "Kid S",
     team: Teams.TeamA,
     sleeping: {
       friday: Sleeping.tuRoom,
@@ -235,7 +237,7 @@ const defaultData: Person[] = [
     id: 14,
     name: 'Li T.',
     generation: 'Silent Gen',
-    shirt: "XXL",
+    shirt: "XXXL",
     team: Teams.TeamS,
     sleeping: {
       friday: Sleeping.none,
@@ -484,9 +486,9 @@ const defaultData: Person[] = [
   {
     id: 34,
     name: 'Ch W.',
-    generation: 'Baby Boomers',
+    generation: 'Gen Z',
     shirt: undefined,
-    team: Teams.TeamS,
+    team: Teams.TeamU,
     sleeping: {
       friday: Sleeping.none,
       saturday: Sleeping.waynes,
@@ -495,6 +497,18 @@ const defaultData: Person[] = [
   },
   {
     id: 35,
+    name: 'Star',
+    generation: 'Gen Z',
+    shirt: undefined,
+    team: Teams.TeamU,
+    sleeping: {
+      friday: Sleeping.none,
+      saturday: Sleeping.waynes,
+      sunday: Sleeping.waynes
+    },
+  },
+  {
+    id: 36,
     name: 'Wa D.',
     generation: 'Baby Boomers',
     shirt: undefined,
@@ -508,7 +522,7 @@ const defaultData: Person[] = [
     departure: new Date('2025-08-31T17:00:00'),
   },
   {
-    id: 36,
+    id: 37,
     name: 'Ly D.',
     generation: 'Baby Boomers',
     shirt: undefined,
@@ -520,6 +534,30 @@ const defaultData: Person[] = [
     },
     arrival: new Date('2025-08-31T10:00:00'),
     departure: new Date('2025-08-31T17:00:00'),
+  },
+  {
+    id: 38,
+    name: 'St ?.',
+    generation: 'Baby Boomers',
+    shirt: undefined,
+    team: Teams.TeamU,
+    sleeping: {
+      friday: Sleeping.unknown,
+      saturday: Sleeping.camper,
+      sunday: Sleeping.camper
+    },
+  },
+  {
+    id: 39,
+    name: 'Sh ?.',
+    generation: 'Baby Boomers',
+    shirt: undefined,
+    team: Teams.TeamU,
+    sleeping: {
+      friday: Sleeping.unknown,
+      saturday: Sleeping.camper,
+      sunday: Sleeping.camper
+    },
   },
 ]
 

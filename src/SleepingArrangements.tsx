@@ -35,17 +35,17 @@ const columns = [
   columnHelper.accessor('days.friday', {
     header: () => <span>Friday</span>,
     cell: info => info.getValue().length,
-    footer: info => `Total: ${info.table.getFilteredRowModel().rows.filter(r => r.original.days.friday !== undefined).length} people`
+    footer: info => `Total: ${info.table.getFilteredRowModel().rows.filter(r => !['?', 'no need'].includes(r.original.room)).map(r => r.original.days.friday).map(p => p.length).reduce((acc, val) => acc + val, 0)} people`
   }),
   columnHelper.accessor('days.saturday', {
     header: () => <span>Saturday</span>,
     cell: info => info.getValue().length,
-    footer: info => `Total: ${info.table.getFilteredRowModel().rows.filter(r => r.original.days.saturday !== undefined).length} people`
+    footer: info => `Total: ${info.table.getFilteredRowModel().rows.filter(r => !['?', 'no need'].includes(r.original.room)).map(r => r.original.days.saturday).map(p => p.length).reduce((acc, val) => acc + val, 0)} people`
   }),
   columnHelper.accessor('days.sunday', {
     header: () => <span>Sunday</span>,
     cell: info => info.getValue().length,
-    footer: info => `Total: ${info.table.getFilteredRowModel().rows.filter(r => r.original.days.sunday !== undefined).length} people`
+    footer: info => `Total: ${info.table.getFilteredRowModel().rows.filter(r => !['?', 'no need'].includes(r.original.room)).map(r => r.original.days.sunday).map(p => p.length).reduce((acc, val) => acc + val, 0)} people`
   })
 ]
 
@@ -67,6 +67,8 @@ const SleepingArrangements: React.FC<SleepingArrangementsProps> = ({ people }) =
       }
     }
   });
+
+  console.log(peopleInRoomsByDay);
 
   const [data, _setData] = React.useState(() => [...peopleInRoomsByDay])
 
