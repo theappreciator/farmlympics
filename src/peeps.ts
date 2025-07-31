@@ -18,8 +18,6 @@ export const RoomsAndSites = {
     needs: { name: "Need a Place", site: "Need a Place" } as Room,
     treehouseB: { name: "B Treehouse", site: "Farm" } as Room,
     treehouseG: { name: "G Treehouse", site: "Farm" } as Room,
-    kathyMain: { name: "Kathy House", site: "Kathy's" } as Room,
-    kathyCabin: { name: "Kathy Cabin", site: "Kathy's" } as Room,
     unknown: { name: "?", site: "?" } as Room,
 }
 
@@ -242,8 +240,8 @@ const people: Person[] = [
     team: Teams.TeamA,
     sleeping: {
       friday: RoomsAndSites.none,
-      saturday: RoomsAndSites.office,
-      sunday: RoomsAndSites.office
+      saturday: RoomsAndSites.needs,
+      sunday: RoomsAndSites.needs
     },
     arrival: new Date('2025-08-30T14:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
@@ -342,8 +340,8 @@ const people: Person[] = [
     team: Teams.TeamA,
     sleeping: {
       friday: RoomsAndSites.none,
-      saturday: RoomsAndSites.kathyMain,
-      sunday: RoomsAndSites.kathyMain
+      saturday: RoomsAndSites.office,
+      sunday: RoomsAndSites.office
     },
     arrival: new Date('2025-08-30T12:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
@@ -356,8 +354,8 @@ const people: Person[] = [
     team: Teams.TeamB,
     sleeping: {
       friday: RoomsAndSites.none,
-      saturday: RoomsAndSites.kathyMain,
-      sunday: RoomsAndSites.kathyMain
+      saturday: RoomsAndSites.office,
+      sunday: RoomsAndSites.office
     },
     arrival: new Date('2025-08-30T12:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
@@ -468,8 +466,8 @@ const people: Person[] = [
     team: Teams.TeamS,
     sleeping: {
       friday: RoomsAndSites.none,
-      saturday: RoomsAndSites.kathyMain,
-      sunday: RoomsAndSites.kathyMain
+      saturday: RoomsAndSites.office,
+      sunday: RoomsAndSites.office
     },
     arrival: new Date('2025-08-30T12:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
