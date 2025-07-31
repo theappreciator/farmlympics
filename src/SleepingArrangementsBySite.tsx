@@ -9,8 +9,7 @@ import {
   useReactTable,
   type SortingState,
 } from '@tanstack/react-table'
-
-import { RoomsAndSites, type Person } from './App';
+import { RoomsAndSites, type Person } from './peeps';
 
 type SleepingSiteByDay = {
   site: string;

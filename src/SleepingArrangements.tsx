@@ -10,7 +10,7 @@ import {
   type SortingState,
 } from '@tanstack/react-table'
 
-import { RoomsAndSites, type Person, type Room } from './App';
+import { RoomsAndSites, type Person, type Room } from './peeps';
 
 type SleepingRoomByDay = {
   room: Room;

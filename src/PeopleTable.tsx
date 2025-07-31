@@ -11,7 +11,7 @@ import {
 } from '@tanstack/react-table'
 import { format } from 'date-fns'
 
-import type { Person } from './App'
+import type { Person } from './peeps';
 import { emptyHelper, sleepingDisplay } from './helpers/tableUtility';
 
 type PeopleTableProps = {
@@ -39,7 +39,7 @@ const columns = [
   }),
   columnHelper.accessor('team', {
     header: () => <span>Team</span>,
-    cell: info => info.getValue(),
+    cell: info => info.getValue().name,
   }),
   columnHelper.accessor('arrival', {
     header: () => <span>Arrive<br/>Time</span>,

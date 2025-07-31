@@ -1,4 +1,4 @@
-import type { Shirt, Room } from "../App";
+import type { Room, Shirt } from "../peeps";
 
 export const sleepingDisplay = (room: Room): string => {
   if (room === undefined) {

@@ -8,9 +8,9 @@ import {
   useReactTable,
 } from '@tanstack/react-table'
 
-import type { Person } from './App';
 import { format } from 'date-fns';
 import { Days } from './Agenda';
+import type { Person } from './peeps';
 
 type ArrivalsProps = {
   people: Person[]
