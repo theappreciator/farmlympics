@@ -18,6 +18,8 @@ export const RoomsAndSites = {
     needs: { name: "Need a Place", site: "Need a Place" } as Room,
     treehouseB: { name: "B Treehouse", site: "Farm" } as Room,
     treehouseG: { name: "G Treehouse", site: "Farm" } as Room,
+    kathyMain: { name: "Kathy House", site: "Kathy's" } as Room,
+    kathyCabin: { name: "Kathy Cabin", site: "Kathy's" } as Room,
     unknown: { name: "?", site: "?" } as Room,
 }
 
@@ -48,6 +50,20 @@ export const Teams = {
   TeamS: { name: "Spectator" },
   TeamU: { name: "TBD" },
 }
+
+// Kim?
+// sleeping:
+//   treehouse -> Ta/Le
+//   office -> Taryn/Leo
+//   Kathy's log cabin -> Riley?
+//   Kathy's house -> Russ, Crystal, Rhodes, Taryn, Leo (Rhodes/Leo in double beds, Taryn in other bed, Russ/Cystal in other bed)
+// Chrstian -> Star
+// Test drive
+//   maybe 3?
+//   steven/sharon -> 9/10
+//   maybe 16? pick up kids from their week
+//   maybe 17? pro - kids are there all weekend
+//   kids teachers -> 23/24
 
 const people: Person[] = [
   {
@@ -198,8 +214,8 @@ const people: Person[] = [
     team: Teams.TeamB,
     sleeping: {
       friday: RoomsAndSites.none,
-      saturday: RoomsAndSites.needs,
-      sunday: RoomsAndSites.needs
+      saturday: RoomsAndSites.basement,
+      sunday: RoomsAndSites.basement
     },
     arrival: new Date('2025-08-30T12:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
@@ -212,8 +228,8 @@ const people: Person[] = [
     team: Teams.TeamB,
     sleeping: {
       friday: RoomsAndSites.none,
-      saturday: RoomsAndSites.needs,
-      sunday: RoomsAndSites.needs
+      saturday: RoomsAndSites.basement,
+      sunday: RoomsAndSites.basement
     },
     arrival: new Date('2025-08-30T12:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
@@ -226,8 +242,8 @@ const people: Person[] = [
     team: Teams.TeamA,
     sleeping: {
       friday: RoomsAndSites.none,
-      saturday: RoomsAndSites.needs,
-      sunday: RoomsAndSites.needs
+      saturday: RoomsAndSites.office,
+      sunday: RoomsAndSites.office
     },
     arrival: new Date('2025-08-30T14:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
@@ -326,8 +342,8 @@ const people: Person[] = [
     team: Teams.TeamA,
     sleeping: {
       friday: RoomsAndSites.none,
-      saturday: RoomsAndSites.needs,
-      sunday: RoomsAndSites.needs
+      saturday: RoomsAndSites.kathyMain,
+      sunday: RoomsAndSites.kathyMain
     },
     arrival: new Date('2025-08-30T12:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
@@ -340,8 +356,8 @@ const people: Person[] = [
     team: Teams.TeamB,
     sleeping: {
       friday: RoomsAndSites.none,
-      saturday: RoomsAndSites.needs,
-      sunday: RoomsAndSites.needs
+      saturday: RoomsAndSites.kathyMain,
+      sunday: RoomsAndSites.kathyMain
     },
     arrival: new Date('2025-08-30T12:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
@@ -452,8 +468,8 @@ const people: Person[] = [
     team: Teams.TeamS,
     sleeping: {
       friday: RoomsAndSites.none,
-      saturday: RoomsAndSites.office,
-      sunday: RoomsAndSites.office
+      saturday: RoomsAndSites.kathyMain,
+      sunday: RoomsAndSites.kathyMain
     },
     arrival: new Date('2025-08-30T12:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
