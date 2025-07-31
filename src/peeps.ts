@@ -21,7 +21,7 @@ export const RoomsAndSites = {
     unknown: { name: "?", site: "?" } as Room,
 }
 
-export type Shirt = "Kid" | "Kid S" | "Kid M" | "S" | "M" | "L" | "LT" | "XL" | "XLT" | "XXL" | "XXXL" | undefined;
+export type Shirt = "Kid" | "Kid S" | "Kid M" | "YL" | "S" | "M" | "L" | "LT" | "XL" | "XLT" | "XXL" | "XXXL" | undefined;
 
 export type Person = {
   id?: number;
@@ -450,7 +450,7 @@ const people: Person[] = [
     id: 30,
     name: 'Vi R.',
     generation: 'Gen Alpha',
-    shirt: 'XL',
+    shirt: 'YL',
     team: Teams.TeamA,
     sleeping: {
       friday: RoomsAndSites.unknown,
