@@ -4,6 +4,7 @@ import Arrivals from './Arrivals';
 import { makeBrandedType } from './helpers/brandedType';
 import PeopleTable from './PeopleTable';
 import SleepingArrangements from './SleepingArrangements';
+import SleepingArrangementsBySite from './SleepingArrangementsBySite';
 import TeamTable from './TeamTable';
 
 export const Teams = makeBrandedType({
@@ -16,22 +17,26 @@ export type Teams = (typeof Teams)[keyof typeof Teams];
 
 export type Generation = "Silent Gen" | "Baby Boomers" | "Gen X" | "Millennials" | "Gen Z" | "Gen Alpha" | "Little One";
 
-export const Sleeping = makeBrandedType({
-    tuRoom: "TU Room",
-    ydRoom: "Young D Room",
-    edRoom: "Elder D Room",
-    office: "The Office",
-    basement: "Basement",
-    camper: "Camper",
-    none: "no need",
-    nanaJs: "Nana J's",
-    waynes: "Wayne's",
-    needs: "Need a Place",
-    treehouseB: "B Treehouse",
-    treehouseG: "G Treehouse",
-    unknown: "?",
-}, 'sleeping')  ;
-export type Sleeping = (typeof Sleeping)[keyof typeof Sleeping];
+export interface Room {
+  name: string;
+  site: string;
+}
+
+export const RoomsAndSites = {
+    tuRoom: { name: "TU Room", site: "Farm" } as Room,
+    ydRoom: { name: "Young D Room", site: "Farm" } as Room,
+    edRoom: { name: "Elder D Room", site: "Farm" } as Room,
+    office: { name: "The Office", site: "Farm" } as Room,
+    basement: { name: "Basement", site: "Farm" } as Room,
+    camper: { name: "Camper", site: "Farm" } as Room,
+    none: { name: "no need", site: "no need" } as Room,
+    nanaJs: { name: "Nana J's", site: "Nana J's" } as Room,
+    waynes: { name: "Wayne's", site: "Wayne's" } as Room,
+    needs: { name: "Need a Place", site: "Need a Place" } as Room,
+    treehouseB: { name: "B Treehouse", site: "Farm" } as Room,
+    treehouseG: { name: "G Treehouse", site: "Farm" } as Room,
+    unknown: { name: "?", site: "?" } as Room,
+}
 
 export type Shirt = "Kid" | "Kid S" | "Kid M" | "S" | "M" | "L" | "LT" | "XL" | "XLT" | "XXL" | "XXXL" | undefined;
 
@@ -42,9 +47,9 @@ export type Person = {
   shirt: Shirt;
   team: Teams;
   sleeping: {
-    friday: Sleeping,
-    saturday: Sleeping,
-    sunday: Sleeping,
+    friday: Room,
+    saturday: Room,
+    sunday: Room,
   };
   arrival?: Date | 'all',
   departure?: Date | 'all',
@@ -58,9 +63,9 @@ const defaultData: Person[] = [
     shirt: "XLT",
     team: Teams.TeamB,
     sleeping: {
-      friday: Sleeping.tuRoom,
-      saturday: Sleeping.tuRoom,
-      sunday: Sleeping.tuRoom,
+      friday: RoomsAndSites.tuRoom,
+      saturday: RoomsAndSites.tuRoom,
+      sunday: RoomsAndSites.tuRoom,
     },
     arrival: new Date('2025-08-29T17:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
@@ -72,9 +77,9 @@ const defaultData: Person[] = [
     shirt: "XL",
     team: Teams.TeamA,
     sleeping: {
-      friday: Sleeping.tuRoom,
-      saturday: Sleeping.tuRoom,
-      sunday: Sleeping.tuRoom,
+      friday: RoomsAndSites.tuRoom,
+      saturday: RoomsAndSites.tuRoom,
+      sunday: RoomsAndSites.tuRoom,
     },
     arrival: new Date('2025-08-29T17:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
@@ -86,9 +91,9 @@ const defaultData: Person[] = [
     shirt: "S",
     team: Teams.TeamB,
     sleeping: {
-      friday: Sleeping.tuRoom,
-      saturday: Sleeping.tuRoom,
-      sunday: Sleeping.tuRoom,
+      friday: RoomsAndSites.tuRoom,
+      saturday: RoomsAndSites.tuRoom,
+      sunday: RoomsAndSites.tuRoom,
     },
     arrival: new Date('2025-08-29T17:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
@@ -100,9 +105,9 @@ const defaultData: Person[] = [
     shirt: "Kid S",
     team: Teams.TeamA,
     sleeping: {
-      friday: Sleeping.tuRoom,
-      saturday: Sleeping.tuRoom,
-      sunday: Sleeping.tuRoom,
+      friday: RoomsAndSites.tuRoom,
+      saturday: RoomsAndSites.tuRoom,
+      sunday: RoomsAndSites.tuRoom,
     },
     arrival: new Date('2025-08-29T17:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
@@ -114,9 +119,9 @@ const defaultData: Person[] = [
     shirt: "Kid S",
     team: Teams.TeamA,
     sleeping: {
-      friday: Sleeping.tuRoom,
-      saturday: Sleeping.tuRoom,
-      sunday: Sleeping.tuRoom,
+      friday: RoomsAndSites.tuRoom,
+      saturday: RoomsAndSites.tuRoom,
+      sunday: RoomsAndSites.tuRoom,
     },
     arrival: new Date('2025-08-29T17:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
@@ -128,9 +133,9 @@ const defaultData: Person[] = [
     shirt: "L",
     team: Teams.TeamA,
     sleeping: {
-      friday: Sleeping.edRoom,
-      saturday: Sleeping.edRoom,
-      sunday: Sleeping.edRoom,
+      friday: RoomsAndSites.edRoom,
+      saturday: RoomsAndSites.edRoom,
+      sunday: RoomsAndSites.edRoom,
     },
     arrival: 'all',
     departure: 'all',
@@ -142,9 +147,9 @@ const defaultData: Person[] = [
     shirt: "L",
     team: Teams.TeamB,
     sleeping: {
-      friday: Sleeping.edRoom,
-      saturday: Sleeping.edRoom,
-      sunday: Sleeping.edRoom,
+      friday: RoomsAndSites.edRoom,
+      saturday: RoomsAndSites.edRoom,
+      sunday: RoomsAndSites.edRoom,
     },
     arrival: 'all',
     departure: 'all',
@@ -156,9 +161,9 @@ const defaultData: Person[] = [
     shirt: "L",
     team: Teams.TeamB,
     sleeping: {
-      friday: Sleeping.none,
-      saturday: Sleeping.ydRoom,
-      sunday: Sleeping.ydRoom,
+      friday: RoomsAndSites.none,
+      saturday: RoomsAndSites.ydRoom,
+      sunday: RoomsAndSites.ydRoom,
     },
     arrival: new Date('2025-08-30T12:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
@@ -170,9 +175,9 @@ const defaultData: Person[] = [
     shirt: "XL",
     team: Teams.TeamA,
     sleeping: {
-      friday: Sleeping.none,
-      saturday: Sleeping.ydRoom,
-      sunday: Sleeping.ydRoom,
+      friday: RoomsAndSites.none,
+      saturday: RoomsAndSites.ydRoom,
+      sunday: RoomsAndSites.ydRoom,
     },
     arrival: new Date('2025-08-30T12:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
@@ -184,9 +189,9 @@ const defaultData: Person[] = [
     shirt: "S",
     team: Teams.TeamA,
     sleeping: {
-      friday: Sleeping.none,
-      saturday: Sleeping.ydRoom,
-      sunday: Sleeping.ydRoom,
+      friday: RoomsAndSites.none,
+      saturday: RoomsAndSites.ydRoom,
+      sunday: RoomsAndSites.ydRoom,
     },
     arrival: new Date('2025-08-30T12:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
@@ -198,9 +203,9 @@ const defaultData: Person[] = [
     shirt: "XLT",
     team: Teams.TeamB,
     sleeping: {
-      friday: Sleeping.none,
-      saturday: Sleeping.needs,
-      sunday: Sleeping.needs
+      friday: RoomsAndSites.none,
+      saturday: RoomsAndSites.needs,
+      sunday: RoomsAndSites.needs
     },
     arrival: new Date('2025-08-30T12:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
@@ -212,9 +217,9 @@ const defaultData: Person[] = [
     shirt: "XL",
     team: Teams.TeamB,
     sleeping: {
-      friday: Sleeping.none,
-      saturday: Sleeping.needs,
-      sunday: Sleeping.needs
+      friday: RoomsAndSites.none,
+      saturday: RoomsAndSites.needs,
+      sunday: RoomsAndSites.needs
     },
     arrival: new Date('2025-08-30T12:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
@@ -226,9 +231,9 @@ const defaultData: Person[] = [
     shirt: "XXXL",
     team: Teams.TeamA,
     sleeping: {
-      friday: Sleeping.none,
-      saturday: Sleeping.needs,
-      sunday: Sleeping.needs
+      friday: RoomsAndSites.none,
+      saturday: RoomsAndSites.needs,
+      sunday: RoomsAndSites.needs
     },
     arrival: new Date('2025-08-30T14:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
@@ -240,9 +245,9 @@ const defaultData: Person[] = [
     shirt: "XXXL",
     team: Teams.TeamS,
     sleeping: {
-      friday: Sleeping.none,
-      saturday: Sleeping.none,
-      sunday: Sleeping.none
+      friday: RoomsAndSites.none,
+      saturday: RoomsAndSites.none,
+      sunday: RoomsAndSites.none
     },
     arrival: new Date('2025-08-31T08:00:00'),
     departure: new Date('2025-08-31T18:00:00'),
@@ -254,9 +259,9 @@ const defaultData: Person[] = [
     shirt: "XL",
     team: Teams.TeamA,
     sleeping: {
-      friday: Sleeping.none,
-      saturday: Sleeping.nanaJs,
-      sunday: Sleeping.nanaJs
+      friday: RoomsAndSites.none,
+      saturday: RoomsAndSites.nanaJs,
+      sunday: RoomsAndSites.nanaJs
     },
   },
   {
@@ -266,9 +271,9 @@ const defaultData: Person[] = [
     shirt: "XXL",
     team: Teams.TeamB,
     sleeping: {
-      friday: Sleeping.none,
-      saturday: Sleeping.nanaJs,
-      sunday: Sleeping.nanaJs
+      friday: RoomsAndSites.none,
+      saturday: RoomsAndSites.nanaJs,
+      sunday: RoomsAndSites.nanaJs
     },
   },
   {
@@ -278,9 +283,9 @@ const defaultData: Person[] = [
     shirt: "XL",
     team: Teams.TeamA,
     sleeping: {
-      friday: Sleeping.none,
-      saturday: Sleeping.nanaJs,
-      sunday: Sleeping.nanaJs
+      friday: RoomsAndSites.none,
+      saturday: RoomsAndSites.nanaJs,
+      sunday: RoomsAndSites.nanaJs
     },
   },
   {
@@ -290,9 +295,9 @@ const defaultData: Person[] = [
     shirt: "M",
     team: Teams.TeamB,
     sleeping: {
-      friday: Sleeping.none,
-      saturday: Sleeping.nanaJs,
-      sunday: Sleeping.nanaJs
+      friday: RoomsAndSites.none,
+      saturday: RoomsAndSites.nanaJs,
+      sunday: RoomsAndSites.nanaJs
     },
   },
   {
@@ -302,9 +307,9 @@ const defaultData: Person[] = [
     shirt: "Kid S",
     team: Teams.TeamB,
     sleeping: {
-      friday: Sleeping.none,
-      saturday: Sleeping.nanaJs,
-      sunday: Sleeping.nanaJs
+      friday: RoomsAndSites.none,
+      saturday: RoomsAndSites.nanaJs,
+      sunday: RoomsAndSites.nanaJs
     },
   },
   {
@@ -314,9 +319,9 @@ const defaultData: Person[] = [
     shirt: "M",
     team: Teams.TeamB,
     sleeping: {
-      friday: Sleeping.nanaJs,
-      saturday: Sleeping.nanaJs,
-      sunday: Sleeping.nanaJs,
+      friday: RoomsAndSites.nanaJs,
+      saturday: RoomsAndSites.nanaJs,
+      sunday: RoomsAndSites.nanaJs,
     },
   },
   {
@@ -326,9 +331,9 @@ const defaultData: Person[] = [
     shirt: 'M',
     team: Teams.TeamA,
     sleeping: {
-      friday: Sleeping.none,
-      saturday: Sleeping.needs,
-      sunday: Sleeping.needs
+      friday: RoomsAndSites.none,
+      saturday: RoomsAndSites.needs,
+      sunday: RoomsAndSites.needs
     },
     arrival: new Date('2025-08-30T12:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
@@ -340,9 +345,9 @@ const defaultData: Person[] = [
     shirt: 'S',
     team: Teams.TeamB,
     sleeping: {
-      friday: Sleeping.none,
-      saturday: Sleeping.needs,
-      sunday: Sleeping.needs
+      friday: RoomsAndSites.none,
+      saturday: RoomsAndSites.needs,
+      sunday: RoomsAndSites.needs
     },
     arrival: new Date('2025-08-30T12:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
@@ -354,9 +359,9 @@ const defaultData: Person[] = [
     shirt: "L",
     team: Teams.TeamA,
     sleeping: {
-      friday: Sleeping.none,
-      saturday: Sleeping.nanaJs,
-      sunday: Sleeping.nanaJs
+      friday: RoomsAndSites.none,
+      saturday: RoomsAndSites.nanaJs,
+      sunday: RoomsAndSites.nanaJs
     },
     arrival: new Date('2025-08-30T12:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
@@ -368,9 +373,9 @@ const defaultData: Person[] = [
     shirt: "M",
     team: Teams.TeamA,
     sleeping: {
-      friday: Sleeping.unknown,
-      saturday: Sleeping.unknown,
-      sunday: Sleeping.unknown
+      friday: RoomsAndSites.unknown,
+      saturday: RoomsAndSites.unknown,
+      sunday: RoomsAndSites.unknown
     },
   },
   {
@@ -380,9 +385,9 @@ const defaultData: Person[] = [
     shirt: "LT",
     team: Teams.TeamB,
     sleeping: {
-      friday: Sleeping.unknown,
-      saturday: Sleeping.unknown,
-      sunday: Sleeping.unknown
+      friday: RoomsAndSites.unknown,
+      saturday: RoomsAndSites.unknown,
+      sunday: RoomsAndSites.unknown
     },
   },
   {
@@ -392,9 +397,9 @@ const defaultData: Person[] = [
     shirt: "Kid M",
     team: Teams.TeamB,
     sleeping: {
-      friday: Sleeping.unknown,
-      saturday: Sleeping.unknown,
-      sunday: Sleeping.unknown
+      friday: RoomsAndSites.unknown,
+      saturday: RoomsAndSites.unknown,
+      sunday: RoomsAndSites.unknown
     },
   },
   {
@@ -404,9 +409,9 @@ const defaultData: Person[] = [
     shirt: "Kid S",
     team: Teams.TeamA,
     sleeping: {
-      friday: Sleeping.unknown,
-      saturday: Sleeping.unknown,
-      sunday: Sleeping.unknown
+      friday: RoomsAndSites.unknown,
+      saturday: RoomsAndSites.unknown,
+      sunday: RoomsAndSites.unknown
     },
   },
   {
@@ -416,9 +421,9 @@ const defaultData: Person[] = [
     shirt: 'L',
     team: Teams.TeamA,
     sleeping: {
-      friday: Sleeping.unknown,
-      saturday: Sleeping.unknown,
-      sunday: Sleeping.unknown
+      friday: RoomsAndSites.unknown,
+      saturday: RoomsAndSites.unknown,
+      sunday: RoomsAndSites.unknown
     },
   },
   {
@@ -428,9 +433,9 @@ const defaultData: Person[] = [
     shirt: 'XL',
     team: Teams.TeamB,
     sleeping: {
-      friday: Sleeping.unknown,
-      saturday: Sleeping.unknown,
-      sunday: Sleeping.unknown
+      friday: RoomsAndSites.unknown,
+      saturday: RoomsAndSites.unknown,
+      sunday: RoomsAndSites.unknown
     },
   },
   {
@@ -440,9 +445,9 @@ const defaultData: Person[] = [
     shirt: 'XL',
     team: Teams.TeamA,
     sleeping: {
-      friday: Sleeping.unknown,
-      saturday: Sleeping.unknown,
-      sunday: Sleeping.unknown
+      friday: RoomsAndSites.unknown,
+      saturday: RoomsAndSites.unknown,
+      sunday: RoomsAndSites.unknown
     },
   },
   {
@@ -452,9 +457,9 @@ const defaultData: Person[] = [
     shirt: undefined,
     team: Teams.TeamS,
     sleeping: {
-      friday: Sleeping.none,
-      saturday: Sleeping.office,
-      sunday: Sleeping.office
+      friday: RoomsAndSites.none,
+      saturday: RoomsAndSites.office,
+      sunday: RoomsAndSites.office
     },
     arrival: new Date('2025-08-30T12:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
@@ -466,9 +471,9 @@ const defaultData: Person[] = [
     shirt: undefined,
     team: Teams.TeamS,
     sleeping: {
-      friday: Sleeping.none,
-      saturday: Sleeping.waynes,
-      sunday: Sleeping.waynes
+      friday: RoomsAndSites.none,
+      saturday: RoomsAndSites.waynes,
+      sunday: RoomsAndSites.waynes
     },
   },
   {
@@ -478,9 +483,9 @@ const defaultData: Person[] = [
     shirt: undefined,
     team: Teams.TeamS,
     sleeping: {
-      friday: Sleeping.none,
-      saturday: Sleeping.waynes,
-      sunday: Sleeping.waynes
+      friday: RoomsAndSites.none,
+      saturday: RoomsAndSites.waynes,
+      sunday: RoomsAndSites.waynes
     },
   },
   {
@@ -490,9 +495,9 @@ const defaultData: Person[] = [
     shirt: undefined,
     team: Teams.TeamU,
     sleeping: {
-      friday: Sleeping.none,
-      saturday: Sleeping.waynes,
-      sunday: Sleeping.waynes
+      friday: RoomsAndSites.none,
+      saturday: RoomsAndSites.waynes,
+      sunday: RoomsAndSites.waynes
     },
   },
   {
@@ -502,9 +507,9 @@ const defaultData: Person[] = [
     shirt: undefined,
     team: Teams.TeamU,
     sleeping: {
-      friday: Sleeping.none,
-      saturday: Sleeping.waynes,
-      sunday: Sleeping.waynes
+      friday: RoomsAndSites.none,
+      saturday: RoomsAndSites.waynes,
+      sunday: RoomsAndSites.waynes
     },
   },
   {
@@ -514,9 +519,9 @@ const defaultData: Person[] = [
     shirt: undefined,
     team: Teams.TeamS,
     sleeping: {
-      friday: Sleeping.waynes,
-      saturday: Sleeping.waynes,
-      sunday: Sleeping.waynes
+      friday: RoomsAndSites.waynes,
+      saturday: RoomsAndSites.waynes,
+      sunday: RoomsAndSites.waynes
     },
     arrival: new Date('2025-08-31T10:00:00'),
     departure: new Date('2025-08-31T17:00:00'),
@@ -528,9 +533,9 @@ const defaultData: Person[] = [
     shirt: undefined,
     team: Teams.TeamS,
     sleeping: {
-      friday: Sleeping.waynes,
-      saturday: Sleeping.waynes,
-      sunday: Sleeping.waynes
+      friday: RoomsAndSites.waynes,
+      saturday: RoomsAndSites.waynes,
+      sunday: RoomsAndSites.waynes
     },
     arrival: new Date('2025-08-31T10:00:00'),
     departure: new Date('2025-08-31T17:00:00'),
@@ -542,9 +547,9 @@ const defaultData: Person[] = [
     shirt: undefined,
     team: Teams.TeamU,
     sleeping: {
-      friday: Sleeping.unknown,
-      saturday: Sleeping.camper,
-      sunday: Sleeping.camper
+      friday: RoomsAndSites.unknown,
+      saturday: RoomsAndSites.camper,
+      sunday: RoomsAndSites.camper
     },
   },
   {
@@ -554,9 +559,9 @@ const defaultData: Person[] = [
     shirt: undefined,
     team: Teams.TeamU,
     sleeping: {
-      friday: Sleeping.unknown,
-      saturday: Sleeping.camper,
-      sunday: Sleeping.camper
+      friday: RoomsAndSites.unknown,
+      saturday: RoomsAndSites.camper,
+      sunday: RoomsAndSites.camper
     },
   },
 ]
@@ -604,6 +609,9 @@ function App() {
 
       <a id="sleeping" />
       <SleepingArrangements people={defaultData} />
+
+      <a id="sleepingsite" />
+      <SleepingArrangementsBySite people={defaultData} />
 
       <a id="agenda" />
       <Agenda />

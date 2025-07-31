@@ -1,11 +1,11 @@
-import type { Shirt, Sleeping } from "../App";
+import type { Shirt, Room } from "../App";
 
-export const sleepingDisplay = (sleeping: Sleeping) => {
-  if (sleeping === undefined) {
+export const sleepingDisplay = (room: Room): string => {
+  if (room === undefined) {
     return "?";
   }
   
-  return sleeping;
+  return room.name;
 }
 
 export const emptyHelper = (value: Shirt) => {

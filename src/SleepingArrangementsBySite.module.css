@@ -1,0 +1,15 @@
+.container {
+    min-width: 800px;
+}
+
+.header th {
+    border-bottom: thin solid;
+}
+
+.container tbody td:first-child {
+    text-align: left;
+}
+
+.footer th {
+    border-top: thin solid;
+}
