@@ -195,7 +195,7 @@ const people: Person[] = [
     name: 'Rh D.',
     generation: 'Gen Alpha',
     shirt: "S",
-    team: Teams.TeamA,
+    team: Teams.TeamB,
     sleeping: {
       friday: RoomsAndSites.none,
       saturday: RoomsAndSites.ydRoom,
@@ -301,7 +301,7 @@ const people: Person[] = [
     name: 'Ha J.',
     generation: 'Gen Z',
     shirt: "M",
-    team: Teams.TeamB,
+    team: Teams.TeamA,
     sleeping: {
       friday: RoomsAndSites.none,
       saturday: RoomsAndSites.nanaJs,
@@ -510,7 +510,7 @@ const people: Person[] = [
   },
   {
     id: 35,
-    name: 'Star',
+    name: 'St L.',
     generation: 'Gen Z',
     shirt: undefined,
     team: Teams.TeamB,
@@ -550,7 +550,7 @@ const people: Person[] = [
   },
   {
     id: 38,
-    name: 'St ?.',
+    name: 'St S.',
     generation: 'Baby Boomers',
     shirt: undefined,
     team: Teams.TeamU,
@@ -562,7 +562,7 @@ const people: Person[] = [
   },
   {
     id: 39,
-    name: 'Sh ?.',
+    name: 'Sh S.',
     generation: 'Baby Boomers',
     shirt: undefined,
     team: Teams.TeamU,
