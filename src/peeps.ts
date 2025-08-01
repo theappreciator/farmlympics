@@ -138,7 +138,7 @@ const people: Person[] = [
     id: 7,
     name: 'De D.',
     generation: 'Gen X',
-    shirt: "L",
+    shirt: "XXL",
     team: Teams.TeamB,
     sleeping: {
       friday: RoomsAndSites.edRoom,
