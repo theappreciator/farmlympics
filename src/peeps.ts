@@ -227,8 +227,8 @@ const people: Person[] = [
     team: Teams.TeamA,
     sleeping: {
       friday: RoomsAndSites.none,
-      saturday: RoomsAndSites.needs,
-      sunday: RoomsAndSites.needs
+      saturday: RoomsAndSites.office,
+      sunday: RoomsAndSites.office
     },
     arrival: new Date('2025-08-30T14:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
@@ -327,8 +327,8 @@ const people: Person[] = [
     team: Teams.TeamA,
     sleeping: {
       friday: RoomsAndSites.none,
-      saturday: RoomsAndSites.office,
-      sunday: RoomsAndSites.office
+      saturday: RoomsAndSites.ydRoom,
+      sunday: RoomsAndSites.ydRoom
     },
     arrival: new Date('2025-08-30T12:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
@@ -341,8 +341,8 @@ const people: Person[] = [
     team: Teams.TeamB,
     sleeping: {
       friday: RoomsAndSites.none,
-      saturday: RoomsAndSites.office,
-      sunday: RoomsAndSites.office
+      saturday: RoomsAndSites.ydRoom,
+      sunday: RoomsAndSites.ydRoom
     },
     arrival: new Date('2025-08-30T12:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
@@ -461,8 +461,8 @@ const people: Person[] = [
     team: Teams.TeamS,
     sleeping: {
       friday: RoomsAndSites.none,
-      saturday: RoomsAndSites.office,
-      sunday: RoomsAndSites.office
+      saturday: RoomsAndSites.ydRoom,
+      sunday: RoomsAndSites.ydRoom
     },
     arrival: new Date('2025-08-30T12:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
@@ -547,7 +547,7 @@ const people: Person[] = [
     id: 38,
     name: 'St S.',
     generation: 'Baby Boomers',
-    shirt: undefined,
+    shirt: "XXL",
     team: Teams.TeamA,
     sleeping: {
       friday: RoomsAndSites.unknown,
@@ -559,7 +559,7 @@ const people: Person[] = [
     id: 39,
     name: 'Sh S.',
     generation: 'Baby Boomers',
-    shirt: undefined,
+    shirt: "XL",
     team: Teams.TeamB,
     sleeping: {
       friday: RoomsAndSites.unknown,
