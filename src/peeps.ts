@@ -21,7 +21,7 @@ export const RoomsAndSites = {
     unknown: { name: "?", site: "?" } as Room,
 }
 
-export type Shirt = "Kid" | "Kid S" | "Kid M" | "YL" | "S" | "M" | "L" | "LT" | "XL" | "XLT" | "XXL" | "XXXL" | undefined;
+export type Shirt = "YS" | "YM" | "YL" | "S" | "M" | "L" | "LT" | "XL" | "XLT" | "XXL" | "XXXL" | undefined;
 
 export type Person = {
   id?: number;
@@ -48,20 +48,6 @@ export const Teams = {
   TeamS: { name: "Spectator" },
   TeamU: { name: "TBD" },
 }
-
-// Kim?
-// sleeping:
-//   treehouse -> Ta/Le
-//   office -> Taryn/Leo
-//   Kathy's log cabin -> Riley?
-//   Kathy's house -> Russ, Crystal, Rhodes, Taryn, Leo (Rhodes/Leo in double beds, Taryn in other bed, Russ/Cystal in other bed)
-// Chrstian -> Star
-// Test drive
-//   maybe 3?
-//   steven/sharon -> 9/10
-//   maybe 16? pick up kids from their week
-//   maybe 17? pro - kids are there all weekend
-//   kids teachers -> 23/24
 
 const people: Person[] = [
   {
@@ -110,7 +96,7 @@ const people: Person[] = [
     id: 4,
     name: 'Gu T.',
     generation: 'Gen Alpha',
-    shirt: "Kid S",
+    shirt: "YS",
     team: Teams.TeamA,
     sleeping: {
       friday: RoomsAndSites.tuRoom,
@@ -124,7 +110,7 @@ const people: Person[] = [
     id: 5,
     name: 'Bo T.',
     generation: 'Little One',
-    shirt: "Kid S",
+    shirt: "YS",
     team: Teams.TeamA,
     sleeping: {
       friday: RoomsAndSites.tuRoom,
@@ -312,7 +298,7 @@ const people: Person[] = [
     id: 19,
     name: 'Ma J.',
     generation: 'Little One',
-    shirt: "Kid S",
+    shirt: "YS",
     team: Teams.TeamB,
     sleeping: {
       friday: RoomsAndSites.none,
@@ -402,7 +388,7 @@ const people: Person[] = [
     id: 26,
     name: 'Ta S.',
     generation: 'Gen Alpha',
-    shirt: "Kid M",
+    shirt: "YM",
     team: Teams.TeamB,
     sleeping: {
       friday: RoomsAndSites.unknown,
@@ -414,7 +400,7 @@ const people: Person[] = [
     id: 27,
     name: 'Gr S.',
     generation: 'Little One',
-    shirt: "Kid S",
+    shirt: "YS",
     team: Teams.TeamA,
     sleeping: {
       friday: RoomsAndSites.unknown,
