@@ -371,6 +371,8 @@ const people: Person[] = [
       saturday: RoomsAndSites.none,
       sunday: RoomsAndSites.none
     },
+    arrival: new Date('2025-08-31T08:00:00'),
+    departure: new Date('2025-08-31T20:00:00'),
   },
   {
     id: 25,
@@ -383,6 +385,8 @@ const people: Person[] = [
       saturday: RoomsAndSites.none,
       sunday: RoomsAndSites.none
     },
+    arrival: new Date('2025-08-31T08:00:00'),
+    departure: new Date('2025-08-31T20:00:00'),
   },
   {
     id: 26,
@@ -395,6 +399,8 @@ const people: Person[] = [
       saturday: RoomsAndSites.none,
       sunday: RoomsAndSites.none
     },
+    arrival: new Date('2025-08-31T08:00:00'),
+    departure: new Date('2025-08-31T20:00:00'),
   },
   {
     id: 27,
@@ -407,6 +413,8 @@ const people: Person[] = [
       saturday: RoomsAndSites.none,
       sunday: RoomsAndSites.none
     },
+    arrival: new Date('2025-08-31T08:00:00'),
+    departure: new Date('2025-08-31T20:00:00'),
   },
   {
     id: 28,
