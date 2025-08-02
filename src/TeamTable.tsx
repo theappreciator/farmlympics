@@ -12,7 +12,7 @@ import {
 import type { Person, Team } from './peeps';
 
 type TeamTableProps = {
-  team: Team;
+  team: Team[];
   people: Person[];
 };
 
@@ -34,6 +34,12 @@ const columns = [
   columnHelper.accessor('team', {
     header: () => <span>Team</span>,
     cell: info => info.getValue().name,
+    id: "team"
+  }),
+  columnHelper.accessor('team', {
+    header: () => <span>Confirmed</span>,
+    cell: info => info.getValue().type === "main" ? "✓" : "",
+    id: "conf"
   }),
 ]
 
@@ -58,7 +64,7 @@ const TeamTable: React.FC<TeamTableProps> = ({ team, people }) => {
     <>
     {data.length > 0 && (
       <>
-      <h2>TEAM {team.name}</h2>
+      <h2>TEAM {team[0].name}</h2>
         <table className={styles.container}>
           <thead className={styles.header}>
             {table.getHeaderGroups().map(headerGroup => (
@@ -102,7 +108,7 @@ const TeamTable: React.FC<TeamTableProps> = ({ team, people }) => {
             {table.getRowModel().rows.map(row => (
               <tr key={row.id}>
                 {row.getVisibleCells().map(cell => (
-                  <td key={cell.id}>
+                  <td key={row.id+"___"+cell.id+"000"}>
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </td>
                 ))}

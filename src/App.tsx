@@ -37,13 +37,13 @@ function App() {
       <PeopleTable people={people} />
 
       <a id="teama" />
-      <TeamTable team={Teams.TeamA} people={people.filter(p => p.team === Teams.TeamA)}/>
+      <TeamTable team={[Teams.TeamAMain, Teams.TeamASecondary]} people={people.filter(p => [Teams.TeamAMain, Teams.TeamASecondary].includes(p.team))}/>
       <a id="teamb" />
-      <TeamTable team={Teams.TeamB} people={people.filter(p => p.team === Teams.TeamB)}/>
+      <TeamTable team={[Teams.TeamBMain, Teams.TeamBSecondary]} people={people.filter(p => [Teams.TeamBMain, Teams.TeamBSecondary].includes(p.team))}/>
       <a id="TeamS" />
-      <TeamTable team={Teams.TeamS} people={people.filter(p => p.team === Teams.TeamS)}/>
+      <TeamTable team={[Teams.TeamS]} people={people.filter(p => p.team === Teams.TeamS)}/>
       <a id="TeamU" />
-      <TeamTable team={Teams.TeamU} people={people.filter(p => p.team === Teams.TeamU)}/>
+      <TeamTable team={[Teams.TeamU]} people={people.filter(p => p.team === Teams.TeamU)}/>
 
       <a id="arrivals" />
       <Arrivals people={people} />
