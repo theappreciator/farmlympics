@@ -1,8 +1,10 @@
 import React from 'react'
 // import styles from './Agenda.module.css'
 
-import AgendaDay from './AgendaDay'
+import AgendaDay, { timeDisplay } from './AgendaDay'
 import { makeBrandedType } from './helpers/brandedType';
+import type { GameEvent } from './games';
+import allGames, { GATHERING_MINUTES } from './games';
 
 export const Days = makeBrandedType({
   Friday: "Friday, Aug 29",
@@ -13,118 +15,147 @@ export const Days = makeBrandedType({
 export type Days = (typeof Days)[keyof typeof Days];
 
 export type Event = {
-    lines: string[];
-    start: string;
-    day: Days
+    lines: string[] | GameEvent | React.ReactNode;
+    start: number;
+    day: Days;
 }
 
 type AgendaProps = {
 };
 
+const sortedGames = allGames.sort((a, b) => a.order - b.order);
+
+let sundayRunningStartTime;
+
 const defaultData: Event[] = [
   {
     lines: ['Setup Activities', '* setup tents', '* setup games', '* setup music and audio'],
-    start: 'all day',
+    start: 0,
     day: Days.Saturday,
   },
   {
     lines: ['Dry Run/Walkthrough'],
-    start: '4:00p',
+    start: 1600,
     day: Days.Saturday,
   },
   {
     lines: ['Dinner', '* TBD'],
-    start: '6:00p',
+    start: 1800,
     day: Days.Saturday,
   },
   {
     lines: ['Last Minute Setup Activities', '* get ice', '* game setup', '* drink station setup', '* last minute questions'],
-    start: '7:00a',
+    start: (() => {sundayRunningStartTime=700; const time = sundayRunningStartTime; sundayRunningStartTime+= 100; return time})(),
     day: Days.Sunday,
   },
   {
     lines: ['Breakfast', '* CFA Chicken Minis', '* Fruit', '* Coffee', '* Juice'],
-    start: '7:00a',
+    start: (() => {const time=sundayRunningStartTime; sundayRunningStartTime+= 100; return time})(),
     day: Days.Sunday,
   },
   {
-    lines: ['Opening Ceremony (15 min)'],
-    start: '9:00a',
+    lines: <div style={{textAlign: "left", fontWeight: 700}}>Opening Ceremony (15 min)</div>,
+    start: (() => {const time=sundayRunningStartTime; sundayRunningStartTime+= 25; return time})(),
     day: Days.Sunday,
   },
   {
-    lines: ['Game 1 (45 min)'],
-    start: '9:15a',
+    lines: [`Gathering time (${timeDisplay(GATHERING_MINUTES, "short")})`],
+    start: (() => {const time=sundayRunningStartTime; sundayRunningStartTime+= sortedGames[0].gatheringTime; return time})(),
     day: Days.Sunday,
   },
   {
-    lines: ['Game 2 (45 min)'],
-    start: '10:00a',
+    lines: sortedGames[0],
+    start: (() => {const time=sundayRunningStartTime; sundayRunningStartTime+= sortedGames[0].playTime; return time})(),
     day: Days.Sunday,
   },
   {
-    lines: ['Game 3 (45 min)'],
-    start: '10:45a',
+    lines: [`Gathering time (${timeDisplay(GATHERING_MINUTES, "short")})`],
+    start: (() => {const time=sundayRunningStartTime; sundayRunningStartTime+= sortedGames[1].gatheringTime; return time})(),
     day: Days.Sunday,
   },
   {
-    lines: ['Game 4 (45 min)'],
-    start: '11:30a',
+    lines: sortedGames[1],
+    start: (() => {const time=sundayRunningStartTime; sundayRunningStartTime+= sortedGames[1].playTime; return time})(),
+    day: Days.Sunday,
+  },
+  {
+    lines: [`Gathering time (${timeDisplay(GATHERING_MINUTES, "short")})`],
+    start: (() => {const time=sundayRunningStartTime; sundayRunningStartTime+= sortedGames[2].gatheringTime; return time})(),
+    day: Days.Sunday,
+  },
+  {
+    lines: sortedGames[2],
+    start: (() => {const time=sundayRunningStartTime; sundayRunningStartTime+= sortedGames[2].playTime; return time})(),
     day: Days.Sunday,
   },
   {
     lines: ['Lunch (45 min)', '* CFA Chicken Sandwich', '* CFA Chicken Nuggets', '* Chicken salad', '* chips', '* fruit'],
-    start: '12:15p',
+    start: (() => {const time=sundayRunningStartTime; sundayRunningStartTime+= 75; return time})(),
     day: Days.Sunday,
   },
   {
-    lines: ['Game 5 (45 min)'],
-    start: '1:00p',
+    lines: [`Gathering time (${timeDisplay(GATHERING_MINUTES, "short")})`],
+    start: (() => {const time=sundayRunningStartTime; sundayRunningStartTime+= sortedGames[3].gatheringTime; return time})(),
     day: Days.Sunday,
   },
   {
-    lines: ['Game 6 (45 min)'],
-    start: '1:45p',
+    lines: sortedGames[3],
+    start: (() => {const time=sundayRunningStartTime; sundayRunningStartTime+= sortedGames[3].playTime; return time})(),
     day: Days.Sunday,
   },
   {
-    lines: ['Game 7 (45 min)'],
-    start: '2:30p',
+    lines: [`Gathering time (${timeDisplay(GATHERING_MINUTES, "short")})`],
+    start: (() => {const time=sundayRunningStartTime; sundayRunningStartTime+= sortedGames[4].gatheringTime; return time})(),
     day: Days.Sunday,
   },
   {
-    lines: ['Game 8 (45 min)'],
-    start: '3:15p',
+    lines: sortedGames[4],
+    start: (() => {const time=sundayRunningStartTime; sundayRunningStartTime+= sortedGames[4].playTime; return time})(),
     day: Days.Sunday,
   },
   {
-    lines: ['Closing Ceremony'],
-    start: '4:00p',
+    lines: [`Gathering time (${timeDisplay(GATHERING_MINUTES, "short")})`],
+    start: (() => {const time=sundayRunningStartTime; sundayRunningStartTime+= sortedGames[5].gatheringTime; return time})(),
+    day: Days.Sunday,
+  },
+  {
+    lines: sortedGames[4],
+    start: (() => {const time=sundayRunningStartTime; sundayRunningStartTime+= sortedGames[5].playTime; return time})(),
+    day: Days.Sunday,
+  },
+  {
+    lines: [`Gathering time (${timeDisplay(GATHERING_MINUTES, "short")})`],
+    start: (() => {const time=sundayRunningStartTime; sundayRunningStartTime+=GATHERING_MINUTES; return time})(),
+    day: Days.Sunday,
+  },
+  {
+    lines: <div style={{textAlign: "left", fontWeight: 700}}>Closing Ceremony (30 min)</div>,
+    start: (() => {const time=sundayRunningStartTime; sundayRunningStartTime+=50; return time})(),
     day: Days.Sunday,
   },
   {
     lines: ['Cocktail Hour', '* formal attire'],
-    start: '4:30p',
+    start: (() => {const time=sundayRunningStartTime; sundayRunningStartTime+=125; return time})(),
     day: Days.Sunday,
   },
   {
     lines: ['Dinner', "* CFA Leftovers", "* Chips", "* Fruit"],
-    start: '6:00p',
+    start: (() => {const time=sundayRunningStartTime; sundayRunningStartTime+=100; return time})(),
     day: Days.Sunday,
   },
   {
     lines: ['Campfire', '* S\'mores', '* Milkshakes'],
-    start: '7:00p',
+    start: (() => {const time=sundayRunningStartTime; sundayRunningStartTime+=100; return time})(),
     day: Days.Sunday,
   },
   {
     lines: ['Clean Up Activities'],
-    start: 'AM',
+    start: 1,
     day: Days.Monday,
   },
   {
     lines: ['Breakfast', '* Biscuits', '* Sausage', '* Eggs', '* Fruit', '* Coffee'],
-    start: '9:00a',
+    start: 900,
     day: Days.Monday,
   },
 ]
