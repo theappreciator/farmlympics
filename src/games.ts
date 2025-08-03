@@ -39,7 +39,7 @@ const games: GameEvent[] = [
     {
         game: {
             id: "cowbanding",
-            name: "Cow Branding",
+            name: "Cow Banding",
         },
         order: 3,
         playTime: 75,
