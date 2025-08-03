@@ -3,7 +3,7 @@ export interface Game {
     name: string;
 }
 
-export type GameLocation = "field" | "front yard" | "back yard" | "side yard" | "whole yard" | "tbd";
+export type GameLocation = "field" | "front yard" | "back yard" | "baseball field" | "whole yard" | "tbd";
 
 export interface GameEvent {
     game: Game;
@@ -34,7 +34,7 @@ const games: GameEvent[] = [
         order: 2,
         playTime: 75,
         gatheringTime: GATHERING_MINUTES,
-        location: "side yard",
+        location: "baseball field",
     },
     {
         game: {
@@ -44,7 +44,7 @@ const games: GameEvent[] = [
         order: 3,
         playTime: 75,
         gatheringTime: GATHERING_MINUTES,
-        location: "side yard",
+        location: "baseball field",
     },
     {
         game: {
@@ -64,7 +64,7 @@ const games: GameEvent[] = [
         order: 5,
         playTime: 75,
         gatheringTime: GATHERING_MINUTES,
-        location: "side yard",
+        location: "baseball field",
     },
     {
         game: {
@@ -74,7 +74,7 @@ const games: GameEvent[] = [
         order: 6,
         playTime: 75,
         gatheringTime: GATHERING_MINUTES,
-        location: "tbd",
+        location: "baseball field",
     },
     {
         game: {

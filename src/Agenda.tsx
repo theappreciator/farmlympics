@@ -23,8 +23,6 @@ export type Event = {
 type AgendaProps = {
 };
 
-const sortedGamesO = allGames.sort((a, b) => a.order - b.order);
-
 const sortedGames = new Array(6);
 sortedGames[0] = (allGames.find(g => g.game.id === "farmersays"));
 sortedGames[1] = (allGames.find(g => g.game.id === "cowbranding"));
