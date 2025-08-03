@@ -1,8 +1,9 @@
 export interface Game {
+    id: string;
     name: string;
 }
 
-export type GameLocation = "field" | "front yard" | "back yard" | "tbd";
+export type GameLocation = "field" | "front yard" | "back yard" | "side yard" | "whole yard" | "tbd";
 
 export interface GameEvent {
     game: Game;
@@ -17,54 +18,80 @@ export const GATHERING_MINUTES = 25;
 const games: GameEvent[] = [
     {
         game: {
-            name: "Game 1",
+            id: "farmersays",
+            name: "Farmer Says",
         },
         order: 1,
         playTime: 75,
         gatheringTime: GATHERING_MINUTES,
-        location: "tbd",
+        location: "front yard",
     },
     {
         game: {
-            name: "Game 2",
+            id: "cowbranding",
+            name: "Cow Branding",
         },
         order: 2,
         playTime: 75,
         gatheringTime: GATHERING_MINUTES,
-        location: "tbd",
+        location: "side yard",
     },
     {
         game: {
-            name: "Game 3",
+            id: "cowbanding",
+            name: "Cow Branding",
         },
         order: 3,
         playTime: 75,
         gatheringTime: GATHERING_MINUTES,
-        location: "tbd",
+        location: "side yard",
     },
     {
         game: {
-            name: "Game 4",
+            id: "scavenger",
+            name: "Scavenger Hunt",
         },
         order: 4,
         playTime: 75,
         gatheringTime: GATHERING_MINUTES,
-        location: "tbd",
+        location: "whole yard",
     },
     {
         game: {
-            name: "Game 5",
+            id: "eggstomarket",
+            name: "Taking Eggs to the Market",
         },
         order: 5,
+        playTime: 75,
+        gatheringTime: GATHERING_MINUTES,
+        location: "side yard",
+    },
+    {
+        game: {
+            id: "plantatree",
+            name: "Plant a Tree",
+        },
+        order: 6,
         playTime: 75,
         gatheringTime: GATHERING_MINUTES,
         location: "tbd",
     },
     {
         game: {
-            name: "Game b",
+            id: "tbda",
+            name: "TBD Game",
         },
-        order: 6,
+        order: 7,
+        playTime: 75,
+        gatheringTime: GATHERING_MINUTES,
+        location: "tbd",
+    },
+    {
+        game: {
+            id: "tbdb",
+            name: "TBD Game",
+        },
+        order: 8,
         playTime: 75,
         gatheringTime: GATHERING_MINUTES,
         location: "tbd",

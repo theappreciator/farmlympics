@@ -210,7 +210,7 @@ const people: Person[] = [
   },
   {
     id: 12,
-    name: 'Ja F.',
+    name: 'Ja H.',
     generation: 'Gen Z',
     shirt: "XL",
     team: Teams.TeamBMain,

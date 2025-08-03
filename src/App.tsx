@@ -57,11 +57,27 @@ function App() {
       <a id="agenda" />
       <Agenda />
 
+      
+      <h2>What is Being Provided</h2>
+      <hr/>
       <div style={{width: '300px', margin: '0 auto'}}>
+        <ul style={{ listStyleType: 'disc', paddingLeft: '20px', textAlign: 'left' }}>
+          <li>shirts</li>
+          <li>water</li>
+          <li>drinks</li>
+          <li>food</li>
+          <li>sunscreen</li>
+          <li>FUN!</li>
+        </ul>
+      </div>
+
         <h2>What to Wear/Bring</h2>
+        <hr />
+        <div style={{width: '300px', margin: '0 auto'}}>
         <ul style={{ listStyleType: 'disc', paddingLeft: '20px', textAlign: 'left' }}>
           <li>comfy clothes and shoes to get sweaty and dirty</li>
-          <li>water</li>
+          <li>hat</li>
+          <li>sunglasses</li>
           <li>sunscreen</li>
         </ul>
       </div>

@@ -23,7 +23,15 @@ export type Event = {
 type AgendaProps = {
 };
 
-const sortedGames = allGames.sort((a, b) => a.order - b.order);
+const sortedGamesO = allGames.sort((a, b) => a.order - b.order);
+
+const sortedGames = new Array(6);
+sortedGames[0] = (allGames.find(g => g.game.id === "farmersays"));
+sortedGames[1] = (allGames.find(g => g.game.id === "cowbranding"));
+sortedGames[2] = (allGames.find(g => g.game.id === "cowbanding"));
+sortedGames[3] = (allGames.find(g => g.game.id === "scavenger"));
+sortedGames[4] = (allGames.find(g => g.game.id === "eggstomarket"));
+sortedGames[5] = (allGames.find(g => g.game.id === "plantatree"));
 
 let sundayRunningStartTime;
 
@@ -119,7 +127,7 @@ const defaultData: Event[] = [
     day: Days.Sunday,
   },
   {
-    lines: sortedGames[4],
+    lines: sortedGames[5],
     start: (() => {const time=sundayRunningStartTime; sundayRunningStartTime+= sortedGames[5].playTime; return time})(),
     day: Days.Sunday,
   },
