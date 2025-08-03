@@ -460,7 +460,7 @@ const people: Person[] = [
     id: 31,
     name: 'Sh D',
     generation: 'Baby Boomers',
-    shirt: undefined,
+    shirt: "XXL",
     team: Teams.TeamS,
     sleeping: {
       friday: RoomsAndSites.none,
