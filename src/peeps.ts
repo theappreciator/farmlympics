@@ -474,7 +474,7 @@ const people: Person[] = [
     id: 32,
     name: 'Ch W.',
     generation: 'Baby Boomers',
-    shirt: undefined,
+    shirt: "XXL",
     team: Teams.TeamS,
     sleeping: {
       friday: RoomsAndSites.none,
@@ -486,7 +486,7 @@ const people: Person[] = [
     id: 33,
     name: 'Pa W.',
     generation: 'Baby Boomers',
-    shirt: undefined,
+    shirt: "M",
     team: Teams.TeamS,
     sleeping: {
       friday: RoomsAndSites.none,
@@ -498,7 +498,7 @@ const people: Person[] = [
     id: 34,
     name: 'Ch W.',
     generation: 'Gen Z',
-    shirt: undefined,
+    shirt: "L",
     team: Teams.TeamBMain,
     sleeping: {
       friday: RoomsAndSites.none,
@@ -510,7 +510,7 @@ const people: Person[] = [
     id: 35,
     name: 'St L.',
     generation: 'Gen Z',
-    shirt: undefined,
+    shirt: "M",
     team: Teams.TeamBMain,
     sleeping: {
       friday: RoomsAndSites.none,
@@ -522,7 +522,7 @@ const people: Person[] = [
     id: 36,
     name: 'Wa D.',
     generation: 'Baby Boomers',
-    shirt: undefined,
+    shirt: "XXL",
     team: Teams.TeamS,
     sleeping: {
       friday: RoomsAndSites.waynes,
@@ -536,7 +536,7 @@ const people: Person[] = [
     id: 37,
     name: 'Ly D.',
     generation: 'Baby Boomers',
-    shirt: undefined,
+    shirt: "L",
     team: Teams.TeamS,
     sleeping: {
       friday: RoomsAndSites.waynes,
