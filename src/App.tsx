@@ -1,5 +1,6 @@
 import Agenda from './Agenda';
 import './App.css'
+import styles from './App.module.css'
 import Arrivals from './Arrivals';
 import people, { Teams } from './peeps';
 import PeopleTable from './PeopleTable';
@@ -32,6 +33,21 @@ function App() {
           {link.displayText}{i < anchorLinks.length - 1 ? ' | ' : ''}
         </a>
       ))}
+
+      <br/>
+      <div className={styles.vsContainer}>
+        <div>
+          <img width="200px" src="chicken.jpg"/>
+          <br/>
+          Team Air
+        </div>
+        <div style={{marginLeft:"10px", marginRight: "10px", fontWeight: 700}}>VS.</div>
+        <div>
+          <img width="200px" src="cow.jpg"/>
+          <br/>
+          Team Land
+        </div>
+      </div>
 
       <a id="people" />
       <PeopleTable people={people} />
@@ -80,6 +96,12 @@ function App() {
           <li>sunglasses</li>
           <li>sunscreen</li>
         </ul>
+      </div>
+
+      <hr/>
+      <div style={{width: 800}}>
+      <img width="800px" src="chicken-banner.jpg"/>
+      <img width="800px" src="bull-banner.jpg"/>
       </div>
     </>
   )
