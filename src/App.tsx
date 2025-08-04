@@ -7,6 +7,7 @@ import PeopleTable from './PeopleTable';
 import SleepingArrangements from './SleepingArrangements';
 import SleepingArrangementsBySite from './SleepingArrangementsBySite';
 import TeamTable from './TeamTable';
+import TShirts from './TShirts';
 
 interface AnchorLink {
   anchor: string;
@@ -60,6 +61,8 @@ function App() {
       <TeamTable team={[Teams.TeamS]} people={people.filter(p => p.team === Teams.TeamS)}/>
       <a id="TeamU" />
       <TeamTable team={[Teams.TeamU]} people={people.filter(p => p.team === Teams.TeamU)}/>
+
+      <TShirts people={people} />
 
       <a id="arrivals" />
       <Arrivals people={people} />
