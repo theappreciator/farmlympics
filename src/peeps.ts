@@ -567,6 +567,20 @@ const people: Person[] = [
   },
   {
     id: 38,
+    name: 'Sa D.',
+    generation: 'Millennials',
+    shirt: ShirtSizes.xxlarge,
+    team: Teams.TeamS,
+    sleeping: {
+      friday: RoomsAndSites.waynes,
+      saturday: RoomsAndSites.waynes,
+      sunday: RoomsAndSites.waynes
+    },
+    arrival: new Date('2025-08-31T10:00:00'),
+    departure: new Date('2025-08-31T17:00:00'),
+  },
+  {
+    id: 39,
     name: 'St S.',
     generation: 'Baby Boomers',
     shirt: ShirtSizes.xxlarge,
@@ -578,7 +592,7 @@ const people: Person[] = [
     },
   },
   {
-    id: 39,
+    id: 40,
     name: 'Sh S.',
     generation: 'Baby Boomers',
     shirt: ShirtSizes.xlarge,
