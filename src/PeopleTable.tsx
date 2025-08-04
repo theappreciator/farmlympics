@@ -12,7 +12,7 @@ import {
 import { format } from 'date-fns'
 
 import type { Person } from './peeps';
-import { emptyHelper, sleepingDisplay } from './helpers/tableUtility';
+import { sleepingDisplay } from './helpers/tableUtility';
 
 type PeopleTableProps = {
   people: Person[];
@@ -35,7 +35,7 @@ const columns = [
   }),
   columnHelper.accessor('shirt', {
     header: () => <span>Shirt<br/>Size</span>,
-    cell: info => emptyHelper(info.getValue()),
+    cell: info => info.getValue().display,
   }),
   columnHelper.accessor('team', {
     header: () => <span>Team</span>,

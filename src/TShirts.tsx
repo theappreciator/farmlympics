@@ -10,11 +10,13 @@ import {
   type SortingState,
 } from '@tanstack/react-table'
 
-import { type Person, type Shirt } from './peeps';
+import { Teams, type Person, type Shirt } from './peeps';
 
 type TShirtsCountBySize = {
   shirt: Shirt;
-  people: Person[]
+  teamA: Person[],
+  teamB: Person[],
+  unk: Person[],
 }
 
 type TShirtsProps = {
@@ -26,25 +28,65 @@ const columnHelper = createColumnHelper<TShirtsCountBySize>()
 const columns = [
   columnHelper.accessor('shirt', {
     header: () => <span>Shirt Size</span>,
-    cell: info => info.getValue(),
+    cell: info => info.getValue().display,
+    id: "shirt-name"
   }),
-  columnHelper.accessor('people', {
-    header: () => <span>Count</span>,
+  columnHelper.accessor('shirt', {
+    header: () => <span>Shirt Size</span>,
+    cell: info => info.getValue().code,
+    id: "shirt-code"
+  }),
+  columnHelper.accessor('teamA', {
+    header: () => <span>Team A</span>,
     cell: info => info.getValue().length,
-    // footer: info => `Total: ${info.table.getFilteredRowModel().rows.filter(r => !['?', 'no need'].includes(r.original.room.name)).map(r => r.original.days.friday).map(p => p.length).reduce((acc, val) => acc + val, 0)} people`
-  })
+    footer: info => `Team A: ${info.table.getFilteredRowModel().rows.map(r => r.original.teamA.length).reduce((acc, val) => acc + val, 0)} shirts`
+  }),
+  columnHelper.accessor('teamB', {
+    header: () => <span>Team B</span>,
+    cell: info => info.getValue().length,
+    footer: info => `Team B: ${info.table.getFilteredRowModel().rows.map(r => r.original.teamB.length).reduce((acc, val) => acc + val, 0)} shirts`
+  }),
+  columnHelper.accessor('unk', {
+    header: () => <span>?</span>,
+    cell: info => info.getValue().length,
+    footer: info => `TBD: ${info.table.getFilteredRowModel().rows.map(r => r.original.unk.length).reduce((acc, val) => acc + val, 0)} shirts`
+  }),
 ]
 
 const TShirts: React.FC<TShirtsProps> = ({ people }) => {
 
-  const shirtsBySize: TShirtsCountBySize[] = Array.from(new Set(people.filter(p => p.shirt).map(people => people.shirt))).map(s => {
-    return {
-        shirt: s,
-        people: people.filter(p => p.shirt === s)
-    }
-  }).sort((a, b) => (a.shirt as string).localeCompare((b.shirt as string)));
+  const shirtsBySize: TShirtsCountBySize[] = [];
+  
+  people.forEach(p => {
 
-  const [data, _setData] = React.useState(() => [...shirtsBySize])
+    let shirtBySize = shirtsBySize.find(s => s.shirt.code === p.shirt.code);
+    if (!shirtBySize) {
+        shirtBySize = {
+            shirt: p.shirt,
+            teamA: [],
+            teamB: [],
+            unk: [],
+        };
+        shirtsBySize.push(shirtBySize);
+    }
+
+    switch (p.team.name) {
+        case Teams.TeamAMain.name:
+            shirtBySize.teamA.push(p);
+            break;
+        case Teams.TeamBMain.name:
+            shirtBySize.teamB.push(p);
+            break;
+        default:
+            shirtBySize.unk.push(p);
+            break;
+    }
+
+  });
+
+  const sortedShirtsBySize = shirtsBySize.sort((a, b) => a.shirt.order - b.shirt.order);
+
+  const [data, _setData] = React.useState(() => [...sortedShirtsBySize])
 
   const [sorting, setSorting] = React.useState<SortingState>([])
 
