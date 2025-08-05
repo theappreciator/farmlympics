@@ -103,8 +103,8 @@ function App() {
 
       <hr/>
       <div style={{width: 800}}>
-      <img width="800px" src="chicken-banner.jpg"/>
-      <img width="800px" src="bull-banner.jpg"/>
+      <img width="800px" src="flock-shirt-front.jpg"/>
+      <img width="800px" src="horns-shirt-front.jpg"/>
       </div>
     </>
   )
