@@ -64,10 +64,10 @@ export interface Team {
 }
 
 export const Teams = {
-  TeamAMain: ({ name: "A", type: "main" }) as Team,
-  TeamASecondary: ({ name: "A", type: "secondary" }) as Team,
-  TeamBMain: ({ name: "B", type: "main" }) as Team, 
-  TeamBSecondary: ({ name: "B", type: "secondary" } as Team), 
+  TeamAMain: ({ name: "Horns", type: "main" }) as Team,
+  TeamASecondary: ({ name: "Horns", type: "secondary" }) as Team,
+  TeamBMain: ({ name: "Flock", type: "main" }) as Team, 
+  TeamBSecondary: ({ name: "Flock", type: "secondary" } as Team), 
   TeamS: ({ name: "Spectator", type: "main" } as Team),
   TeamU: ({ name: "TBD", type: "main" } as Team),
 }
@@ -260,7 +260,7 @@ const people: Person[] = [
     name: 'Li T.',
     generation: 'Silent Gen',
     shirt: ShirtSizes.xxxlarge,
-    team: Teams.TeamS,
+    team: Teams.TeamBSecondary,
     sleeping: {
       friday: RoomsAndSites.none,
       saturday: RoomsAndSites.none,
@@ -480,7 +480,7 @@ const people: Person[] = [
     name: 'Sh D',
     generation: 'Baby Boomers',
     shirt: ShirtSizes.xxlarge,
-    team: Teams.TeamS,
+    team: Teams.TeamASecondary,
     sleeping: {
       friday: RoomsAndSites.none,
       saturday: RoomsAndSites.ydRoom,
@@ -494,7 +494,7 @@ const people: Person[] = [
     name: 'Ch W.',
     generation: 'Baby Boomers',
     shirt: ShirtSizes.xxlarge,
-    team: Teams.TeamS,
+    team: Teams.TeamBSecondary,
     sleeping: {
       friday: RoomsAndSites.none,
       saturday: RoomsAndSites.waynes,
@@ -506,7 +506,7 @@ const people: Person[] = [
     name: 'Pa W.',
     generation: 'Baby Boomers',
     shirt: ShirtSizes.medium,
-    team: Teams.TeamS,
+    team: Teams.TeamASecondary,
     sleeping: {
       friday: RoomsAndSites.none,
       saturday: RoomsAndSites.waynes,
@@ -542,7 +542,7 @@ const people: Person[] = [
     name: 'Wa D.',
     generation: 'Baby Boomers',
     shirt: ShirtSizes.xxlarge,
-    team: Teams.TeamS,
+    team: Teams.TeamASecondary,
     sleeping: {
       friday: RoomsAndSites.waynes,
       saturday: RoomsAndSites.waynes,
@@ -556,7 +556,7 @@ const people: Person[] = [
     name: 'Ly D.',
     generation: 'Baby Boomers',
     shirt: ShirtSizes.large,
-    team: Teams.TeamS,
+    team: Teams.TeamBSecondary,
     sleeping: {
       friday: RoomsAndSites.waynes,
       saturday: RoomsAndSites.waynes,
@@ -570,7 +570,7 @@ const people: Person[] = [
     name: 'Sa D.',
     generation: 'Millennials',
     shirt: ShirtSizes.xxlarge,
-    team: Teams.TeamS,
+    team: Teams.TeamASecondary,
     sleeping: {
       friday: RoomsAndSites.waynes,
       saturday: RoomsAndSites.waynes,

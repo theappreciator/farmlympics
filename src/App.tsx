@@ -16,8 +16,8 @@ interface AnchorLink {
 
 const anchorLinks: AnchorLink[] = [
   { anchor: "people", displayText: "People" },
-  { anchor: "teama", displayText: "Team A" },
-  { anchor: "teamb", displayText: "Team B" },
+  { anchor: "teama", displayText: "Team Horns" },
+  { anchor: "teamb", displayText: "Team Flock" },
   { anchor: "arrivals", displayText: "Arrivals" },
   { anchor: "sleeping", displayText: "Sleeping Arrangements" },
   { anchor: "agenda", displayText: "Agenda" },
@@ -36,17 +36,17 @@ function App() {
       ))}
 
       <br/>
-      <div className={styles.vsContainer}>
+      <div className={styles.vsContainer} style={{fontWeight: 700}}>
         <div>
           <img width="200px" src="chicken.jpg"/>
           <br/>
-          Team Air
+          Flock of Fury
         </div>
-        <div style={{marginLeft:"10px", marginRight: "10px", fontWeight: 700}}>VS.</div>
-        <div>
+        <div style={{marginLeft:"10px", marginRight: "10px" }}>VS.</div>
+        <div style={{fontWeight: 700}}>
           <img width="200px" src="cow.jpg"/>
           <br/>
-          Team Land
+          Horns &amp; Havoc
         </div>
       </div>
 

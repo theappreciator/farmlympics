@@ -37,14 +37,14 @@ const columns = [
     id: "shirt-code"
   }),
   columnHelper.accessor('teamA', {
-    header: () => <span>Team A</span>,
+    header: () => <span>Team Horns</span>,
     cell: info => info.getValue().length,
-    footer: info => `Team A: ${info.table.getFilteredRowModel().rows.map(r => r.original.teamA.length).reduce((acc, val) => acc + val, 0)} shirts`
+    footer: info => `Team Horns: ${info.table.getFilteredRowModel().rows.map(r => r.original.teamA.length).reduce((acc, val) => acc + val, 0)} shirts`
   }),
   columnHelper.accessor('teamB', {
-    header: () => <span>Team B</span>,
+    header: () => <span>Team Flock</span>,
     cell: info => info.getValue().length,
-    footer: info => `Team B: ${info.table.getFilteredRowModel().rows.map(r => r.original.teamB.length).reduce((acc, val) => acc + val, 0)} shirts`
+    footer: info => `Team Flock: ${info.table.getFilteredRowModel().rows.map(r => r.original.teamB.length).reduce((acc, val) => acc + val, 0)} shirts`
   }),
   columnHelper.accessor('unk', {
     header: () => <span>?</span>,
