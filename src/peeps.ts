@@ -477,7 +477,7 @@ const people: Person[] = [
   },
   {
     id: 31,
-    name: 'Sh D',
+    name: 'Sh D.',
     generation: 'Baby Boomers',
     shirt: ShirtSizes.xxlarge,
     team: Teams.TeamASecondary,
@@ -512,72 +512,6 @@ const people: Person[] = [
       saturday: RoomsAndSites.waynes,
       sunday: RoomsAndSites.waynes
     },
-  },
-  {
-    id: 34,
-    name: 'Ch W.',
-    generation: 'Gen Z',
-    shirt: ShirtSizes.large,
-    team: Teams.TeamBMain,
-    sleeping: {
-      friday: RoomsAndSites.none,
-      saturday: RoomsAndSites.waynes,
-      sunday: RoomsAndSites.waynes
-    },
-  },
-  {
-    id: 35,
-    name: 'St L.',
-    generation: 'Gen Z',
-    shirt: ShirtSizes.medium,
-    team: Teams.TeamBMain,
-    sleeping: {
-      friday: RoomsAndSites.none,
-      saturday: RoomsAndSites.waynes,
-      sunday: RoomsAndSites.waynes
-    },
-  },
-  {
-    id: 36,
-    name: 'Wa D.',
-    generation: 'Baby Boomers',
-    shirt: ShirtSizes.xxlarge,
-    team: Teams.TeamASecondary,
-    sleeping: {
-      friday: RoomsAndSites.waynes,
-      saturday: RoomsAndSites.waynes,
-      sunday: RoomsAndSites.waynes
-    },
-    arrival: new Date('2025-08-31T10:00:00'),
-    departure: new Date('2025-08-31T17:00:00'),
-  },
-  {
-    id: 37,
-    name: 'Ly D.',
-    generation: 'Baby Boomers',
-    shirt: ShirtSizes.large,
-    team: Teams.TeamBSecondary,
-    sleeping: {
-      friday: RoomsAndSites.waynes,
-      saturday: RoomsAndSites.waynes,
-      sunday: RoomsAndSites.waynes
-    },
-    arrival: new Date('2025-08-31T10:00:00'),
-    departure: new Date('2025-08-31T17:00:00'),
-  },
-  {
-    id: 38,
-    name: 'Sa D.',
-    generation: 'Millennials',
-    shirt: ShirtSizes.xxlarge,
-    team: Teams.TeamASecondary,
-    sleeping: {
-      friday: RoomsAndSites.waynes,
-      saturday: RoomsAndSites.waynes,
-      sunday: RoomsAndSites.waynes
-    },
-    arrival: new Date('2025-08-31T10:00:00'),
-    departure: new Date('2025-08-31T17:00:00'),
   },
   {
     id: 39,
