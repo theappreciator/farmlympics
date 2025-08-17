@@ -29,7 +29,7 @@ sortedGames[1] = (allGames.find(g => g.game.id === "cowbranding"));
 sortedGames[2] = (allGames.find(g => g.game.id === "cowbanding"));
 sortedGames[3] = (allGames.find(g => g.game.id === "scavenger"));
 sortedGames[4] = (allGames.find(g => g.game.id === "eggstomarket"));
-sortedGames[5] = (allGames.find(g => g.game.id === "plantatree"));
+sortedGames[5] = (allGames.find(g => g.game.id === "cowpatty"));
 
 let sundayRunningStartTime;
 

@@ -78,8 +78,8 @@ const games: GameEvent[] = [
     },
     {
         game: {
-            id: "tbda",
-            name: "TBD Game",
+            id: "cowpatty",
+            name: "Cow Patty Toss",
         },
         order: 7,
         playTime: 75,
@@ -94,7 +94,7 @@ const games: GameEvent[] = [
         order: 8,
         playTime: 75,
         gatheringTime: GATHERING_MINUTES,
-        location: "tbd",
+        location: "baseball field",
     }
 ]
 
