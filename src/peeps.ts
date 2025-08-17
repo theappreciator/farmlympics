@@ -446,10 +446,12 @@ const people: Person[] = [
     shirt: ShirtSizes.large,
     team: Teams.TeamAMain,
     sleeping: {
-      friday: RoomsAndSites.unknown,
-      saturday: RoomsAndSites.unknown,
-      sunday: RoomsAndSites.unknown
+      friday: RoomsAndSites.none,
+      saturday: RoomsAndSites.none,
+      sunday: RoomsAndSites.none
     },
+    arrival: new Date('2025-08-31T08:00:00'),
+    departure: new Date('2025-08-31T20:00:00'),
   },
   {
     id: 29,
@@ -458,10 +460,12 @@ const people: Person[] = [
     shirt: ShirtSizes.xlarge,
     team: Teams.TeamBMain,
     sleeping: {
-      friday: RoomsAndSites.unknown,
-      saturday: RoomsAndSites.unknown,
-      sunday: RoomsAndSites.unknown
+      friday: RoomsAndSites.none,
+      saturday: RoomsAndSites.none,
+      sunday: RoomsAndSites.none
     },
+    arrival: new Date('2025-08-31T08:00:00'),
+    departure: new Date('2025-08-31T20:00:00'),
   },
   {
     id: 30,
@@ -470,10 +474,12 @@ const people: Person[] = [
     shirt: ShirtSizes.youthLarge,
     team: Teams.TeamAMain,
     sleeping: {
-      friday: RoomsAndSites.unknown,
-      saturday: RoomsAndSites.unknown,
-      sunday: RoomsAndSites.unknown
+      friday: RoomsAndSites.none,
+      saturday: RoomsAndSites.none,
+      sunday: RoomsAndSites.none
     },
+    arrival: new Date('2025-08-31T08:00:00'),
+    departure: new Date('2025-08-31T20:00:00'),
   },
   {
     id: 31,
