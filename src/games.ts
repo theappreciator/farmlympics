@@ -11,6 +11,7 @@ export interface GameEvent {
     playTime: number;
     gatheringTime: number; // Time to gather for the game
     location: GameLocation;
+    intro: string;
 }
 
 export const GATHERING_MINUTES = 25;
@@ -25,6 +26,7 @@ const games: GameEvent[] = [
         playTime: 75,
         gatheringTime: GATHERING_MINUTES,
         location: "front yard",
+        intro: "Every day begins by thinking through everything that needs to be done.",
     },
     {
         game: {
@@ -35,6 +37,7 @@ const games: GameEvent[] = [
         playTime: 75,
         gatheringTime: GATHERING_MINUTES,
         location: "baseball field",
+        intro: "Make sure all your cows are marked in case they get out",
     },
     {
         game: {
@@ -45,6 +48,7 @@ const games: GameEvent[] = [
         playTime: 75,
         gatheringTime: GATHERING_MINUTES,
         location: "baseball field",
+        intro: "Help your wild bulls become mild-mannered steers",
     },
     {
         game: {
@@ -55,6 +59,7 @@ const games: GameEvent[] = [
         playTime: 75,
         gatheringTime: GATHERING_MINUTES,
         location: "whole yard",
+        intro: "Gather your tools to complete the rest of your work"
     },
     {
         game: {
@@ -65,26 +70,29 @@ const games: GameEvent[] = [
         playTime: 75,
         gatheringTime: GATHERING_MINUTES,
         location: "baseball field",
+        intro: "Sell your eggs to make some money"
     },
     {
         game: {
             id: "plantatree",
             name: "Plant a Tree",
         },
-        order: 6,
+        order: 7,
         playTime: 75,
         gatheringTime: GATHERING_MINUTES,
         location: "baseball field",
+        intro: "Make a memory for future generations"
     },
     {
         game: {
             id: "cowpatty",
             name: "Cow Patty Toss",
         },
-        order: 7,
+        order: 6,
         playTime: 75,
         gatheringTime: GATHERING_MINUTES,
         location: "tbd",
+        intro: "Put nutrients in your dirt"
     },
     {
         game: {
@@ -95,6 +103,7 @@ const games: GameEvent[] = [
         playTime: 75,
         gatheringTime: GATHERING_MINUTES,
         location: "baseball field",
+        intro: "TBD..."
     }
 ]
 

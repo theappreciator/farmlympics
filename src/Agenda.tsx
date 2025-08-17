@@ -135,7 +135,19 @@ const defaultData: Event[] = [
     day: Days.Sunday,
   },
   {
-    lines: <div style={{textAlign: "left", fontWeight: 700}}>Closing Ceremony (30 min)</div>,
+    lines: (
+      <div style={{textAlign: "left"}}>
+        <div style={{fontWeight: 700}}>
+          Closing Ceremony (30 min)
+        </div>
+        <div>
+          * tagline: Every day ends by planning ahead for tomorrow
+        </div>
+        <div>
+          * location: baseball field
+        </div>
+      </div>
+    ),
     start: (() => {const time=sundayRunningStartTime; sundayRunningStartTime+=50; return time})(),
     day: Days.Sunday,
   },

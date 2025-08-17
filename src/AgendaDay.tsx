@@ -66,6 +66,9 @@ const activityDisplay = (info: CellContext<Event, string[] | GameEvent | React.R
           Game #{gameEvent.order}: {gameEvent.game.name} ({timeDisplay(gameEvent.playTime, "short")})
         </div>
         <div>
+          * tagline: {gameEvent.intro}
+        </div>
+        <div>
           * location: {gameEvent.location}
         </div>
       </div>
