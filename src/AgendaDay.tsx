@@ -65,7 +65,8 @@ const activityDisplay = (info: CellContext<Event, string[] | GameEvent | React.R
     return (
       <div style={{textAlign: "left"}}>
         <div style={{fontWeight: "700"}}>
-          Game #{gameEvent.order}: {gameEvent.game.name} ({timeDisplay(gameEvent.playTime, "short")}) <a onClick={() => dispatcher(gameEvent)}>Rules</a>
+          Game #{gameEvent.order}: {gameEvent.game.name} ({timeDisplay(gameEvent.playTime, "short")})
+          <a onClick={() => dispatcher(gameEvent)}>Rules</a>
         </div>
         <div>
           * tagline: {gameEvent.intro}

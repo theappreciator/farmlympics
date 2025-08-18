@@ -28,6 +28,14 @@
     border-top: thin solid;
 }
 
+a {
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 @media (min-width: 720px) {
     .sheetContainer {
         max-width: 800px;
