@@ -79,7 +79,7 @@ const activityDisplay = (info: CellContext<Event, string[] | GameEvent | React.R
       <div style={{textAlign: "left"}}>
         <GameNameHeading gameEvent={gameEvent} dispatcher={dispatcher}/>
         <div style={{fontStyle: "italic"}}>
-          {gameEvent.intro}
+          {gameEvent.game.intro}
         </div>
         <div>
           location → {gameEvent.location}
@@ -171,18 +171,18 @@ const AgendaDay: React.FC<AgendaDayProps> = ({ day, agenda }) => {
                 <Sheet.Scroller>
                   <h2>Game: {selectedGame?.game.name}</h2>
                   <h3>What is it?:</h3>
-                  <ul><li>{selectedGame?.what}</li></ul>
+                  <ul><li>{selectedGame?.game.what}</li></ul>
                   <h3>How to win?:</h3>
-                  <ul><li>{selectedGame?.winning}</li></ul>
+                  <ul><li>{selectedGame?.game.winning}</li></ul>
                   <h3>How to Play:</h3>
                   <ul>
-                    {selectedGame?.how?.map(h => (
+                    {selectedGame?.game.how?.map(h => (
                       <li>{h}</li>
                     ))}
                   </ul>
                   <h3>Rules:</h3>
                   <ul>
-                    {selectedGame?.rules?.map(r => {
+                    {selectedGame?.game.rules?.map(r => {
                       if (Array.isArray(r)) {
                         return (
                           <ul>
@@ -201,7 +201,7 @@ const AgendaDay: React.FC<AgendaDayProps> = ({ day, agenda }) => {
                   </ul>
                   <h3>Setup:</h3>
                   <ul>
-                    {selectedGame?.setup?.map(s => (
+                    {selectedGame?.game.setup?.map(s => (
                       <li>{s}</li>
                     ))}
                   </ul>
