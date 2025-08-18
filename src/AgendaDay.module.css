@@ -27,3 +27,19 @@
 .footer td {
     border-top: thin solid;
 }
+
+@media (min-width: 720px) {
+    .sheetContainer {
+        max-width: 800px;
+        left: calc(50% - 400px) !important;
+    }
+}
+
+.sheetContent {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.sheetContent h3 {
+    margin-bottom: 0px;
+}

@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Sheet } from 'react-modal-sheet';
 import styles from './AgendaDay.module.css'
 
 import {
@@ -9,6 +10,7 @@ import {
   type CellContext,
 } from '@tanstack/react-table'
 
+import useEscapeKey from './hooks/useEscPress';
 import type { Days, Event } from './Agenda'
 import type { GameEvent } from './games';
 
@@ -45,7 +47,7 @@ export const timeDisplay = (time: number, displayType: "long" | "short" = "long"
   }
 }
 
-const activityDisplay = (info: CellContext<Event, string[] | GameEvent | React.ReactNode>) => {
+const activityDisplay = (info: CellContext<Event, string[] | GameEvent | React.ReactNode>, dispatcher: React.Dispatch<React.SetStateAction<GameEvent | undefined>>) => {
   const value = info.getValue();
 
   if (Array.isArray(value)) {
@@ -63,7 +65,7 @@ const activityDisplay = (info: CellContext<Event, string[] | GameEvent | React.R
     return (
       <div style={{textAlign: "left"}}>
         <div style={{fontWeight: "700"}}>
-          Game #{gameEvent.order}: {gameEvent.game.name} ({timeDisplay(gameEvent.playTime, "short")})
+          Game #{gameEvent.order}: {gameEvent.game.name} ({timeDisplay(gameEvent.playTime, "short")}) <a onClick={() => dispatcher(gameEvent)}>Rules</a>
         </div>
         <div>
           * tagline: {gameEvent.intro}
@@ -76,22 +78,33 @@ const activityDisplay = (info: CellContext<Event, string[] | GameEvent | React.R
   }
 }
 
-const columnHelper = createColumnHelper<Event>()
-
-const columns = [
-  columnHelper.accessor('start', {
-    header: () => <span>Time</span>,
-    cell: info => timeDisplay(info.getValue())
-  }),
-  columnHelper.accessor('lines', {
-    header: () => <div style={{textAlign: "left"}}>Activity</div>,
-    cell: activityDisplay,
-  }),
-]
+const snapPoints = [1, -300, 0.3, 0];
+const initialSnap = 0; // Initial snap point when sheet is opened
 
 const AgendaDay: React.FC<AgendaDayProps> = ({ day, agenda }) => {
 
-  const [data, _setData] = React.useState(() => [...agenda])
+  const [data, _setData] = useState(() => [...agenda])
+  // const [isOpen, setOpen] = useState(false);
+  const [selectedGame, setSelectedGame] = useState<GameEvent>();
+
+  const columnHelper = createColumnHelper<Event>()
+
+  useEscapeKey(() => {
+    if (selectedGame) {
+      setSelectedGame(undefined);
+    }
+  });
+
+  const columns = [
+    columnHelper.accessor('start', {
+      header: () => <span>Time</span>,
+      cell: info => timeDisplay(info.getValue())
+    }),
+    columnHelper.accessor('lines', {
+      header: () => <div style={{textAlign: "left"}}>Activity</div>,
+      cell: info => activityDisplay(info, setSelectedGame),
+    }),
+  ]
 
   const table = useReactTable({
     data,
@@ -100,43 +113,82 @@ const AgendaDay: React.FC<AgendaDayProps> = ({ day, agenda }) => {
   })
 
   return (
-    <>
-    {data.length > 0 && (
-      <>
-      <h2>Agenda: {day}</h2>
-        <table className={styles.container}>
-          <thead className={styles.header}>
-            {table.getHeaderGroups().map(headerGroup => (
-              <tr key={headerGroup.id}>
-                {headerGroup.headers.map(header => (
-                  <th key={header.id}>
-                    {header.isPlaceholder
-                      ? null
-                      : flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )}
-                  </th>
-                ))}
-              </tr>
-            ))}
-          </thead>
-          <tbody>
-            {table.getRowModel().rows.map(row => (
-              <tr key={row.id}>
-                {row.getVisibleCells().map(cell => (
-                  <td key={cell.id}>
-                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-          
-        </table>
-      </>
-    )}
-    </>
+    <div>
+      {data.length > 0 && (
+        <>
+        <h2>Agenda: {day}</h2>
+          <table className={styles.container}>
+            <thead className={styles.header}>
+              {table.getHeaderGroups().map(headerGroup => (
+                <tr key={headerGroup.id}>
+                  {headerGroup.headers.map(header => (
+                    <th key={header.id}>
+                      {header.isPlaceholder
+                        ? null
+                        : flexRender(
+                            header.column.columnDef.header,
+                            header.getContext()
+                          )}
+                    </th>
+                  ))}
+                </tr>
+              ))}
+            </thead>
+            <tbody>
+              {table.getRowModel().rows.map(row => (
+                <tr key={row.id}>
+                  {row.getVisibleCells().map(cell => (
+                    <td key={cell.id}>
+                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+            
+          </table>
+
+          <Sheet
+            isOpen={selectedGame !== undefined}
+            onClose={() => setSelectedGame(undefined)}
+            snapPoints={snapPoints}
+            initialSnap={initialSnap}
+            >
+            <Sheet.Container className={styles.sheetContainer}>
+              <Sheet.Header />
+              <Sheet.Content className={styles.sheetContent}>
+                <Sheet.Scroller>
+                  <h2>Game: {selectedGame?.game.name}</h2>
+                  <h3>What is it?:</h3>
+                  <ul><li>{selectedGame?.what}</li></ul>
+                  <h3>How to win?:</h3>
+                  <ul><li>{selectedGame?.winning}</li></ul>
+                  <h3>How to Play:</h3>
+                  <ul>
+                    {selectedGame?.how?.map(h => (
+                      <li>{h}</li>
+                    ))}
+                  </ul>
+                  <h3>Rules:</h3>
+                  <ul>
+                    {selectedGame?.rules?.map(r => (
+                      <li>{r}</li>
+                    ))}
+                  </ul>
+                  <h3>Setup:</h3>
+                  <ul>
+                    {selectedGame?.setup?.map(s => (
+                      <li>{s}</li>
+                    ))}
+                  </ul>
+                </Sheet.Scroller>
+              </Sheet.Content>
+            </Sheet.Container>
+            <Sheet.Backdrop onTap={() => setSelectedGame(undefined)}/>
+          </Sheet>
+        </>
+      )}
+    </div>
   )
 }
 
