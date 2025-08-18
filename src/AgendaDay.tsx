@@ -121,7 +121,7 @@ const AgendaDay: React.FC<AgendaDayProps> = ({ day, agenda }) => {
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
-  })
+  });
 
   return (
     <div>
@@ -182,9 +182,22 @@ const AgendaDay: React.FC<AgendaDayProps> = ({ day, agenda }) => {
                   </ul>
                   <h3>Rules:</h3>
                   <ul>
-                    {selectedGame?.rules?.map(r => (
-                      <li>{r}</li>
-                    ))}
+                    {selectedGame?.rules?.map(r => {
+                      if (Array.isArray(r)) {
+                        return (
+                          <ul>
+                            {r.map (sr => (
+                              <li>{sr}</li>
+                            ))}
+                          </ul>
+                        )
+                      }
+                      else {
+                        return (
+                          <li>{r}</li>
+                        )
+                      }
+                    })}
                   </ul>
                   <h3>Setup:</h3>
                   <ul>
