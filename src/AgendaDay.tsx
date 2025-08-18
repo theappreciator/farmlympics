@@ -47,6 +47,19 @@ export const timeDisplay = (time: number, displayType: "long" | "short" = "long"
   }
 }
 
+type GameNameHeadingProps = {
+  gameEvent: GameEvent;
+  dispatcher: React.Dispatch<React.SetStateAction<GameEvent | undefined>>;
+};
+
+const GameNameHeading: React.FC<GameNameHeadingProps> = ({ gameEvent, dispatcher }) => {
+  return (
+    <div style={{fontWeight: "700"}}>
+      Game #{gameEvent.order}: {gameEvent.game.name} ({timeDisplay(gameEvent.playTime, "short")}) <a onClick={() => dispatcher(gameEvent)}>Rules</a>
+    </div>
+  );
+};
+
 const activityDisplay = (info: CellContext<Event, string[] | GameEvent | React.ReactNode>, dispatcher: React.Dispatch<React.SetStateAction<GameEvent | undefined>>) => {
   const value = info.getValue();
 
@@ -64,15 +77,12 @@ const activityDisplay = (info: CellContext<Event, string[] | GameEvent | React.R
     const gameEvent = (value as GameEvent);
     return (
       <div style={{textAlign: "left"}}>
-        <div style={{fontWeight: "700"}}>
-          Game #{gameEvent.order}: {gameEvent.game.name} ({timeDisplay(gameEvent.playTime, "short")})
-          <a onClick={() => dispatcher(gameEvent)}>Rules</a>
+        <GameNameHeading gameEvent={gameEvent} dispatcher={dispatcher}/>
+        <div style={{fontStyle: "italic"}}>
+          {gameEvent.intro}
         </div>
         <div>
-          * tagline: {gameEvent.intro}
-        </div>
-        <div>
-          * location: {gameEvent.location}
+          location → {gameEvent.location}
         </div>
       </div>
     )

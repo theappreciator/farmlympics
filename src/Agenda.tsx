@@ -140,11 +140,11 @@ const defaultData: Event[] = [
         <div style={{fontWeight: 700}}>
           Closing Ceremony (30 min)
         </div>
-        <div>
-          * tagline: Every day ends by planning ahead for tomorrow
+        <div style={{fontStyle: "italic"}}>
+          Every day ends by planning ahead for tomorrow
         </div>
         <div>
-          * location: baseball field
+          location → baseball field
         </div>
       </div>
     ),
