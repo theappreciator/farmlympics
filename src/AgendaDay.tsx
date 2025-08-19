@@ -170,15 +170,28 @@ const AgendaDay: React.FC<AgendaDayProps> = ({ day, agenda }) => {
               <Sheet.Content className={styles.sheetContent}>
                 <Sheet.Scroller>
                   <h2>Game: {selectedGame?.game.name}</h2>
-                  <h3>What is it?:</h3>
+                  <h3>What is it?</h3>
                   <ul><li>{selectedGame?.game.what}</li></ul>
-                  <h3>How to win?:</h3>
+                  <h3>How to win?</h3>
                   <ul><li>{selectedGame?.game.winning}</li></ul>
                   <h3>How to Play:</h3>
                   <ul>
-                    {selectedGame?.game.how?.map(h => (
-                      <li>{h}</li>
-                    ))}
+                    {selectedGame?.game.how?.map(h => {
+                      if (Array.isArray(h)) {
+                        return (
+                          <ul>
+                            {h.map(sh => (
+                              <li>{sh}</li>
+                            ))}
+                          </ul>
+                        )
+                      }
+                      else {
+                        return (
+                          <li>{h}</li>
+                        )
+                      }
+})}
                   </ul>
                   <h3>Rules:</h3>
                   <ul>
@@ -205,6 +218,26 @@ const AgendaDay: React.FC<AgendaDayProps> = ({ day, agenda }) => {
                       <li>{s}</li>
                     ))}
                   </ul>
+                  <h3>Time:</h3>
+                  <ul>
+                    {selectedGame?.game.time?.map(t => (
+                      <li>{t}</li>
+                    ))}
+                  </ul>
+                  <hr/>
+                  <div>
+                    <h3>General Definitions</h3>
+                    <br/>
+                    <div>
+                      <span style={{fontWeight: 700}}>On Team</span>: <span>The team is actively participating in the current round, ie: playing now</span>
+                    </div>
+                    <div>
+                       <span style={{fontWeight: 700}}>Off Team</span>: <span>The team not actively participating in ths current round, ie: not playing now</span>
+                    </div>
+                    <div>
+                       <span style={{fontWeight: 700}}>Home Base</span>: <span>Team neutral, safe location for teams to congregate and recieve instructions</span>
+                    </div>
+                  </div>
                 </Sheet.Scroller>
               </Sheet.Content>
             </Sheet.Container>
