@@ -237,6 +237,13 @@ const AgendaDay: React.FC<AgendaDayProps> = ({ day, agenda }) => {
                     <div>
                        <span style={{fontWeight: 700}}>Home Base</span>: <span>Team neutral, safe location for teams to congregate and recieve instructions</span>
                     </div>
+                    <div>
+                       <span style={{fontWeight: 700}}>Round</span>: <span>The completion of the activity for the specified group of people</span>
+                    </div>
+                    <div>
+                       <span style={{fontWeight: 700}}>Wave</span>: <span>A smaller activity within a round</span>
+                    </div>
+                    <br/>
                   </div>
                 </Sheet.Scroller>
               </Sheet.Content>
