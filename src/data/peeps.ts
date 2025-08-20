@@ -251,9 +251,11 @@ const people: Person[] = [
     team: Teams.TeamAMain,
     sleeping: {
       friday: RoomsAndSites.none,
-      saturday: RoomsAndSites.nanaJs,
-      sunday: RoomsAndSites.nanaJs
+      saturday: RoomsAndSites.none,
+      sunday: RoomsAndSites.none
     },
+    arrival: new Date('2025-08-31T08:00:00'),
+    departure: new Date('2025-08-31T20:00:00'),
   },
   {
     id: 16,
@@ -263,9 +265,11 @@ const people: Person[] = [
     team: Teams.TeamBMain,
     sleeping: {
       friday: RoomsAndSites.none,
-      saturday: RoomsAndSites.nanaJs,
-      sunday: RoomsAndSites.nanaJs
+      saturday: RoomsAndSites.none,
+      sunday: RoomsAndSites.none
     },
+    arrival: new Date('2025-08-31T08:00:00'),
+    departure: new Date('2025-08-31T20:00:00'),
   },
   {
     id: 17,
@@ -275,9 +279,11 @@ const people: Person[] = [
     team: Teams.TeamAMain,
     sleeping: {
       friday: RoomsAndSites.none,
-      saturday: RoomsAndSites.nanaJs,
-      sunday: RoomsAndSites.nanaJs
+      saturday: RoomsAndSites.none,
+      sunday: RoomsAndSites.none
     },
+    arrival: new Date('2025-08-31T08:00:00'),
+    departure: new Date('2025-08-31T20:00:00'),
   },
   {
     id: 18,
@@ -287,9 +293,11 @@ const people: Person[] = [
     team: Teams.TeamAMain,
     sleeping: {
       friday: RoomsAndSites.none,
-      saturday: RoomsAndSites.nanaJs,
-      sunday: RoomsAndSites.nanaJs
+      saturday: RoomsAndSites.none,
+      sunday: RoomsAndSites.none
     },
+    arrival: new Date('2025-08-31T08:00:00'),
+    departure: new Date('2025-08-31T20:00:00'),
   },
   {
     id: 19,
@@ -299,9 +307,11 @@ const people: Person[] = [
     team: Teams.TeamBMain,
     sleeping: {
       friday: RoomsAndSites.none,
-      saturday: RoomsAndSites.nanaJs,
-      sunday: RoomsAndSites.nanaJs
+      saturday: RoomsAndSites.none,
+      sunday: RoomsAndSites.none
     },
+    arrival: new Date('2025-08-31T08:00:00'),
+    departure: new Date('2025-08-31T20:00:00'),
   },
   {
     id: 20,
@@ -482,6 +492,8 @@ const people: Person[] = [
       saturday: RoomsAndSites.waynes,
       sunday: RoomsAndSites.waynes
     },
+    arrival: new Date('2025-08-31T08:00:00'),
+    departure: new Date('2025-08-31T20:00:00'),
   },
   {
     id: 33,
@@ -494,6 +506,8 @@ const people: Person[] = [
       saturday: RoomsAndSites.waynes,
       sunday: RoomsAndSites.waynes
     },
+    arrival: new Date('2025-08-31T08:00:00'),
+    departure: new Date('2025-08-31T20:00:00'),
   },
   {
     id: 39,
@@ -506,6 +520,8 @@ const people: Person[] = [
       saturday: RoomsAndSites.camper,
       sunday: RoomsAndSites.camper
     },
+    arrival: new Date('2025-08-30T14:00:00'),
+    departure: new Date('2025-09-01T12:00:00'),
   },
   {
     id: 40,
@@ -518,6 +534,8 @@ const people: Person[] = [
       saturday: RoomsAndSites.camper,
       sunday: RoomsAndSites.camper
     },
+    arrival: new Date('2025-08-30T14:00:00'),
+    departure: new Date('2025-09-01T12:00:00'),
   },
 ]
 
