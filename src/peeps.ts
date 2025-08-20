@@ -75,7 +75,7 @@ export const Teams = {
 const people: Person[] = [
   {
     id: 1,
-    name: 'Je T.',
+    name: "Je T.",
     generation: 'Millennials',
     shirt: ShirtSizes.xlargeTall,
     team: Teams.TeamBMain,
