@@ -1,9 +1,9 @@
-export type Generation = "Silent Gen" | "Baby Boomers" | "Gen X" | "Millennials" | "Gen Z" | "Gen Alpha" | "Little One";
-
-export interface Room {
-  name: string;
-  site: string;
-}
+import {
+  type Room,
+  type Team,
+  type Shirt,
+  type Person,
+} from '../types/index';
 
 export const RoomsAndSites = {
     tuRoom: { name: "TU Room", site: "Farm" } as Room,
@@ -22,12 +22,6 @@ export const RoomsAndSites = {
     unknown: { name: "?", site: "?" } as Room,
 }
 
-export interface Shirt {
-  order: number;
-  code: string;
-  display: string;
-}
-
 export const ShirtSizes = {
   youthSmall: { order: 1, code: "YS", display: "Youth Small" } as Shirt,
   youthMedium: { order: 2, code: "YM", display: "Youth Medium" } as Shirt,
@@ -41,26 +35,6 @@ export const ShirtSizes = {
   largeTall: { order: 10, code: "LT", display: "Large Tall" } as Shirt,
   xlargeTall: { order: 11, code: "XLT", display: "X-Large Tall" } as Shirt,
   unknown: { order: 99999, code: "?", display: "?"} as Shirt,
-}
-
-export type Person = {
-  id?: number;
-  name: string;
-  generation: Generation;
-  shirt: Shirt;
-  team: Team;
-  sleeping: {
-    friday: Room,
-    saturday: Room,
-    sunday: Room,
-  };
-  arrival?: Date | 'all',
-  departure?: Date | 'all',
-}
-
-export interface Team {
-  name: string;
-  type: "main" | "secondary";
 }
 
 export const Teams = {
@@ -340,6 +314,8 @@ const people: Person[] = [
       saturday: RoomsAndSites.nanaJs,
       sunday: RoomsAndSites.nanaJs,
     },
+    arrival: 'all',
+    departure: 'all',
   },
   {
     id: 21,

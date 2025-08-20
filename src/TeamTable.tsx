@@ -9,7 +9,7 @@ import {
   useReactTable,
   type SortingState,
 } from '@tanstack/react-table'
-import type { Person, Team } from './peeps';
+import type { Person, Team } from './types';
 
 type TeamTableProps = {
   team: Team[];

@@ -1,44 +1,31 @@
-export interface FoodEvent {
-    kind: "FoodEvent";
-    name: string;
-    day: "Friday" | "Saturday" | "Sunday" | "Monday";
-    time: string;
-    menu: Menu[];
-    info: string[];
-    groceries: Grocery[];
-}
-
-export interface Grocery {
-    name: string;
-    qty: string;
-    preferredStore: "None" | "Home" | "Food Lion" | "Harris Teeter" | "Midtown Market" | "Lowes Foods";
-}
-
-export interface Menu {
-    name: string;
-}
+import {
+  type FoodEvent,
+} from '../types/index';
 
 const meals: FoodEvent[] = [
     {
         kind: "FoodEvent",
+        meal: "Breakfast",
         name: "Breakfast - TBD",
         day: "Saturday",
         time: "8a",
         info: [],
         menu: [],
-        groceries: []
+        items: []
     },
-        {
+    {
         kind: "FoodEvent",
+        meal: "Lunch",
         name: "Lunch - TBD",
         day: "Saturday",
         time: "12p",
         info: [],
         menu: [],
-        groceries: []
+        items: []
     },
     {
         kind: "FoodEvent",
+        meal: "Breakfast",
         name: "Breakfast - Chick-Fil-A",
         day: "Saturday",
         time: "8a-TBD",
@@ -57,10 +44,11 @@ const meals: FoodEvent[] = [
                 name: "Juice",
             }
         ],
-        groceries: []
+        items: []
     },
     {
         kind: "FoodEvent",
+        meal: "Dinner",
         name: "Dinner - Mexican",
         day: "Saturday",
         time: "6p",
@@ -69,19 +57,40 @@ const meals: FoodEvent[] = [
             "Need headcount in advance for reservation"
         ],
         menu: [],
-        groceries: []
+        items: [
+            {
+                name: "stuff",
+                qty: "1",
+                preferredStore: "None"
+            }
+        ]
     },
     {
         kind: "FoodEvent",
+        meal: "Breakfast",
         name: "Breakfast - TBD",
         day: "Sunday",
         time: "8a",
-        info: [],
+        info: [
+            "Continential breakfast style?"
+        ],
         menu: [],
-        groceries: []
+        items: [
+            {
+                name: "Croissants",
+                qty: "30",
+                preferredStore: "Food Lion"
+            },
+            {
+                name: "Bananas",
+                qty: "20",
+                preferredStore: "Food Lion"
+            },
+        ]
     },
     {
         kind: "FoodEvent",
+        meal: "Lunch",
         name: "Lunch - Jersey Mike's",
         day: "Sunday",
         time: "12p",
@@ -92,13 +101,14 @@ const meals: FoodEvent[] = [
         ],
         menu: [
             {
-                name: "Sub Sandwhiches"
+                name: "Sub Sandwiches"
             }
         ],
-        groceries: []
+        items: []
     },
     {
         kind: "FoodEvent",
+        meal: "Other",
         name: "Cocktail Hour",
         day: "Sunday",
         time: "4p",
@@ -106,19 +116,21 @@ const meals: FoodEvent[] = [
             "Formal attire",
         ],
         menu: [],
-        groceries: []
+        items: []
     },
     {
         kind: "FoodEvent",
+        meal: "Dinner",
         name: "Dinner - TBD",
         day: "Sunday",
         time: "6p",
         info: [],
         menu: [],
-        groceries: []
+        items: []
     },
     {
         kind: "FoodEvent",
+        meal: "Breakfast",
         name: "Breakfast",
         day: "Monday",
         time: "8a",
@@ -140,7 +152,7 @@ const meals: FoodEvent[] = [
                 name: "Coffee"
             },
         ],
-        groceries: [
+        items: [
             {
                 name: "Frozen Biscuits",
                 qty: "60 biscuits",
@@ -165,21 +177,23 @@ const meals: FoodEvent[] = [
     },
     {
         kind: "FoodEvent",
+        meal: "Lunch",
         name: "Lunch - TBD",
         day: "Monday",
         time: "12p",
         info: [],
         menu: [],
-        groceries: []
+        items: []
     },
     {
         kind: "FoodEvent",
+        meal: "Dinner",
         name: "Dinner - TBD",
         day: "Monday",
         time: "6p",
         info: [],
         menu: [],
-        groceries: []
+        items: []
     },
 ]
 

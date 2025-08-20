@@ -2,7 +2,7 @@ import Agenda from './Agenda';
 import './App.css'
 import styles from './App.module.css'
 import Arrivals from './Arrivals';
-import people, { Teams } from './peeps';
+import people, { Teams } from './data/peeps';
 import PeopleTable from './PeopleTable';
 import SleepingArrangements from './SleepingArrangements';
 import SleepingArrangementsBySite from './SleepingArrangementsBySite';

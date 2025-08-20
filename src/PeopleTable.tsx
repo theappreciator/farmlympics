@@ -11,7 +11,7 @@ import {
 } from '@tanstack/react-table'
 import { format } from 'date-fns'
 
-import type { Person } from './peeps';
+import type { Person } from './types';
 import { sleepingDisplay } from './helpers/tableUtility';
 
 type PeopleTableProps = {

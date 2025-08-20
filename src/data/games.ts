@@ -1,26 +1,6 @@
-export interface Game {
-    kind: "Game";
-    id: string;
-    name: string;
-    intro: string;
-    what: string;
-    winning: string;
-    how: (string | string[])[];
-    rules: (string | string[])[];
-    setup: string[];
-    time: string[];
-}
-
-export type GameLocation = "field" | "front yard" | "back yard" | "baseball field" | "whole yard" | "tbd";
-
-export interface GameEvent {
-    kind: "GameEvent";
-    game: Game;
-    order: number;
-    playTime: number;
-    gatheringTime: number; // Time to gather for the game
-    location: GameLocation;
-}
+import {
+  type GameEvent,
+} from '../types/index';
 
 export const GATHERING_MINUTES = 25;
 

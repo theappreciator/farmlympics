@@ -10,7 +10,8 @@ import {
   type SortingState,
 } from '@tanstack/react-table'
 
-import { Teams, type Person, type Shirt } from './peeps';
+import { Teams } from './data/peeps';
+import type { Person, Shirt } from './types';
 
 type TShirtsCountBySize = {
   shirt: Shirt;

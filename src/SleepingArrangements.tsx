@@ -10,7 +10,8 @@ import {
   type SortingState,
 } from '@tanstack/react-table'
 
-import { RoomsAndSites, type Person, type Room } from './peeps';
+import { RoomsAndSites } from './data/peeps';
+import type { Person, Room } from './types';
 
 type SleepingRoomByDay = {
   room: Room;
@@ -32,17 +33,17 @@ const columns = [
     header: () => <span>Room</span>,
     cell: info => info.getValue().name,
   }),
-  columnHelper.accessor('days.friday', {
+  columnHelper.accessor("days.friday", {
     header: () => <span>Friday</span>,
     cell: info => info.getValue().length,
     footer: info => `Total: ${info.table.getFilteredRowModel().rows.filter(r => !['?', 'no need'].includes(r.original.room.name)).map(r => r.original.days.friday).map(p => p.length).reduce((acc, val) => acc + val, 0)} people`
   }),
-  columnHelper.accessor('days.saturday', {
+  columnHelper.accessor("days.saturday", {
     header: () => <span>Saturday</span>,
     cell: info => info.getValue().length,
     footer: info => `Total: ${info.table.getFilteredRowModel().rows.filter(r => !['?', 'no need'].includes(r.original.room.name)).map(r => r.original.days.saturday).map(p => p.length).reduce((acc, val) => acc + val, 0)} people`
   }),
-  columnHelper.accessor('days.sunday', {
+  columnHelper.accessor("days.sunday", {
     header: () => <span>Sunday</span>,
     cell: info => info.getValue().length,
     footer: info => `Total: ${info.table.getFilteredRowModel().rows.filter(r => !['?', 'no need'].includes(r.original.room.name)).map(r => r.original.days.sunday).map(p => p.length).reduce((acc, val) => acc + val, 0)} people`

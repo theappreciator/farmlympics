@@ -8,9 +8,10 @@ import {
   useReactTable,
 } from '@tanstack/react-table'
 
-import { format } from 'date-fns';
-import { Days } from './Agenda';
-import type { Person } from './peeps';
+// import { Days } from './Agenda';
+import type { Person } from './types';
+import { arrivalHelper } from './helpers/arrivalHelper';
+
 
 type ArrivalsProps = {
   people: Person[]
@@ -55,89 +56,22 @@ type ArrivalsByDay = {
     }
 }
 
-const arrivalHelper = (day: Days, arrivalDate?: Date | 'all', departDate?: Date | 'all'): string | undefined => {
-  if (!arrivalDate || !departDate) return undefined;
-   
-  if (arrivalDate === 'all') return arrivalDate;
-
-  let arriveToday = false;
-  let departToday = false;
-  let arrivedBeforeToday = false;
-  let departedBeforeToday = false;
-
-  let dayAfter, dayOf;
-
-  if (day === Days.Friday) {
-    dayAfter = new Date('2025-08-30T00:00:00');
-    dayOf = new Date('2025-08-29T00:00:00');
-  }
-  else if (day === Days.Saturday) {
-    dayAfter = new Date('2025-08-31T00:00:00');
-    dayOf = new Date('2025-08-30T00:00:00');
-  }
-  else if (day === Days.Sunday) {
-    dayAfter = new Date('2025-09-01T00:00:00');
-    dayOf = new Date('2025-08-31T00:00:00');
-  }
-  else {
-    dayAfter = new Date('2025-09-02T00:00:00');
-    dayOf = new Date('2025-09-01T00:00:00');
-  }
-
-  if (arrivalDate < dayAfter) {
-    if (arrivalDate >= dayOf) {
-      arriveToday = true;
-    }
-    if (departDate < dayAfter && departDate >= dayOf) {
-      departToday = true;
-    }
-  }
-
-  if (arrivalDate < dayOf && !arriveToday && !departToday) {
-    arrivedBeforeToday = true;
-  }
-  if (departDate < dayOf) {
-    departedBeforeToday = true;
-  }
-
-  let arrivalString = '';
-
-  if (arrivedBeforeToday && !departedBeforeToday) {
-    arrivalString += 'all';
-  }
-  if (arriveToday) {
-    arrivalString += format(arrivalDate, 'haaaaa');
-  }
-  if (departToday) {
-    if (arrivalString) {
-      arrivalString += ' - ';
-    }
-    arrivalString += format(departDate, 'haaaaa');
-  }
-
-  if (arrivalString === '') {
-    arrivalString = '༚';
-  }
-
-  return arrivalString ? arrivalString : undefined;
-}
-
 const Arrivals: React.FC<ArrivalsProps> = ({ people }) => {
 
   const arrivalsByDay: ArrivalsByDay[] = people.map(person => {
 
-    const friday = arrivalHelper(Days.Friday, person.arrival, person.departure);
-    const saturday = arrivalHelper(Days.Saturday, person.arrival, person.departure);
-    const sunday = arrivalHelper(Days.Sunday, person.arrival, person.departure);
-    const monday = arrivalHelper(Days.Monday, person.arrival, person.departure);
+    const friday = arrivalHelper("Friday", person.arrival, person.departure);
+    const saturday = arrivalHelper("Saturday", person.arrival, person.departure);
+    const sunday = arrivalHelper("Sunday", person.arrival, person.departure);
+    const monday = arrivalHelper("Monday", person.arrival, person.departure);
 
     return {
       person,
       days: {
-        friday,
-        saturday,
-        sunday,
-        monday
+        friday: friday?.arrivalString,
+        saturday: saturday?.arrivalString,
+        sunday: sunday?.arrivalString,
+        monday: monday?.arrivalString,
       }
     }
   });
