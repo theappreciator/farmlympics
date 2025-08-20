@@ -24,6 +24,31 @@
     width: 200px;
 }
 
+.sheetTableContainer {
+    min-width: 760px;
+    table-layout: fixed;
+}
+
+.sheetTableContainer td {
+    vertical-align: top;
+}
+
+.sheetTableContainer td:first-child {
+    font-weight: 700;
+}
+
+.sheetTableContainer th:first-child {
+    font-weight: 700;
+}
+
+.sheetTableHeader th {
+    border-bottom: thin solid;
+}
+
+.sheetTableHeader th:first-child {
+    width: 200px;
+}
+
 .footer td {
     border-top: thin solid;
 }

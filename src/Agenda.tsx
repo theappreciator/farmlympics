@@ -5,6 +5,8 @@ import AgendaDay, { timeDisplay } from './AgendaDay'
 import { makeBrandedType } from './helpers/brandedType';
 import type { GameEvent } from './games';
 import allGames, { GATHERING_MINUTES } from './games';
+import allMenu from "./food";
+import type { FoodEvent } from "./food";
 
 export const Days = makeBrandedType({
   Friday: "Friday, Aug 29",
@@ -15,7 +17,7 @@ export const Days = makeBrandedType({
 export type Days = (typeof Days)[keyof typeof Days];
 
 export type Event = {
-    lines: string[] | GameEvent | React.ReactNode;
+    lines: string[] | GameEvent | FoodEvent | React.ReactNode;
     start: number;
     day: Days;
 }
@@ -23,13 +25,24 @@ export type Event = {
 type AgendaProps = {
 };
 
-const sortedGames = new Array(6);
-sortedGames[0] = (allGames.find(g => g.game.id === "farmersays"));
-sortedGames[1] = (allGames.find(g => g.game.id === "cowbranding"));
-sortedGames[2] = (allGames.find(g => g.game.id === "cowbanding"));
-sortedGames[3] = (allGames.find(g => g.game.id === "scavenger"));
-sortedGames[4] = (allGames.find(g => g.game.id === "eggstomarket"));
-sortedGames[5] = (allGames.find(g => g.game.id === "cowpatty"));
+function getGameOrThrow(id: string): GameEvent {
+  const game = allGames.find(g => g.game.id === id);
+  if (!game) throw new Error(`Game with id "${id}" not found`);
+  return game;
+}
+const sortedGames: GameEvent[] = [];
+sortedGames[0] = getGameOrThrow("farmersays");
+sortedGames[1] = getGameOrThrow("cowbranding");
+sortedGames[2] = getGameOrThrow("cowbanding");
+sortedGames[3] = getGameOrThrow("scavenger");
+sortedGames[4] = getGameOrThrow("eggstomarket");
+sortedGames[5] = getGameOrThrow("cowpatty");
+
+function getMenuOrThrow(day: "Friday" | "Saturday" | "Sunday" | "Monday", time: string): FoodEvent {
+  const menu = allMenu.find(m => m.day === day && m.time.toLowerCase() === time.toLowerCase());
+  if (!menu) throw new Error(`Game with day "${day}" and time "${time}" not found`);
+  return menu;
+}
 
 let sundayRunningStartTime;
 
@@ -40,12 +53,22 @@ const defaultData: Event[] = [
     day: Days.Saturday,
   },
   {
-    lines: ['Dry Run/Walkthrough'],
-    start: 1600,
+    lines: getMenuOrThrow("Saturday", "8a"),
+    start: 800,
     day: Days.Saturday,
   },
   {
-    lines: ['Dinner', '* TBD'],
+    lines: getMenuOrThrow("Saturday", "12p"),
+    start: 1200,
+    day: Days.Saturday,
+  },
+  {
+    lines: ['Dry Run/Walkthrough'],
+    start: 1300,
+    day: Days.Saturday,
+  },
+  {
+    lines: getMenuOrThrow("Saturday", "6p"),
     start: 1800,
     day: Days.Saturday,
   },
@@ -55,7 +78,7 @@ const defaultData: Event[] = [
     day: Days.Sunday,
   },
   {
-    lines: ['Breakfast', '* CFA Chicken Minis', '* Fruit', '* Coffee', '* Juice'],
+    lines: getMenuOrThrow("Sunday", "8a"),
     start: (() => {const time=sundayRunningStartTime; sundayRunningStartTime+= 100; return time})(),
     day: Days.Sunday,
   },
@@ -95,7 +118,7 @@ const defaultData: Event[] = [
     day: Days.Sunday,
   },
   {
-    lines: ['Lunch (45 min)', '* CFA Chicken Sandwich', '* CFA Chicken Nuggets', '* Chicken salad', '* chips', '* fruit'],
+    lines: getMenuOrThrow("Sunday", "12p"),
     start: (() => {const time=sundayRunningStartTime; sundayRunningStartTime+= 75; return time})(),
     day: Days.Sunday,
   },
@@ -152,12 +175,12 @@ const defaultData: Event[] = [
     day: Days.Sunday,
   },
   {
-    lines: ['Cocktail Hour', '* formal attire'],
+    lines: getMenuOrThrow("Sunday", "4p"),
     start: (() => {const time=sundayRunningStartTime; sundayRunningStartTime+=125; return time})(),
     day: Days.Sunday,
   },
   {
-    lines: ['Dinner', "* CFA Leftovers", "* Chips", "* Fruit"],
+    lines: getMenuOrThrow("Sunday", "6p"),
     start: (() => {const time=sundayRunningStartTime; sundayRunningStartTime+=100; return time})(),
     day: Days.Sunday,
   },
@@ -172,8 +195,18 @@ const defaultData: Event[] = [
     day: Days.Monday,
   },
   {
-    lines: ['Breakfast', '* Biscuits', '* Sausage', '* Eggs', '* Fruit', '* Coffee'],
+    lines: getMenuOrThrow("Monday", "8a"),
     start: 900,
+    day: Days.Monday,
+  },
+  {
+    lines: getMenuOrThrow("Monday", "12p"),
+    start: 1200,
+    day: Days.Monday,
+  },
+  {
+    lines: getMenuOrThrow("Monday", "6p"),
+    start: 1800,
     day: Days.Monday,
   },
 ]

@@ -1,4 +1,5 @@
 export interface Game {
+    kind: "Game";
     id: string;
     name: string;
     intro: string;
@@ -13,6 +14,7 @@ export interface Game {
 export type GameLocation = "field" | "front yard" | "back yard" | "baseball field" | "whole yard" | "tbd";
 
 export interface GameEvent {
+    kind: "GameEvent";
     game: Game;
     order: number;
     playTime: number;
@@ -24,7 +26,9 @@ export const GATHERING_MINUTES = 25;
 
 const games: GameEvent[] = [
     {
+        kind: "GameEvent",
         game: {
+            kind: "Game",
             id: "farmersays",
             name: "Farmer Says",
             intro: "Every day begins by thinking through everything that needs to be done",
@@ -72,7 +76,9 @@ const games: GameEvent[] = [
         location: "front yard",
     },
     {
+        kind: "GameEvent",
         game: {
+            kind: "Game",
             id: "cowbranding",
             name: "Cow Branding",
             intro: "Make sure all your cows are marked in case they get out!",
@@ -139,7 +145,9 @@ const games: GameEvent[] = [
         location: "baseball field",
     },
     {
+        kind: "GameEvent",
         game: {
+            kind: "Game",
             id: "cowbanding",
             name: "Cow Banding",
             intro: "Help your wild bulls become mild-mannered steers",
@@ -184,7 +192,9 @@ const games: GameEvent[] = [
         location: "baseball field",
     },
     {
+        kind: "GameEvent",
         game: {
+            kind: "Game",
             id: "scavenger",
             name: "Scavenger Hunt",
             intro: "Gather your tools to complete the rest of your work",
@@ -266,7 +276,9 @@ const games: GameEvent[] = [
         location: "whole yard",
     },
     {
+        kind: "GameEvent",
         game: {
+            kind: "Game",
             id: "eggstomarket",
             name: "Taking Eggs to the Market",
             intro: "Sell your eggs to make some money",
@@ -317,7 +329,9 @@ const games: GameEvent[] = [
         location: "baseball field",
     },
     {
+        kind: "GameEvent",
         game: {
+            kind: "Game",
             id: "plantatree",
             name: "Plant a Tree",
             intro: "Make a memory for future generations",
@@ -334,7 +348,9 @@ const games: GameEvent[] = [
         location: "baseball field",
     },
     {
+        kind: "GameEvent",
         game: {
+            kind: "Game",
             id: "cowpatty",
             name: "Cow Patty Toss",
             intro: "Farmhands are out in the pasture, fertalizing the soil for future crops",
@@ -392,7 +408,9 @@ const games: GameEvent[] = [
         location: "tbd",
     },
     {
+        kind: "GameEvent",
         game: {
+            kind: "Game",
             id: "tbdb",
             name: "TBD Game",
             intro: "TBD...",
