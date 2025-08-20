@@ -52,18 +52,13 @@ const meals: FoodEvent[] = [
         name: "Dinner - Mexican",
         day: "Saturday",
         time: "6p",
+        showDetail: true,
         info: [
             "Sit down at Mexican Restaurant in Yanceyville",
             "Need headcount in advance for reservation"
         ],
         menu: [],
-        items: [
-            {
-                name: "stuff",
-                qty: "1",
-                preferredStore: "None"
-            }
-        ]
+        items: []
     },
     {
         kind: "FoodEvent",

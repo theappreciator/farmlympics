@@ -57,94 +57,125 @@ const SheetFoodEvent: React.FC<SheetFoodEventProps> = ({ foodEvent }) => {
   return (
     <>
       <h2>Meal: {foodEvent.day} - {foodEvent.name}</h2>
-      <h3>Menu:</h3>
-      <ul>
-        {foodEvent?.menu.map(m => {
-          if (Array.isArray(m)) {
-            return (
-              <ul>
-                {m.map(sm => (
-                  <li>{sm.name}</li>
-                ))}
-              </ul>
-            )
-          }
-          else {
-            return (
-              <li>{m.name}</li>
-            )
-          }
-        })}
-      </ul>
+      {foodEvent.info.length > 0 && (
+        <>
+          <h3>Info:</h3>
+          <ul>
+            {foodEvent?.info.map(i => {
+              if (Array.isArray(i)) {
+                return (
+                  <ul>
+                    {i.map(si => (
+                      <li>{si}</li>
+                    ))}
+                  </ul>
+                )
+              }
+              else {
+                return (
+                  <li>{i}</li>
+                )
+              }
+            })}
+          </ul>
+        </>
+      )}
+      {foodEvent.menu.length > 0 && (
+        <>
+          <h3>Menu:</h3>
+          <ul>
+            {foodEvent?.menu.map(m => {
+              if (Array.isArray(m)) {
+                return (
+                  <ul>
+                    {m.map(sm => (
+                      <li>{sm.name}</li>
+                    ))}
+                  </ul>
+                )
+              }
+              else {
+                return (
+                  <li>{m.name}</li>
+                )
+              }
+            })}
+          </ul>
+        </>
+      )}
       <ArrivalsForFood people={allPeople} day={foodEvent.day} meal={foodEvent.meal} />
-      <h3>Groceries:</h3>
-      <br />
-      <table className={styles.container}>
-        <thead className={styles.header}>
-          {table.getHeaderGroups().map(headerGroup => (
-            <tr key={headerGroup.id}>
-              {headerGroup.headers.map(header => (
-                <th key={header.id} colSpan={header.colSpan}>
-                  {header.isPlaceholder ? null : (
-                    <div
-                      className={
-                        header.column.getCanSort()
-                          ? 'cursor-pointer select-none'
-                          : ''
-                      }
-                      onClick={header.column.getToggleSortingHandler()}
-                      title={
-                        header.column.getCanSort()
-                          ? header.column.getNextSortingOrder() === 'asc'
-                            ? 'Sort ascending'
-                            : header.column.getNextSortingOrder() === 'desc'
-                              ? 'Sort descending'
-                              : 'Clear sort'
-                          : undefined
-                      }
-                    >
-                      {flexRender(
-                        header.column.columnDef.header,
-                        header.getContext()
+      {foodEvent.items.length > 0 && (
+        <>
+          <h3>Groceries:</h3>
+          <br />
+          <table className={styles.container}>
+            <thead className={styles.header}>
+              {table.getHeaderGroups().map(headerGroup => (
+                <tr key={headerGroup.id}>
+                  {headerGroup.headers.map(header => (
+                    <th key={header.id} colSpan={header.colSpan}>
+                      {header.isPlaceholder ? null : (
+                        <div
+                          className={
+                            header.column.getCanSort()
+                              ? 'cursor-pointer select-none'
+                              : ''
+                          }
+                          onClick={header.column.getToggleSortingHandler()}
+                          title={
+                            header.column.getCanSort()
+                              ? header.column.getNextSortingOrder() === 'asc'
+                                ? 'Sort ascending'
+                                : header.column.getNextSortingOrder() === 'desc'
+                                  ? 'Sort descending'
+                                  : 'Clear sort'
+                              : undefined
+                          }
+                        >
+                          {flexRender(
+                            header.column.columnDef.header,
+                            header.getContext()
+                          )}
+                          {{
+                            asc: ' 🔼',
+                            desc: ' 🔽',
+                          }[header.column.getIsSorted() as string] ?? null}
+                        </div>
                       )}
-                      {{
-                        asc: ' 🔼',
-                        desc: ' 🔽',
-                      }[header.column.getIsSorted() as string] ?? null}
-                    </div>
-                  )}
-                </th>
+                    </th>
+                  ))}
+                </tr>
               ))}
-            </tr>
-          ))}
-        </thead>
-        <tbody>
-          {table.getRowModel().rows.map(row => (
-            <tr key={row.id}>
-              {row.getVisibleCells().map(cell => (
-                <td key={row.id + "___" + cell.id + "000"}>
-                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                </td>
+            </thead>
+            <tbody>
+              {table.getRowModel().rows.map(row => (
+                <tr key={row.id}>
+                  {row.getVisibleCells().map(cell => (
+                    <td key={row.id + "___" + cell.id + "000"}>
+                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                    </td>
+                  ))}
+                </tr>
               ))}
-            </tr>
-          ))}
-        </tbody>
-        <tfoot className={styles.footer}>
-          {table.getFooterGroups().map(footerGroup => (
-            <tr key={footerGroup.id}>
-              {footerGroup.headers.map(header => (
-                <td key={header.id} className={styles.footer}>
-                  {flexRender(
-                    header.column.columnDef.footer,
-                    header.getContext(),
-                  )}
-                </td>
+            </tbody>
+            <tfoot className={styles.footer}>
+              {table.getFooterGroups().map(footerGroup => (
+                <tr key={footerGroup.id}>
+                  {footerGroup.headers.map(header => (
+                    <td key={header.id} className={styles.footer}>
+                      {flexRender(
+                        header.column.columnDef.footer,
+                        header.getContext(),
+                      )}
+                    </td>
+                  ))}
+                </tr>
               ))}
-            </tr>
-          ))}
-        </tfoot>
-      </table>
-      <br/>
+            </tfoot>
+          </table>
+        </>
+      )}
+      <br />
     </>
   )
 }

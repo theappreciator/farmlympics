@@ -15,6 +15,7 @@ export interface BaseEvent {
   time: string;
   info: string[];
   items: Grocery[];
+  showDetail?: boolean;
 }
 
 export interface FoodEvent extends BaseEvent {

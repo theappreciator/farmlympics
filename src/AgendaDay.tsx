@@ -97,7 +97,7 @@ const activityDisplay = (info: CellContext<EventInstance, string[] | BaseEvent |
         const foodEvent = (value as FoodEvent);
         return (
           <div style={{ textAlign: "left" }}>
-            {foodEvent.name} {foodEvent.items.length > 0 && (<a onClick={() => dispatcher(foodEvent)}>Detail</a>)}
+            {foodEvent.name} {(foodEvent.items.length > 0 || foodEvent.showDetail) && (<a onClick={() => dispatcher(foodEvent)}>Detail</a>)}
             {foodEvent.info.length > 0 && (
               <div>
                 <ul style={{ marginTop: 0 }}>

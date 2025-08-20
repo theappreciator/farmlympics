@@ -9,14 +9,6 @@ import allMenu from "./data/food";
 import allGeneral from "./data/generalEvents";
 import type { FoodEvent, EventInstance } from "./types";
 
-// export const Days = makeBrandedType({
-//   Friday: "Friday, Aug 29",
-//   Saturday: "Saturday, Aug 30",
-//   Sunday: "Sunday, Aug 31",
-//   Monday: "Monday, Sep 1",
-// }, 'days')  ;
-// export type Days = (typeof Days)[keyof typeof Days];
-
 type AgendaProps = {
 };
 
