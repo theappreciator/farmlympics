@@ -17,7 +17,7 @@ const generalEvents: GeneralEvent[] = [
             {
                 name: "Coffee",
                 qty: "1 1lb bag",
-                preferredStore: "None"
+                preferredStore: "Home"
             },
             {
                 name: "Fruit",
@@ -66,7 +66,7 @@ const generalEvents: GeneralEvent[] = [
             {
                 name: "Coffee",
                 qty: "1 5lb bag",
-                preferredStore: "None"
+                preferredStore: "Home"
             },
             {
                 name: "Chips",

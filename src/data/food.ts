@@ -125,6 +125,40 @@ const meals: FoodEvent[] = [
     },
     {
         kind: "FoodEvent",
+        meal: "Other-Evening",
+        name: "Campfire",
+        day: "Sunday",
+        time: "7p",
+        menu: [],
+        info: [
+            'S\'mores',
+            'Milkshakes',
+        ],
+        items: [
+            {
+                name: "Marshmallows",
+                qty: "2 bags",
+                preferredStore: "Food Lion"
+            },
+            {
+                name: "Graham Crackers",
+                qty: "2 boxes",
+                preferredStore: "Food Lion",
+            },
+            {
+                name: "Reese's Peanut Butter Cups",
+                qty: "12 chocolates",
+                preferredStore: "Food Lion"
+            },
+            {
+                name: "Hershey mini chocolate bars",
+                qty: "12 bars",
+                preferredStore: "Food Lion"
+            }
+        ]
+    },
+    {
+        kind: "FoodEvent",
         meal: "Breakfast",
         name: "Breakfast",
         day: "Monday",

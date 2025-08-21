@@ -6,7 +6,7 @@ export const DayNames: Record<DayName, string> = {
   "Monday": "Monday, September 1",
 }
 
-export type MealType = "Breakfast" | "Lunch" | "Dinner" | "Other";
+export type MealType = "Breakfast" | "Lunch" | "Dinner" | "Other" | "Other-Evening";
 
 export interface BaseEvent {
   kind: "FoodEvent" | "GameEvent" | "GeneralEvent"
@@ -27,7 +27,7 @@ export interface FoodEvent extends BaseEvent {
 export interface Grocery {
   name: string;
   qty: string;
-  preferredStore: "None" | "Home" | "Food Lion" | "Harris Teeter" | "Midtown Market" | "Lowes Foods" | "Costco";
+  preferredStore: "None" | "Home" | "Food Lion" | "Harris Teeter" | "Midtown Market" | "Lowes Foods" | "Costco" | "Lowes";
 }
 
 export interface Menu {

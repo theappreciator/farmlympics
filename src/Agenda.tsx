@@ -178,7 +178,7 @@ const defaultData: EventInstance[] = [
     day: "Sunday",
   },
   {
-    lines: ['Campfire', '* S\'mores', '* Milkshakes'],
+    lines: getMenuOrThrow("Sunday", "7p"),
     start: (() => {const time=sundayRunningStartTime; sundayRunningStartTime+=100; return time})(),
     day: "Sunday",
   },

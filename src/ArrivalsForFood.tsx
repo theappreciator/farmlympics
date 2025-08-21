@@ -69,9 +69,12 @@ const arrivalTimeHelper = (day: DayName, meal: MealType, arrivalDate?: Date | 'a
 
   const breakfastTime = 8;
   const lunchTime = 12;
-  const dinnerTime = 16;
+  const dinnerTime = 18;
+
+  const otherEvening = 19;
 
   console.log(arrivals);
+  console.log(meal);
   switch (meal) {
     case "Breakfast":
       if ((arrivals?.todayArrivalNumber !== undefined && arrivals.todayArrivalNumber <= breakfastTime) &&
@@ -88,6 +91,12 @@ const arrivalTimeHelper = (day: DayName, meal: MealType, arrivalDate?: Date | 'a
     case "Dinner":
       if ((arrivals?.todayArrivalNumber !== undefined && arrivals.todayArrivalNumber <= dinnerTime) &&
           (arrivals?.todayDepartureNumber !== undefined && arrivals.todayDepartureNumber > dinnerTime)) {
+        return arrivalDisplayHelper(arrivals.todayArrivalString, arrivals.todayDepartureString);
+      }
+      break;
+    case "Other-Evening":
+      if ((arrivals?.todayArrivalNumber !== undefined && arrivals.todayArrivalNumber <= otherEvening) &&
+          (arrivals?.todayDepartureNumber !== undefined && arrivals.todayDepartureNumber > otherEvening)) {
         return arrivalDisplayHelper(arrivals.todayArrivalString, arrivals.todayDepartureString);
       }
       break;
