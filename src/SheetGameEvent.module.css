@@ -1,3 +1,20 @@
 .title {
     font-weight: 700;
 }
+
+.container {
+    width: 730px;
+    table-layout: fixed;
+}
+
+.header th {
+    border-bottom: thin solid;
+}
+
+.header th:first-child {
+    width: 50%;
+}
+
+.footer th {
+    border-top: thin solid;
+}

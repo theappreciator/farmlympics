@@ -48,6 +48,21 @@ const generalEvents: GeneralEvent[] = [
                 name: "Macadamia Nuts",
                 qty: "1 large bag",
                 preferredStore: "Costco"
+            },
+            {
+                name: "Marking Paint",
+                qty: "8 bottles",
+                preferredStore: "Lowes"
+            },
+            {
+                name: "Canopies",
+                qty: "4+",
+                preferredStore: "Home"
+            },
+            {
+                name: "Coolers",
+                qty: "8+",
+                preferredStore: "Home"
             }
         ]
     },

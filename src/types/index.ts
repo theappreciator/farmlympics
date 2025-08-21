@@ -27,7 +27,7 @@ export interface FoodEvent extends BaseEvent {
 export interface Grocery {
   name: string;
   qty: string;
-  preferredStore: "None" | "Home" | "Food Lion" | "Harris Teeter" | "Midtown Market" | "Lowes Foods" | "Costco" | "Lowes";
+  preferredStore: "None" | "Home" | "Food Lion" | "Harris Teeter" | "Midtown Market" | "Lowes Foods" | "Costco" | "Lowes" | "Amazon";
 }
 
 export interface Menu {
@@ -53,7 +53,7 @@ export interface Game {
 
 export type GameLocation = "field" | "front yard" | "back yard" | "baseball field" | "whole yard" | "tbd";
 
-export interface GameEvent {
+export interface GameEvent extends Omit<BaseEvent, "name" | "day" | "time"> {
   kind: "GameEvent";
   game: Game;
   order: number;
