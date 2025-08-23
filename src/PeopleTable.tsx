@@ -90,7 +90,7 @@ const PeopleTable: React.FC<PeopleTableProps> = ({ people }) => {
     <>
     {data.length > 0 && (
       <>
-      <h2>PEOPLE</h2>
+      <h2>People</h2>
         <table className={styles.container}>
           <thead className={styles.header}>
             {table.getHeaderGroups().map(headerGroup => (

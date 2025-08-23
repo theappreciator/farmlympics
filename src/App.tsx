@@ -6,8 +6,10 @@ import people, { Teams } from './data/peeps';
 import PeopleTable from './PeopleTable';
 import SleepingArrangements from './SleepingArrangements';
 import SleepingArrangementsBySite from './SleepingArrangementsBySite';
+import TeamsFaceoff from './TeamsFaceoff';
 import TeamTable from './TeamTable';
 import TShirts from './TShirts';
+import WeatherForecast from './WeatherForecast';
 
 interface AnchorLink {
   anchor: string;
@@ -36,19 +38,10 @@ function App() {
       ))}
 
       <br/>
-      <div className={styles.vsContainer} style={{fontWeight: 700}}>
-        <div>
-          <img width="200px" src="chicken.jpg"/>
-          <br/>
-          Flock of Fury
-        </div>
-        <div style={{marginLeft:"10px", marginRight: "10px" }}>VS.</div>
-        <div style={{fontWeight: 700}}>
-          <img width="200px" src="cow.jpg"/>
-          <br/>
-          Horns &amp; Havoc
-        </div>
-      </div>
+      <br/>
+      <TeamsFaceoff />
+
+      <WeatherForecast />
 
       <a id="people" />
       <PeopleTable people={people} />

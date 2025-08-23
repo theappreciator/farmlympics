@@ -5,6 +5,19 @@
   text-align: center;
 }
 
+h1,h2 {
+  font-size: 64px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: "Futura", "Courier";
+  letter-spacing: -2px;
+  transform: scale(0.9,1);
+}
+
+h2 {
+  font-size: 30px;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
