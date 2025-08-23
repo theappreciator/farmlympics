@@ -154,6 +154,11 @@ const meals: FoodEvent[] = [
                 name: "Hershey mini chocolate bars",
                 qty: "12 bars",
                 preferredStore: "Food Lion"
+            },
+            {
+                name: "Marshmallow skewers",
+                qty: "10+ poles",
+                preferredStore: "Home"
             }
         ]
     },
