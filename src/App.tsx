@@ -10,6 +10,8 @@ import TeamsFaceoff from './TeamsFaceoff';
 import TeamTable from './TeamTable';
 import TShirts from './TShirts';
 import WeatherForecast from './WeatherForecast';
+import WhatIsProvided from './WhatIsProvided';
+import WhatToBring from './WhatToBring';
 
 interface AnchorLink {
   anchor: string;
@@ -32,15 +34,18 @@ function App() {
     <>
       <h1>Farmlympics 2025</h1>
 
+      <hr />
       {anchorLinks.map((link, i) => (
         <a key={link.anchor} href={`#${link.anchor}`} style={{}}>
           {link.displayText}{i < anchorLinks.length - 1 ? ' | ' : ''}
         </a>
       ))}
+      <hr />
 
       <br />
-      <br />
       <TeamsFaceoff />
+
+      <hr />
 
       <WeatherForecast />
 
@@ -70,30 +75,9 @@ function App() {
       <a id="agenda" />
       <Agenda />
 
+      <WhatIsProvided />
 
-      <h2>What is Being Provided</h2>
-      <hr />
-      <div style={{ width: '300px', margin: '0 auto' }}>
-        <ul style={{ listStyleType: 'disc', paddingLeft: '20px', textAlign: 'left' }}>
-          <li>shirts</li>
-          <li>water</li>
-          <li>drinks</li>
-          <li>food</li>
-          <li>sunscreen</li>
-          <li>FUN!</li>
-        </ul>
-      </div>
-
-      <h2>What to Wear/Bring</h2>
-      <hr />
-      <div style={{ width: '300px', margin: '0 auto' }}>
-        <ul style={{ listStyleType: 'disc', paddingLeft: '20px', textAlign: 'left' }}>
-          <li>comfy clothes and shoes to get sweaty and dirty</li>
-          <li>hat</li>
-          <li>sunglasses</li>
-          <li>sunscreen</li>
-        </ul>
-      </div>
+      <WhatToBring />
 
       <hr />
       <h2>Logos</h2>

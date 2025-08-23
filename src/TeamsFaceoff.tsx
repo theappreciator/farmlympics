@@ -9,7 +9,7 @@ const TeamsFaceoff: React.FC<TeamsFaceoffProps> = () => {
 
   return (
     <>
-      <div className={styles.intro}>Cherry Hill Farm presents the 6th annual Farmlympics</div>
+      <div className={styles.intro}>Cherry Hill Farm presents the 6th annual Farmlympics...</div>
 
       <div className={styles.vsContainer} style={{ fontWeight: 700 }}>
         <div className={styles.team}>

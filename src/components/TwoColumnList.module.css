@@ -1,0 +1,13 @@
+.twoColumnList {
+  columns: 3;
+  -webkit-columns: 3;
+  -moz-columns: 3;
+  text-align: left;
+  /* margin: '0 auto'  */
+}
+
+.twoColumnList li {
+  /* list-style-type: 'disc'; */
+  /* padding-left: 20px; */
+  /* text-align: 'left'; */
+}
