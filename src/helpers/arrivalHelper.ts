@@ -100,12 +100,6 @@ export const arrivalHelper = (day: DayName, arrivalDate?: Date | 'all', departDa
     arrivalString = '༚';
   }
 
-  console.log(arrivalDate);
-  console.log(departDate);
-  console.log(arrivalString);
-  console.log(todayArrivalNumber, todayDepartureNumber);
-  console.log(todayArrivalString, todayDepartureString);
-
   return {
     arrivalString: arrivalString ? arrivalString : undefined,
     todayArrivalNumber,

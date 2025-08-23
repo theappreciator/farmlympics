@@ -26,12 +26,12 @@ const columns = [
     header: () => <span>Name</span>,
     cell: info => info.getValue(),
   }),
-  columnHelper.accessor('sleeping', {
-    header: () => <div style={{textAlign: "center"}}>Location</div>,
-    cell: info => <div style={{textAlign: "center"}}>{info.getValue()?.site !== "no need" ? info.getValue()?.site : "༚"}</div>,
-  }),
+  // columnHelper.accessor('sleeping', {
+  //   header: () => <div style={{textAlign: "center"}}>Location</div>,
+  //   cell: info => <div style={{textAlign: "center"}}>{info.getValue()?.site !== "no need" ? info.getValue()?.site : "༚"}</div>,
+  // }),
   columnHelper.accessor('today', {
-    header: () => <div style={{textAlign: "center"}}>Arrival/Departure Time</div>,
+    header: () => <span style={{textAlign: "center"}}>Arrival/Departure Time</span>,
     cell: info => <div style={{textAlign: "center"}}>{info.getValue()}</div>,
     footer: info => <div style={{textAlign: "center"}}>{`Total: ${info.table.getFilteredRowModel().rows.filter(r => r.original.today !== undefined).length} people`}</div>
   }),

@@ -60,6 +60,11 @@ const generalEvents: GeneralEvent[] = [
                 preferredStore: "Home"
             },
             {
+                name: "Folding Chairs",
+                qty: "10+",
+                preferredStore: "Home"
+            },
+            {
                 name: "Coolers",
                 qty: "8+",
                 preferredStore: "Home"

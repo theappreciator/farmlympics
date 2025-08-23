@@ -5,17 +5,27 @@
   text-align: center;
 }
 
-h1,h2 {
-  font-size: 64px;
+h1,h2,h3,th{
   font-weight: 600;
   text-transform: uppercase;
   font-family: "Futura", "Courier";
   letter-spacing: -2px;
-  transform: scale(0.9,1);
+}
+
+h1 {
+  font-size: 64px;  
 }
 
 h2 {
   font-size: 30px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+th {
+  letter-spacing: -1px;
 }
 
 .logo {

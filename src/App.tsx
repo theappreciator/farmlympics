@@ -1,6 +1,6 @@
 import Agenda from './Agenda';
 import './App.css'
-import styles from './App.module.css'
+// import styles from './App.module.css'
 import Arrivals from './Arrivals';
 import people, { Teams } from './data/peeps';
 import PeopleTable from './PeopleTable';
@@ -27,18 +27,19 @@ const anchorLinks: AnchorLink[] = [
 ];
 
 function App() {
+
   return (
     <>
       <h1>Farmlympics 2025</h1>
 
       {anchorLinks.map((link, i) => (
-        <a key={link.anchor} href={`#${link.anchor}`} style={{ }}>
+        <a key={link.anchor} href={`#${link.anchor}`} style={{}}>
           {link.displayText}{i < anchorLinks.length - 1 ? ' | ' : ''}
         </a>
       ))}
 
-      <br/>
-      <br/>
+      <br />
+      <br />
       <TeamsFaceoff />
 
       <WeatherForecast />
@@ -47,13 +48,13 @@ function App() {
       <PeopleTable people={people} />
 
       <a id="teama" />
-      <TeamTable team={[Teams.TeamAMain, Teams.TeamASecondary]} people={people.filter(p => [Teams.TeamAMain, Teams.TeamASecondary].includes(p.team))}/>
+      <TeamTable team={[Teams.TeamAMain, Teams.TeamASecondary]} people={people.filter(p => [Teams.TeamAMain, Teams.TeamASecondary].includes(p.team))} />
       <a id="teamb" />
-      <TeamTable team={[Teams.TeamBMain, Teams.TeamBSecondary]} people={people.filter(p => [Teams.TeamBMain, Teams.TeamBSecondary].includes(p.team))}/>
+      <TeamTable team={[Teams.TeamBMain, Teams.TeamBSecondary]} people={people.filter(p => [Teams.TeamBMain, Teams.TeamBSecondary].includes(p.team))} />
       <a id="TeamS" />
-      <TeamTable team={[Teams.TeamS]} people={people.filter(p => p.team === Teams.TeamS)}/>
+      <TeamTable team={[Teams.TeamS]} people={people.filter(p => p.team === Teams.TeamS)} />
       <a id="TeamU" />
-      <TeamTable team={[Teams.TeamU]} people={people.filter(p => p.team === Teams.TeamU)}/>
+      <TeamTable team={[Teams.TeamU]} people={people.filter(p => p.team === Teams.TeamU)} />
 
       <TShirts people={people} />
 
@@ -69,10 +70,10 @@ function App() {
       <a id="agenda" />
       <Agenda />
 
-      
+
       <h2>What is Being Provided</h2>
-      <hr/>
-      <div style={{width: '300px', margin: '0 auto'}}>
+      <hr />
+      <div style={{ width: '300px', margin: '0 auto' }}>
         <ul style={{ listStyleType: 'disc', paddingLeft: '20px', textAlign: 'left' }}>
           <li>shirts</li>
           <li>water</li>
@@ -83,9 +84,9 @@ function App() {
         </ul>
       </div>
 
-        <h2>What to Wear/Bring</h2>
-        <hr />
-        <div style={{width: '300px', margin: '0 auto'}}>
+      <h2>What to Wear/Bring</h2>
+      <hr />
+      <div style={{ width: '300px', margin: '0 auto' }}>
         <ul style={{ listStyleType: 'disc', paddingLeft: '20px', textAlign: 'left' }}>
           <li>comfy clothes and shoes to get sweaty and dirty</li>
           <li>hat</li>
@@ -94,10 +95,11 @@ function App() {
         </ul>
       </div>
 
-      <hr/>
-      <div style={{width: 800}}>
-      <img width="800px" src="flock-shirt-front.jpg"/>
-      <img width="800px" src="horns-shirt-front.jpg"/>
+      <hr />
+      <h2>Logos</h2>
+      <div style={{ width: 800, marginLeft: "auto", marginRight: "auto" }}>
+        <img width="800px" src="flock-shirt-front.jpg" />
+        <img width="800px" src="horns-shirt-front.jpg" />
       </div>
     </>
   )

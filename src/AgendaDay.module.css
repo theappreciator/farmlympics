@@ -1,5 +1,6 @@
 .container {
     min-width: 800px;
+    width: 100%;
     table-layout: fixed;
 }
 
@@ -64,7 +65,15 @@ a:hover {
 @media (min-width: 720px) {
     .sheetContainer {
         max-width: 800px;
-        left: calc(50% - 400px) !important;
+        left: calc(50% - 500px) !important;
+    }
+}
+
+@media (max-width: 719px) {
+    .sheetContainer {
+        max-width: 800px;
+        left: calc(50% - 500px) !important;
+        background-color: red;
     }
 }
 

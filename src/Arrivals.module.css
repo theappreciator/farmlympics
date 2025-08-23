@@ -1,5 +1,6 @@
 .container {
     min-width: 800px;
+    width: 100%;
     table-layout: fixed;
 }
 

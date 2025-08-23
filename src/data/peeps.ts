@@ -1,9 +1,14 @@
+import { hydrateName } from '../helpers/nameHelper';
 import {
   type Room,
   type Team,
   type Shirt,
   type Person,
 } from '../types/index';
+
+const fullNameModulePath = "./peepsFullnames";
+const importedModule = await import(/* @vite-ignore */fullNameModulePath).then((m) => m).catch(() => { console.log("ERROR LOADING"); return  { default: {} } });
+const fullNames = importedModule.default;
 
 export const RoomsAndSites = {
     tuRoom: { name: "TU Room", site: "Farm" } as Room,
@@ -49,7 +54,7 @@ export const Teams = {
 const people: Person[] = [
   {
     id: 1,
-    name: "Je T.",
+    name: hydrateName(1, "Je T.", fullNames),
     generation: 'Millennials',
     shirt: ShirtSizes.xlargeTall,
     team: Teams.TeamBMain,
@@ -63,7 +68,7 @@ const people: Person[] = [
   },
   {
     id: 2,
-    name: 'Am T.',
+    name: hydrateName(2, "Am T.", fullNames),
     generation: 'Millennials',
     shirt: ShirtSizes.xlarge,
     team: Teams.TeamAMain,
@@ -77,7 +82,7 @@ const people: Person[] = [
   },
   {
     id: 3,
-    name: 'Ja T.',
+    name: hydrateName(3, "Ja T.", fullNames),
     generation: 'Gen Alpha',
     shirt: ShirtSizes.small,
     team: Teams.TeamBMain,
@@ -91,7 +96,7 @@ const people: Person[] = [
   },
   {
     id: 4,
-    name: 'Gu T.',
+    name: hydrateName(4, "Gu T.", fullNames),
     generation: 'Gen Alpha',
     shirt: ShirtSizes.youthSmall,
     team: Teams.TeamAMain,
@@ -105,7 +110,7 @@ const people: Person[] = [
   },
   {
     id: 5,
-    name: 'Bo T.',
+    name: hydrateName(5, "Bo T.", fullNames),
     generation: 'Little One',
     shirt: ShirtSizes.youthSmall,
     team: Teams.TeamAMain,
@@ -119,7 +124,7 @@ const people: Person[] = [
   },
   {
     id: 6,
-    name: 'Gr D.',
+    name: hydrateName(6, "Gr D.", fullNames),
     generation: 'Baby Boomers',
     shirt: ShirtSizes.large,
     team: Teams.TeamAMain,
@@ -133,7 +138,7 @@ const people: Person[] = [
   },
   {
     id: 7,
-    name: 'De D.',
+    name: hydrateName(7, "De D.", fullNames),
     generation: 'Gen X',
     shirt: ShirtSizes.xxlarge,
     team: Teams.TeamBMain,
@@ -147,7 +152,7 @@ const people: Person[] = [
   },
   {
     id: 8,
-    name: 'Ru D.',
+    name: hydrateName(8, "Ru D.", fullNames),
     generation: 'Millennials',
     shirt: ShirtSizes.large,
     team: Teams.TeamBMain,
@@ -161,7 +166,7 @@ const people: Person[] = [
   },
   {
     id: 9,
-    name: 'Cr D.',
+    name: hydrateName(9, "Cr D.", fullNames),
     generation: 'Millennials',
     shirt: ShirtSizes.xlarge,
     team: Teams.TeamAMain,
@@ -175,7 +180,7 @@ const people: Person[] = [
   },
   {
     id: 10,
-    name: 'Rh D.',
+    name: hydrateName(10, "Rh D.", fullNames),
     generation: 'Gen Alpha',
     shirt: ShirtSizes.small,
     team: Teams.TeamBMain,
@@ -189,7 +194,7 @@ const people: Person[] = [
   },
   {
     id: 11,
-    name: 'Ma F.',
+    name: hydrateName(11, "Ma F.", fullNames),
     generation: 'Millennials',
     shirt: ShirtSizes.xlargeTall,
     team: Teams.TeamBMain,
@@ -203,7 +208,7 @@ const people: Person[] = [
   },
   {
     id: 12,
-    name: 'Ja H.',
+    name: hydrateName(12, "Ja H.", fullNames),
     generation: 'Gen Z',
     shirt: ShirtSizes.xlarge,
     team: Teams.TeamBMain,
@@ -217,7 +222,7 @@ const people: Person[] = [
   },
   {
     id: 13,
-    name: 'Ri L.',
+    name: hydrateName(13, "Ri L.", fullNames),
     generation: 'Millennials',
     shirt: ShirtSizes.xxxlarge,
     team: Teams.TeamAMain,
@@ -231,7 +236,7 @@ const people: Person[] = [
   },
   {
     id: 14,
-    name: 'Li T.',
+    name: hydrateName(14, "Li T.", fullNames),
     generation: 'Silent Gen',
     shirt: ShirtSizes.xxxlarge,
     team: Teams.TeamBSecondary,
@@ -245,77 +250,77 @@ const people: Person[] = [
   },
   {
     id: 15,
-    name: 'An J.',
+    name: hydrateName(15, "An J.", fullNames),
     generation: 'Millennials',
     shirt: ShirtSizes.xlarge,
     team: Teams.TeamAMain,
     sleeping: {
       friday: RoomsAndSites.none,
-      saturday: RoomsAndSites.none,
-      sunday: RoomsAndSites.none
+      saturday: RoomsAndSites.nanaJs,
+      sunday: RoomsAndSites.nanaJs
     },
-    arrival: new Date('2025-08-31T08:00:00'),
-    departure: new Date('2025-08-31T20:00:00'),
+    arrival: new Date('2025-08-30T14:00:00'),
+    departure: new Date('2025-09-01T12:00:00'),
   },
   {
     id: 16,
-    name: 'Ma J.',
+    name: hydrateName(16, "Ma J.", fullNames),
     generation: 'Millennials',
     shirt: ShirtSizes.xxlarge,
     team: Teams.TeamBMain,
     sleeping: {
       friday: RoomsAndSites.none,
-      saturday: RoomsAndSites.none,
-      sunday: RoomsAndSites.none
+      saturday: RoomsAndSites.nanaJs,
+      sunday: RoomsAndSites.nanaJs
     },
-    arrival: new Date('2025-08-31T08:00:00'),
-    departure: new Date('2025-08-31T20:00:00'),
+    arrival: new Date('2025-08-30T14:00:00'),
+    departure: new Date('2025-09-01T12:00:00'),
   },
   {
     id: 17,
-    name: 'Ga J.',
+    name: hydrateName(17, "Ga J.", fullNames),
     generation: 'Gen Z',
     shirt: ShirtSizes.xlarge,
     team: Teams.TeamAMain,
     sleeping: {
       friday: RoomsAndSites.none,
-      saturday: RoomsAndSites.none,
-      sunday: RoomsAndSites.none
+      saturday: RoomsAndSites.nanaJs,
+      sunday: RoomsAndSites.nanaJs
     },
-    arrival: new Date('2025-08-31T08:00:00'),
-    departure: new Date('2025-08-31T20:00:00'),
+    arrival: new Date('2025-08-30T14:00:00'),
+    departure: new Date('2025-09-01T12:00:00'),
   },
   {
     id: 18,
-    name: 'Ha J.',
+    name: hydrateName(18, "Ha J.", fullNames),
     generation: 'Gen Z',
     shirt: ShirtSizes.medium,
     team: Teams.TeamAMain,
     sleeping: {
       friday: RoomsAndSites.none,
-      saturday: RoomsAndSites.none,
-      sunday: RoomsAndSites.none
+      saturday: RoomsAndSites.nanaJs,
+      sunday: RoomsAndSites.nanaJs
     },
-    arrival: new Date('2025-08-31T08:00:00'),
-    departure: new Date('2025-08-31T20:00:00'),
+    arrival: new Date('2025-08-30T14:00:00'),
+    departure: new Date('2025-09-01T12:00:00'),
   },
   {
     id: 19,
-    name: 'Ma J.',
+    name: hydrateName(19, "Ma J.", fullNames),
     generation: 'Little One',
     shirt: ShirtSizes.youthSmall,
     team: Teams.TeamBMain,
     sleeping: {
       friday: RoomsAndSites.none,
-      saturday: RoomsAndSites.none,
-      sunday: RoomsAndSites.none
+      saturday: RoomsAndSites.nanaJs,
+      sunday: RoomsAndSites.nanaJs
     },
-    arrival: new Date('2025-08-31T08:00:00'),
-    departure: new Date('2025-08-31T20:00:00'),
+    arrival: new Date('2025-08-30T14:00:00'),
+    departure: new Date('2025-09-01T12:00:00'),
   },
   {
     id: 20,
-    name: 'La J.',
+    name: hydrateName(20, "La J.", fullNames),
     generation: 'Baby Boomers',
     shirt: ShirtSizes.medium,
     team: Teams.TeamBMain,
@@ -329,7 +334,7 @@ const people: Person[] = [
   },
   {
     id: 21,
-    name: 'Ta D.',
+    name: hydrateName(21, "Ta D.", fullNames),
     generation: 'Millennials',
     shirt: ShirtSizes.medium,
     team: Teams.TeamAMain,
@@ -343,7 +348,7 @@ const people: Person[] = [
   },
   {
     id: 22,
-    name: 'Le D.',
+    name: hydrateName(22, "Le D.", fullNames),
     generation: 'Gen Z',
     shirt: ShirtSizes.small,
     team: Teams.TeamBMain,
@@ -357,7 +362,7 @@ const people: Person[] = [
   },
   {
     id: 23,
-    name: 'Me J.',
+    name: hydrateName(23, "Me J.", fullNames),
     generation: 'Baby Boomers',
     shirt: ShirtSizes.large,
     team: Teams.TeamAMain,
@@ -371,7 +376,7 @@ const people: Person[] = [
   },
   {
     id: 24,
-    name: 'La S.',
+    name: hydrateName(24, "La S.", fullNames),
     generation: 'Millennials',
     shirt: ShirtSizes.medium,
     team: Teams.TeamASecondary,
@@ -385,7 +390,7 @@ const people: Person[] = [
   },
   {
     id: 25,
-    name: 'Ja S.',
+    name: hydrateName(25, "Ja S.", fullNames),
     generation: 'Millennials',
     shirt: ShirtSizes.largeTall,
     team: Teams.TeamBSecondary,
@@ -399,7 +404,7 @@ const people: Person[] = [
   },
   {
     id: 26,
-    name: 'Ta S.',
+    name: hydrateName(26, "Ta S.", fullNames),
     generation: 'Gen Alpha',
     shirt: ShirtSizes.youthMedium,
     team: Teams.TeamBSecondary,
@@ -413,7 +418,7 @@ const people: Person[] = [
   },
   {
     id: 27,
-    name: 'Gr S.',
+    name: hydrateName(27, "Gr S.", fullNames),
     generation: 'Little One',
     shirt: ShirtSizes.youthSmall,
     team: Teams.TeamASecondary,
@@ -427,7 +432,7 @@ const people: Person[] = [
   },
   {
     id: 28,
-    name: 'Je R.',
+    name: hydrateName(28, "Je R.", fullNames),
     generation: 'Millennials',
     shirt: ShirtSizes.large,
     team: Teams.TeamAMain,
@@ -441,7 +446,7 @@ const people: Person[] = [
   },
   {
     id: 29,
-    name: 'Ed R.',
+    name: hydrateName(29, "Ed R.", fullNames),
     generation: 'Millennials',
     shirt: ShirtSizes.xlarge,
     team: Teams.TeamBMain,
@@ -455,7 +460,7 @@ const people: Person[] = [
   },
   {
     id: 30,
-    name: 'Vi R.',
+    name: hydrateName(30, "Vi R.", fullNames),
     generation: 'Gen Alpha',
     shirt: ShirtSizes.youthLarge,
     team: Teams.TeamAMain,
@@ -469,7 +474,7 @@ const people: Person[] = [
   },
   {
     id: 31,
-    name: 'Sh D.',
+    name: hydrateName(31, "Sh D.", fullNames),
     generation: 'Baby Boomers',
     shirt: ShirtSizes.xxlarge,
     team: Teams.TeamASecondary,
@@ -483,7 +488,7 @@ const people: Person[] = [
   },
   {
     id: 32,
-    name: 'Ch W.',
+    name: hydrateName(32, "Ch W.", fullNames),
     generation: 'Baby Boomers',
     shirt: ShirtSizes.xxlarge,
     team: Teams.TeamBSecondary,
@@ -497,7 +502,7 @@ const people: Person[] = [
   },
   {
     id: 33,
-    name: 'Pa W.',
+    name: hydrateName(33, "Pa W.", fullNames),
     generation: 'Baby Boomers',
     shirt: ShirtSizes.medium,
     team: Teams.TeamASecondary,
@@ -510,8 +515,8 @@ const people: Person[] = [
     departure: new Date('2025-08-31T20:00:00'),
   },
   {
-    id: 39,
-    name: 'St S.',
+    id: 34,
+    name: hydrateName(34, "St S.", fullNames),
     generation: 'Baby Boomers',
     shirt: ShirtSizes.xxlarge,
     team: Teams.TeamAMain,
@@ -524,8 +529,8 @@ const people: Person[] = [
     departure: new Date('2025-09-01T12:00:00'),
   },
   {
-    id: 40,
-    name: 'Sh S.',
+    id: 35,
+    name: hydrateName(35, "Sh S.", fullNames),
     generation: 'Baby Boomers',
     shirt: ShirtSizes.xlarge,
     team: Teams.TeamBMain,

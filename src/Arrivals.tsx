@@ -25,22 +25,22 @@ const columns = [
     cell: info => info.getValue(),
   }),
   columnHelper.accessor('days.friday', {
-    header: () => <div style={{textAlign: "left"}}>Friday</div>,
+    header: () => <div style={{textAlign: "center"}}>Friday</div>,
     cell: info => info.getValue(),
     footer: info => `Total: ${info.table.getFilteredRowModel().rows.filter(r => r.original.days.friday !== undefined).length} people`
   }),
   columnHelper.accessor('days.saturday', {
-    header: () => <div style={{textAlign: "left"}}>Saturday</div>,
+    header: () => <div style={{textAlign: "center"}}>Saturday</div>,
     cell: info => info.getValue(),
     footer: info => `Total: ${info.table.getFilteredRowModel().rows.filter(r => r.original.days.saturday !== undefined).length} people`
   }),
   columnHelper.accessor('days.sunday', {
-    header: () => <div style={{textAlign: "left"}}>Sunday</div>,
+    header: () => <div style={{textAlign: "center"}}>Sunday</div>,
     cell: info => info.getValue(),
     footer: info => `Total: ${info.table.getFilteredRowModel().rows.filter(r => r.original.days.sunday !== undefined).length} people`
   }),
   columnHelper.accessor('days.monday', {
-    header: () => <div style={{textAlign: "left"}}>Monday</div>,
+    header: () => <div style={{textAlign: "center"}}>Monday</div>,
     cell: info => info.getValue(),
     footer: info => `Total: ${info.table.getFilteredRowModel().rows.filter(r => r.original.days.monday !== undefined).length} people`
   }),
@@ -86,7 +86,7 @@ const Arrivals: React.FC<ArrivalsProps> = ({ people }) => {
 
   return (
     <>
-    {data.length > 0 && (
+    {data.length > 0 && ( 
       <>
       <h2>Arrivals by Day</h2>
         <table className={styles.container}>

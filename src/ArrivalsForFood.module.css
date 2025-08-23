@@ -1,5 +1,6 @@
 .container {
     width: 730px;
+    width: 100%;
     table-layout: fixed;
 }
 

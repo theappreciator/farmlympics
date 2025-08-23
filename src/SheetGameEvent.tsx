@@ -26,15 +26,15 @@ const SheetGameEvent: React.FC<SheetGameEventProps> = ({ gameEvent }) => {
 
   const columns = [
     columnHelper.accessor('name', {
-      header: () => <div style={{ textAlign: "left" }}>Item</div>,
+      header: () => <span style={{ textAlign: "left" }}>Item</span>,
       cell: info => info.getValue(),
     }),
     columnHelper.accessor('preferredStore', {
-      header: () => <div style={{ textAlign: "center" }}>Store</div>,
+      header: () => <span style={{ textAlign: "center" }}>Store</span>,
       cell: info => <div style={{ textAlign: "center" }}>{info.getValue()}</div>,
     }),
     columnHelper.accessor('qty', {
-      header: () => <div style={{ textAlign: "right" }}>Qty</div>,
+      header: () => <span style={{ textAlign: "right" }}>Qty</span>,
       cell: info => <div style={{ textAlign: "right" }}>{info.getValue()}</div>,
     }),
   ]

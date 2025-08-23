@@ -24,7 +24,7 @@ const columns = [
     cell: info => info.row.index + 1,
   }),
   columnHelper.accessor('name', {
-    header: () => <div style={{textAlign: "left"}}>Name</div>,
+    header: () => <span style={{textAlign: "left"}}>Name</span>,
     cell: info => <div style={{textAlign: "left"}}>{info.getValue()}</div>,
   }),
   columnHelper.accessor('generation', {

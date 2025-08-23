@@ -90,6 +90,12 @@ export type Person = {
   departure?: Date | 'all',
 }
 
+export type PersonFullName = {
+  firstName: string;
+  lastName: string;
+  name: string;
+}
+
 export interface Team {
   name: string;
   type: "main" | "secondary";
