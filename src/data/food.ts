@@ -171,6 +171,16 @@ const meals: FoodEvent[] = [
                 name: "Coffee",
                 qty: "5 lbs",
                 preferredStore: "Home"
+            },
+            {
+                name: "Milk",
+                qty: "2 jugs",
+                preferredStore: "Food Lion"
+            },
+            {
+                name: "Half n half",
+                qty: "1 qt",
+                preferredStore: "Food Lion"
             }
         ]
     },
@@ -458,6 +468,16 @@ const meals: FoodEvent[] = [
             {
                 name: "Napkins",
                 qty: "30",
+                preferredStore: "Food Lion"
+            },
+            {
+                name: "Milk",
+                qty: "4 jugs",
+                preferredStore: "Food Lion"
+            },
+            {
+                name: "Half n half",
+                qty: "1 qt",
                 preferredStore: "Food Lion"
             }
         ]
