@@ -41,9 +41,10 @@ const games: GameEvent[] = [
         "Ties will be determined by The Judges",
       ],
       setup: [
-        "Farmer needs overalls and a farmer hat",
+        "Farmer hat x2 and overalls x2",
         "Spray line for starting line",
-        "Determine area for sidelines"
+        "Spray line for farmer area",
+        "Spray line for sidelines"
       ],
       time: [
         "round = 10 min total (5 minutes play, 3 minutes setup, 2 minutes pointing)",
@@ -243,7 +244,7 @@ const games: GameEvent[] = [
       ],
       setup: [
         "50 rings, 5 per each of 10 players at a time",
-        "Setup stake for tossing",
+        "Setup stakes x4 for tossing",
         "Paint starting line",
         "Paint center line"
       ],
@@ -441,8 +442,14 @@ const games: GameEvent[] = [
       ],
       setup: [
         "Water balloon launchers x2",
-        "Aprons",
-        "Egg carton"
+        "aprons x2",
+        "egg cartons x2",
+        "balloons x90",
+        "pencil",
+        "paper",
+        "water buckets x2",
+        "place predators",
+        "spray field lines"
       ],
       time: ["TBD"],
     },
@@ -551,6 +558,8 @@ const games: GameEvent[] = [
         "Set up little one starting line",
         "Set up targets",
         "Set up waiting area",
+        "12 flying discs",
+        "1 bucket for inner target"
       ],
       time: [
         "waves = 8, 4 per team of 16-18 people",

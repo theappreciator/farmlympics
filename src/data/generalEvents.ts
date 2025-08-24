@@ -2,6 +2,8 @@ import {
   type GeneralEvent,
 } from '../types/index';
 
+import allGames from "./games";
+
 const generalEvents: GeneralEvent[] = [
     {
         kind: "GeneralEvent",
@@ -9,9 +11,69 @@ const generalEvents: GeneralEvent[] = [
         day: "Saturday",
         time: "7a",
         info: [
-            'setup tents',
-            'setup games',
-            'setup music and audio'
+            'setup canopies [30 min, 1 person]',
+            'spray field boundaries and lines [30 min, 1 person]',
+            'create water balloon launcher [2 hours, 2 people]',
+            [
+                "Game - Eggs to Market",
+                "TBD, need 2x4s, maybe 4x4s, screws",
+                "Needs brackets to connect 2x4s?",
+                "need to determine if want them fixed in the ground or movable",
+                "Put long nails into sides of posts",
+                "Attach water balloon launcher, handle (safely) wrapped around nails"
+            ],
+            'create cows [2 hours, 2 people]',
+            [
+                "Game - Branding, Branding",
+                "cut 4x cow backs - plywood pieces to size (~22\" x ~28\")",
+                "cut 8x posts - rip 2x4s into 2x2s (~4ft)",
+                "pound posts into the ground",
+                "screw backs to posts",
+                "verify posterboard fits onto backs"
+            ],
+            'create predators for cows [2 hours, 2 people]',
+            [
+                "Game - Eggs to Market",
+                "cut 2-4x backs - plywood pieces to isze (~22\" x ~28\")",
+                "cut 4-8x posts - rip 2x4s into 2x2s (~2ft)",
+                "make 2-4x skids, for moving the predators - rectangle of 2x4s (~3ft x ~2ft)",
+                "screw posts into skids",
+                "screw backs to posts",
+                "verify posterboard fits onto backs",
+            ],
+            'setup music and audio [2 hours, 1 person   ]',
+            [
+                "baseball field side",
+                "table",
+                "power cord",
+                "microphone",
+                "microphone stand",
+                "speakers only on baseball field side?"
+            ],
+            'Setup - Farmer Says',
+            [
+                ...allGames.find(g => g.game.id === "farmersays")?.game.setup || []
+            ],
+            'Setup - Cow Branding',
+            [
+                ...allGames.find(g => g.game.id === "cowbranding")?.game.setup || []
+            ],
+            'Setup - Cow Banding',
+            [
+                ...allGames.find(g => g.game.id === "cowbanding")?.game.setup || []
+            ],
+            'Setup - Scavenger Hunt',
+            [
+                ...allGames.find(g => g.game.id === "scavenger")?.game.setup || []
+            ],
+            'Setup - Eggs to Market',
+            [
+                ...allGames.find(g => g.game.id === "eggstomarket")?.game.setup || []
+            ],
+            'Setup - Cow Patty Toss',
+            [
+                ...allGames.find(g => g.game.id === "cowpatty")?.game.setup || []
+            ]
         ],
         items: [
             {

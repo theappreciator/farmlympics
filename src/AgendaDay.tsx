@@ -128,7 +128,11 @@ const activityDisplay = (info: CellContext<EventInstance, string[] | BaseEvent |
               <div>
                 <ul style={{ marginTop: 0 }}>
                   {generalEvent.info.map(i => (
-                    <li>{i}</li>
+                    <>
+                    {!Array.isArray(i) && (
+                      <li>{i}</li>
+                    )}
+                    </>
                   ))}
                 </ul>
               </div>

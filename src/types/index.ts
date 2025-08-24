@@ -13,7 +13,7 @@ export interface BaseEvent {
   name: string;
   day: DayName;
   time: string;
-  info: string[];
+  info: (string | string[])[];
   items: Grocery[];
   showDetail?: boolean;
 }

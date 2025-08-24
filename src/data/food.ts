@@ -12,7 +12,7 @@ const meals: FoodEvent[] = [
         info: [],
         menu: [
             {
-                name: "Something easy",
+                name: "Something easy - Fast food",
             }
         ],
         items: [
