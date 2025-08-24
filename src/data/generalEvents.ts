@@ -99,7 +99,17 @@ const generalEvents: GeneralEvent[] = [
                 preferredStore: "Food Lion"
             },
             {
+                name: "Soda - Coke (regular)",
+                qty: "2 12 packs",
+                preferredStore: "Food Lion"
+            },
+            {
                 name: "Soda - Diet Dr. Pepper",
+                qty: "2 12 packs",
+                preferredStore: "Food Lion"
+            },
+            {
+                name: "Soda - Starry",
                 qty: "2 12 packs",
                 preferredStore: "Food Lion"
             },
@@ -121,11 +131,6 @@ const generalEvents: GeneralEvent[] = [
             {
                 name: "Peanuts",
                 qty: "1 giant tin, large peanuts",
-                preferredStore: "Costco"
-            },
-            {
-                name: "Macadamia Nuts",
-                qty: "1 large bag",
                 preferredStore: "Costco"
             },
             {

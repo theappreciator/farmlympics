@@ -36,6 +36,7 @@ const games: GameEvent[] = [
         "Farmer = 1 player from Off Team",
         "Scarecrows = the rest of the Off Team",
         "Farmhands = entire On Team",
+        "No running",
         "Players can shout and jeer in the spirit of the game and should not be distraction to other players",
         "Ties will be determined by The Judges",
       ],

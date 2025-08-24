@@ -82,7 +82,15 @@ const people: Person[] = [
       "stopwatch",
       "water balloon launchers",
       "wet wipes",
-      "tables"
+      "tables",
+      "crock/instant pots",
+      "half n half",
+      "juice",
+      "soda - coke zero",
+      "soda - fizzy waters",
+      "soda - starry",
+      "soda - other",
+      "fruit - oranges"
     ],
   },
   {
@@ -98,7 +106,11 @@ const people: Person[] = [
     },
     arrival: new Date('2025-08-29T14:00:00'),
     departure: new Date('2025-09-01T14:00:00'),
-    bringing: [],
+    bringing: [
+      "ground beef (cooked)",
+      "hershey mini chocolate bars",
+      "reese's peanut butter cups",
+    ],
   },
   {
     id: 3,
@@ -190,15 +202,33 @@ const people: Person[] = [
       "eggs",
       "blindfolds",
       "graham crackers",
-      "hershey mini chocolate bars",
       "marshmallows",
       "midtown market chicken salad",
       "pencil and paper",
-      "reese's peanut butter cups",
       "rope",
       "tennis balls",
       "throwing rings 7\"",
-      "washable paint"
+      "washable paint",
+      "hot dog cooking sticks",
+      "chili",
+      "chips",
+      "crock/instant pots",
+      "frozen Biscuits",
+      "milk",
+      "lunch meat",
+      "sausage patties",
+      "shredded cheese",
+      "slaw",
+      "napkins",
+      "paper plates",
+      "ketchup",
+      "mustard",
+      "frozen biscuits",
+      "marshmallow skewers",
+      "mayo (squeezy)",
+      "plastic forks",
+      "plastic spoons",
+      "sour cream (squeezy)"
     ],
   },
   {
@@ -219,7 +249,8 @@ const people: Person[] = [
       "croissants",
       "macadamia nuts",
       "peanuts",
-      "yogurt"
+      "yogurt",
+      "hot dog cooking sticks"
     ],
   },
   {
@@ -235,7 +266,22 @@ const people: Person[] = [
     },
     arrival: new Date('2025-08-30T18:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
-    bringing: [],
+    bringing: [
+      "black beans",
+      "bread",
+      "cheese slices",
+      "cheese slice",
+      "chips",
+      "crock/instant pots",
+      "hoagie rolls",
+      "hot dog buns",
+      "hot dogs",
+      "lunch meat",
+      "ritz crackers",
+      "salsa",
+      "soda - diet dr. pepper",
+      "fruit - watermelon"
+    ],
   },
   {
     id: 10,
@@ -331,7 +377,10 @@ const people: Person[] = [
     },
     arrival: new Date('2025-08-30T14:00:00'),
     departure: new Date('2025-08-31T21:00:00'),
-    bringing: [],
+    bringing: [
+      "bottled waters",
+      "soda - coke (regular)"
+    ],
   },
   {
     id: 16,
@@ -421,7 +470,10 @@ const people: Person[] = [
     },
     arrival: new Date('2025-08-30T12:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
-    bringing: [],
+    bringing: [
+      "bottled waters",
+      
+    ],
   },
   {
     id: 22,

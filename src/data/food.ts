@@ -12,14 +12,8 @@ const meals: FoodEvent[] = [
         info: [],
         menu: [
             {
-                name: "Eggs",
-            },
-            {
-                name: "Waffles",
-            },
-            {
-                name: "Sausage"
-            },
+                name: "Something easy",
+            }
         ],
         items: [
             {
@@ -27,26 +21,6 @@ const meals: FoodEvent[] = [
                 qty: "1 1lb bag",
                 preferredStore: "Home"
             },
-            {
-                name: "Eggs",
-                qty: "6 eggs",
-                preferredStore: "Home"
-            },
-            {
-                name: "Sausage Patties",
-                qty: "1 lb",
-                preferredStore: "Food Lion"
-            },
-            {
-                name: "Waffles",
-                qty: "12",
-                preferredStore: "Food Lion"
-            },
-            {
-                name: "Fruit - Bananas",
-                qty: "3 bananas",
-                preferredStore: "Food Lion"
-            }
         ],
         showDetail: true
     },
@@ -85,13 +59,18 @@ const meals: FoodEvent[] = [
                 preferredStore: "Costco"
             },
             {
+                name: "Hoagie rolls",
+                qty: "1",
+                preferredStore: "Costco",
+            },
+            {
                 name: "Ritz Crackers",
                 qty: "1 box",
                 preferredStore: "Food Lion"
             },
             {
                 name: "Lunch meat",
-                qty: "5 lbs",
+                qty: "3 lbs",
                 preferredStore: "Costco"
             },
             {
@@ -163,8 +142,8 @@ const meals: FoodEvent[] = [
                 preferredStore: "Food Lion",
             },
             {
-                name: "Fruit - Grapes",
-                qty: "5 lbs",
+                name: "Fruit - Oranges",
+                qty: "20",
                 preferredStore: "Food Lion"
             },
             {
@@ -180,6 +159,11 @@ const meals: FoodEvent[] = [
             {
                 name: "Half n half",
                 qty: "1 qt",
+                preferredStore: "Food Lion"
+            },
+            {
+                name: "Juice",
+                qty: "2 gallons",
                 preferredStore: "Food Lion"
             }
         ]
@@ -212,13 +196,18 @@ const meals: FoodEvent[] = [
                 preferredStore: "Food Lion"
             },
             {
+                name: "Black beans",
+                qty: "3 cans",
+                preferredStore: "Food Lion"
+            },
+            {
                 name: "Shredded Cheese",
                 qty: "4 1lb bags",
                 preferredStore: "Food Lion"
             },
             {
                 name: "Sour Cream (squeezy)",
-                qty: "1 large",
+                qty: "2 large",
                 preferredStore: "Food Lion"
             },
             {
@@ -260,6 +249,11 @@ const meals: FoodEvent[] = [
                 name: "Chick-fil-A Chicken Sandwich",
                 qty: "20",
                 preferredStore: "Chick-Fil-A"
+            },
+            {
+                name: "Crock/instant pots",
+                qty: "3",
+                preferredStore: "Home"
             }
         ]
     },
@@ -312,8 +306,13 @@ const meals: FoodEvent[] = [
                 preferredStore: "Food Lion"
             },
             {
-                name: "Cheese slice ",
-                qty: "40 slices",
+                name: "Mayo (squeezy)",
+                qty: "1 bottle",
+                preferredStore: "Food Lion"
+            },
+            {
+                name: "Cheese slice",
+                qty: "20 slices",
                 preferredStore: "Food Lion",
             },
             {
@@ -337,9 +336,14 @@ const meals: FoodEvent[] = [
                 preferredStore: "Food Lion"
             },
             {
-                name: "NO CHILI! NO CLEANUP!",
-                qty: "0",
-                preferredStore: "None"
+                name: "Chili",
+                qty: "3 containers",
+                preferredStore: "Food Lion"
+            },
+            {
+                name: "Slaw",
+                qty: "1 container",
+                preferredStore: "Food Lion"
             },
             {
                 name: "Chick-fil-A Chicken Sandwich",
@@ -478,6 +482,11 @@ const meals: FoodEvent[] = [
             {
                 name: "Half n half",
                 qty: "1 qt",
+                preferredStore: "Food Lion"
+            },
+            {
+                name: "Juice",
+                qty: "2 gallons",
                 preferredStore: "Food Lion"
             }
         ]
