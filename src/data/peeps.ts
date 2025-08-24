@@ -90,7 +90,9 @@ const people: Person[] = [
       "soda - fizzy waters",
       "soda - starry",
       "soda - other",
-      "fruit - oranges"
+      "fruit - oranges",
+      "screws",
+      "long, smooth nails"
     ],
   },
   {
@@ -179,7 +181,8 @@ const people: Person[] = [
       "folding chairs",
       "marking paint",
       "water buckets",
-      "tables"
+      "tables",
+      "bucket"
     ],
   },
   {
@@ -228,7 +231,11 @@ const people: Person[] = [
       "mayo (squeezy)",
       "plastic forks",
       "plastic spoons",
-      "sour cream (squeezy)"
+      "sour cream (squeezy)",
+      "fruit",
+      "fruit - bananas",
+      "fruit - apples",
+      "pPaper plates (pallettes)"
     ],
   },
   {
@@ -280,7 +287,10 @@ const people: Person[] = [
       "ritz crackers",
       "salsa",
       "soda - diet dr. pepper",
-      "fruit - watermelon"
+      "fruit - watermelon",
+      "fruit",
+      "fruit - bananas",
+      "fruit - apples"
     ],
   },
   {
