@@ -151,11 +151,16 @@ const generalEvents: GeneralEvent[] = [
     },
     {
         kind: "GeneralEvent",
-        name: "Last Minute Setup Activities",
+        name: "Final Setup Activities",
         day: "Sunday",
         time: "7a",
         info: [
             'get ice [1 hour, 2 people]',
+            "start crockpots",
+            [
+                "ground beef",
+                "black beans"
+            ],
             'game setup [1 hour, 2 people]',
             [
                 "Papers for score",
