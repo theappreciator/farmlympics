@@ -32,7 +32,7 @@ const Groceries: React.FC<GroceriesProps> = ({ items }) => {
     columnHelper.accessor('owners', {
       header: () => <div style={{ textAlign: "left" }}>Owner</div>,
       cell: info => <div style={{ textAlign: "left" }}>{info.getValue().map(o => <div>{o.name}</div>)}</div>,
-      sortingFn: (rowA, rowB, id) => rowA.original.owners[0]?.name.localeCompare(rowB.original.owners[0]?.name)
+      sortingFn: (rowA, rowB, _) => rowA.original.owners[0]?.name.localeCompare(rowB.original.owners[0]?.name)
     }),
     columnHelper.accessor('day', {
       header: () => <span style={{ textAlign: "left" }}>Day</span>,

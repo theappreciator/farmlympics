@@ -468,7 +468,9 @@ const meals: FoodEvent[] = [
         name: "Leftovers - Serve Yourself",
         day: "Monday",
         time: "12p",
-        info: [],
+        info: [
+            "You're hungry. Figure it out youself."
+        ],
         menu: [],
         items: [],
         showDetail: true
@@ -479,7 +481,9 @@ const meals: FoodEvent[] = [
         name: "Leftovers - Serve Yourself",
         day: "Monday",
         time: "6p",
-        info: [],
+        info: [
+            "You're hungry. Figure it out youself."
+        ],
         menu: [],
         items: [],
         showDetail: true
