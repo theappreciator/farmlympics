@@ -490,33 +490,7 @@ const meals: FoodEvent[] = [
                 preferredStore: "Food Lion"
             }
         ]
-    },
-    {
-        kind: "FoodEvent",
-        meal: "Lunch",
-        name: "Leftovers - Serve Yourself",
-        day: "Monday",
-        time: "12p",
-        info: [
-            "You're hungry. Figure it out youself."
-        ],
-        menu: [],
-        items: [],
-        showDetail: true
-    },
-    {
-        kind: "FoodEvent",
-        meal: "Dinner",
-        name: "Leftovers - Serve Yourself",
-        day: "Monday",
-        time: "6p",
-        info: [
-            "You're hungry. Figure it out youself."
-        ],
-        menu: [],
-        items: [],
-        showDetail: true
-    },
+    }
 ]
 
 export default meals;

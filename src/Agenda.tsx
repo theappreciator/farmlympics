@@ -186,7 +186,7 @@ const defaultData: EventInstance[] = [
     day: "Sunday",
   },
   {
-    lines: ['Clean Up Activities'],
+    lines: getGeneralEventOrThrow("Monday", "7a"),
     start: 1,
     day: "Monday",
   },
@@ -196,13 +196,8 @@ const defaultData: EventInstance[] = [
     day: "Monday",
   },
   {
-    lines: getMenuOrThrow("Monday", "12p"),
-    start: 1200,
-    day: "Monday",
-  },
-  {
-    lines: getMenuOrThrow("Monday", "6p"),
-    start: 1800,
+    lines: getGeneralEventOrThrow("Monday", "11a"),
+    start: 1100,
     day: "Monday",
   },
 ]

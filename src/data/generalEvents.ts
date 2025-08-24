@@ -223,6 +223,35 @@ const generalEvents: GeneralEvent[] = [
             },
         ]
     },
+    {
+        kind: "GeneralEvent",
+        name: "Clean up!",
+        day: "Monday",
+        time: "7a",
+        info: [
+            "Music",
+            "Cows",
+            "Predators",
+            "Tables",
+            "Chairs",
+            "Trash",
+            "Coolers",
+            "All the knick-knacks",
+        ],
+        items: [],
+        showDetail: true
+    },
+    {
+        kind: "GeneralEvent",
+        name: "Hugs and goodbyes",
+        day: "Monday",
+        time: "11a",
+        info: [
+            "Get some leftovers for the road!",
+        ],
+        items: [],
+        showDetail: true
+    }
 ]
 
 export default generalEvents;
