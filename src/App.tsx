@@ -1,6 +1,6 @@
 import Agenda from './Agenda';
 import './App.css'
-// import styles from './App.module.css'
+import styles from './App.module.css'
 import Arrivals from './Arrivals';
 import people, { Teams } from './data/peeps';
 import Groceries from './Groceries';
@@ -38,11 +38,13 @@ function App() {
       <h1>Farmlympics 2025</h1>
 
       <hr />
-      {anchorLinks.map((link, i) => (
-        <a key={link.anchor} href={`#${link.anchor}`} style={{}}>
-          {link.displayText}{i < anchorLinks.length - 1 ? ' | ' : ''}
-        </a>
-      ))}
+      <div className={styles.heading}>
+        {anchorLinks.map((link, i) => (
+          <a key={link.anchor} href={`#${link.anchor}`} style={{}}>
+            {link.displayText}{i < anchorLinks.length - 1 ? ' | ' : ''}
+          </a>
+        ))}
+      </div>
       <hr />
 
       <br />

@@ -1,0 +1,6 @@
+.heading {
+  /* font-weight: 600; */
+  text-transform: uppercase;
+  font-family: "Futura", "Courier";
+  letter-spacing: -1px;
+}
