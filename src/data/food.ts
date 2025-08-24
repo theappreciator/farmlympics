@@ -6,50 +6,111 @@ const meals: FoodEvent[] = [
     {
         kind: "FoodEvent",
         meal: "Breakfast",
-        name: "Breakfast - TBD",
+        name: "Breakfast Special",
         day: "Saturday",
         time: "8a",
         info: [],
-        menu: [],
-        items: []
+        menu: [
+            {
+                name: "Eggs",
+            },
+            {
+                name: "Waffles",
+            },
+            {
+                name: "Sausage"
+            },
+        ],
+        items: [
+            {
+                name: "Coffee",
+                qty: "1 1lb bag",
+                preferredStore: "Home"
+            },
+            {
+                name: "Eggs",
+                qty: "6 eggs",
+                preferredStore: "Home"
+            },
+            {
+                name: "Sausage Patties",
+                qty: "1 lb",
+                preferredStore: "Food Lion"
+            },
+            {
+                name: "Waffles",
+                qty: "12",
+                preferredStore: "Food Lion"
+            },
+            {
+                name: "Fruit - Bananas",
+                qty: "3 bananas",
+                preferredStore: "Food Lion"
+            }
+        ],
+        showDetail: true
     },
     {
         kind: "FoodEvent",
         meal: "Lunch",
-        name: "Lunch - TBD",
+        name: "Serve Yourself Sammies",
         day: "Saturday",
         time: "12p",
         info: [],
-        menu: [],
-        items: []
-    },
-    {
-        kind: "FoodEvent",
-        meal: "Breakfast",
-        name: "Breakfast - Chick-Fil-A",
-        day: "Saturday",
-        time: "8a-TBD",
-        info: [],
         menu: [
             {
-                name: "CFA Chicken Minis",
+                name: "Sandwiches"
+            },
+            {
+                name: "Cold Cuts"
             },
             {
                 name: "Fruit",
-            },
-            {
-                name: "Coffee",
-            },
-            {
-                name: "Juice",
             }
         ],
-        items: []
+        items: [
+            {
+                name: "Midtown Market Chicken Salad",
+                qty: "6 large containers",
+                preferredStore: "Midtown Market",
+            },
+            {
+                name: "Croissants",
+                qty: "20",
+                preferredStore: "Costco"
+            },
+            {
+                name: "Bread",
+                qty: "3 loaves",
+                preferredStore: "Costco"
+            },
+            {
+                name: "Ritz Crackers",
+                qty: "1 box",
+                preferredStore: "Food Lion"
+            },
+            {
+                name: "Lunch meat",
+                qty: "5 lbs",
+                preferredStore: "Costco"
+            },
+            {
+                name: "Chips",
+                qty: "3 bags",
+                preferredStore: "Food Lion"
+            },
+            {
+                name: "Fruit",
+                qty: "Many",
+                preferredStore: "Food Lion"
+            },
+        ],
+        showDetail: true
     },
     {
         kind: "FoodEvent",
         meal: "Dinner",
-        name: "Dinner - Mexican",
+        name: "Mexican",
         day: "Saturday",
         time: "6p",
         showDetail: true,
@@ -63,43 +124,134 @@ const meals: FoodEvent[] = [
     {
         kind: "FoodEvent",
         meal: "Breakfast",
-        name: "Breakfast - TBD",
+        name: "Chicken Minis, Fruit, Yogurt",
         day: "Sunday",
         time: "8a",
         info: [
-            "Continential breakfast style?"
+            
         ],
-        menu: [],
-        items: [
+        menu: [
             {
-                name: "Croissants",
-                qty: "30",
-                preferredStore: "Food Lion"
+                name: "Chicken minis"
             },
             {
-                name: "Bananas",
+                name: "Fruit"
+            },
+            {
+                name: "Yogurt"
+            }
+        ],
+        items: [
+            {
+                name: "Chicken minis",
+                qty: "160",
+                preferredStore: "Chick-Fil-A",
+            },
+            {
+                name: "Yogurt",
+                qty: "36 cups",
+                preferredStore: "Costco"
+            },
+            {
+                name: "Fruit - Bananas",
                 qty: "20",
                 preferredStore: "Food Lion"
             },
+            {
+                name: "Fruit - Apples",
+                qty: "20",
+                preferredStore: "Food Lion",
+            },
+            {
+                name: "Fruit - Grapes",
+                qty: "5 lbs",
+                preferredStore: "Food Lion"
+            },
+            {
+                name: "Coffee",
+                qty: "5 lbs",
+                preferredStore: "Home"
+            }
         ]
     },
     {
         kind: "FoodEvent",
         meal: "Lunch",
-        name: "Lunch - Jersey Mike's",
+        name: "Walking Taco",
         day: "Sunday",
         time: "12p",
         info: [
-            "Expect to arrive at house at 11:30a",
-            "Order specifics need to be placed at 10:00a",
-            "Be mindful of travel time to Roxboro and back"
+            "Get a bag of chips",
+            "Crush them up",
+            "Put in your stuff",
+            "Get a fork",
+            "Eat it!"
         ],
         menu: [
             {
-                name: "Sub Sandwiches"
+                name: "Walking tacos",
+            },
+            {
+                name: "Backup - Chick-fil-A chicken sandwich"
             }
         ],
-        items: []
+        items: [
+            {
+                name: "Ground Beef (cooked)",
+                qty: "10 lbs",
+                preferredStore: "Food Lion"
+            },
+            {
+                name: "Shredded Cheese",
+                qty: "4 1lb bags",
+                preferredStore: "Food Lion"
+            },
+            {
+                name: "Sour Cream (squeezy)",
+                qty: "1 large",
+                preferredStore: "Food Lion"
+            },
+            {
+                name: "Salsa",
+                qty: "4 large jars",
+                preferredStore: "Food Lion"
+            },
+            {
+                name: "Chips",
+                qty: "54 small bags",
+                preferredStore: "Food Lion"
+            },
+            {
+                name: "Fruit - Watermelon",
+                qty: "40 slices",
+                preferredStore: "Food Lion"
+            },
+            {
+                name: "Plastic forks",
+                qty: "50",
+                preferredStore: "Food Lion"
+            },
+            {
+                name: "Plastic spoons",
+                qty: "50",
+                preferredStore: "Food Lion"
+            },
+            {
+                name: "Paper plates",
+                qty: "50",
+                preferredStore: "Food Lion"
+            },
+            {
+                name: "Napkins",
+                qty: "100",
+                preferredStore: "Food Lion"
+            },
+            {
+                name: "Chick-fil-A Chicken Sandwich",
+                qty: "20",
+                preferredStore: "Chick-Fil-A"
+            }
+        ]
     },
     {
         kind: "FoodEvent",
@@ -116,12 +268,76 @@ const meals: FoodEvent[] = [
     {
         kind: "FoodEvent",
         meal: "Dinner",
-        name: "Dinner - TBD",
+        name: "Campfire Hotdogs",
         day: "Sunday",
         time: "6p",
         info: [],
-        menu: [],
-        items: []
+        menu: [
+            {
+                name: "Hot dogs"
+            },
+            {
+                name: "Backup - Chick-fil-A chicken sandwich"
+            }
+        ],
+        items: [
+            {
+                name: "Hot dogs",
+                qty: "40 dogs",
+                preferredStore: "Food Lion"
+            },
+            {
+                name: "Hot dog buns",
+                qty: "40 buns",
+                preferredStore: "Food Lion"
+            },
+            {
+                name: "Ketchup",
+                qty: "1 bottle",
+                preferredStore: "Food Lion"
+            },
+            {
+                name: "Mustard",
+                qty: "1 bottle",
+                preferredStore: "Food Lion"
+            },
+            {
+                name: "Cheese slice ",
+                qty: "40 slices",
+                preferredStore: "Food Lion",
+            },
+            {
+                name: "Hot dog cooking sticks",
+                qty: "20 sticks",
+                preferredStore: "Home",
+            },
+            {
+                name: "Chips",
+                qty: "8 large bags",
+                preferredStore: "Food Lion"
+            },
+            {
+                name: "Paper plates",
+                qty: "50",
+                preferredStore: "Food Lion"
+            },
+            {
+                name: "Napkins",
+                qty: "100",
+                preferredStore: "Food Lion"
+            },
+            {
+                name: "NO CHILI! NO CLEANUP!",
+                qty: "0",
+                preferredStore: "None"
+            },
+            {
+                name: "Chick-fil-A Chicken Sandwich",
+                qty: "20",
+                preferredStore: "Chick-Fil-A"
+            }
+        ],
+        showDetail: true,
     },
     {
         kind: "FoodEvent",
@@ -132,7 +348,6 @@ const meals: FoodEvent[] = [
         menu: [],
         info: [
             'S\'mores',
-            'Milkshakes',
         ],
         items: [
             {
@@ -159,7 +374,17 @@ const meals: FoodEvent[] = [
                 name: "Marshmallow skewers",
                 qty: "10+ poles",
                 preferredStore: "Home"
-            }
+            },
+            {
+                name: "Paper plates",
+                qty: "50",
+                preferredStore: "Food Lion"
+            },
+            {
+                name: "Napkins",
+                qty: "100",
+                preferredStore: "Food Lion"
+            },
         ]
     },
     {
@@ -185,49 +410,79 @@ const meals: FoodEvent[] = [
             {
                 name: "Coffee"
             },
+            {
+                name: "Chick-fil-A leftovers"
+            }
         ],
         items: [
             {
                 name: "Frozen Biscuits",
-                qty: "60 biscuits",
+                qty: "20 biscuits",
                 preferredStore: "Food Lion"
             },
             {
-                name: "Sausage Patties - Neeses",
-                qty: "100 patties",
+                name: "Sausage Patties",
+                qty: "40 patties",
+                preferredStore: "Food Lion"
+            },
+            {
+                name: "Cheese slice",
+                qty: "20 slices",
                 preferredStore: "Food Lion"
             },
             {
                 name: "Eggs",
-                qty: "30 eggs",
+                qty: "24 eggs",
                 preferredStore: "Home"
             },
             {
                 name: "Coffee",
-                qty: "30 cups",
+                qty: "1 lb",
                 preferredStore: "Home"
+            },
+            {
+                name: "Plastic forks",
+                qty: "30",
+                preferredStore: "Food Lion"
+            },
+            {
+                name: "Plastic spoons",
+                qty: "30",
+                preferredStore: "Food Lion"
+            },
+            {
+                name: "Paper plates",
+                qty: "30",
+                preferredStore: "Food Lion"
+            },
+            {
+                name: "Napkins",
+                qty: "30",
+                preferredStore: "Food Lion"
             }
         ]
     },
     {
         kind: "FoodEvent",
         meal: "Lunch",
-        name: "Lunch - TBD",
+        name: "Leftovers - Serve Yourself",
         day: "Monday",
         time: "12p",
         info: [],
         menu: [],
-        items: []
+        items: [],
+        showDetail: true
     },
     {
         kind: "FoodEvent",
         meal: "Dinner",
-        name: "Dinner - TBD",
+        name: "Leftovers - Serve Yourself",
         day: "Monday",
         time: "6p",
         info: [],
         menu: [],
-        items: []
+        items: [],
+        showDetail: true
     },
 ]
 

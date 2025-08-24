@@ -164,17 +164,22 @@ const games: GameEvent[] = [
         preferredStore: "Home"
       },
       {
-        name: "Lumber - 2x4x8ft (4 cows, 2 stakes per = 8 stakes, ripped in two)",
+        name: "Lumber - 2x4x8ft",
         qty: "4",
         preferredStore: "Lowes"
       },
       {
-        name: "Playwood panels - at least 22\"x28\"",
+        name: "Posterboard",
+        qty: "4 sheets",
+        preferredStore: "Home",
+      },
+      {
+        name: "Plywood panels",
         qty: "4",
         preferredStore: "Lowes"
       },
       {
-        name: "Screws (4 cows, 4 screws per cow)",
+        name: "Screws",
         qty: "16 screws",
         preferredStore: "Lowes"
       },
@@ -269,9 +274,9 @@ const games: GameEvent[] = [
         preferredStore: "Amazon"
       },
       {
-        name: "Lumber - 2x4x8ft (4 cows, 1 stake per = 4 stakes, ripped in two)",
+        name: "Lumber - 2x4x8ft",
         qty: "2",
-        preferredStore: "Amazon"
+        preferredStore: "Lowes"
       },
       {
         name: "Rope",
@@ -462,7 +467,7 @@ const games: GameEvent[] = [
         preferredStore: "Amazon"
       },
       {
-        name: "Balloons (fuzzy things)",
+        name: "Balloons",
         qty: "90",
         preferredStore: "Amazon"
       },
@@ -472,7 +477,7 @@ const games: GameEvent[] = [
         preferredStore: "Home"
       },
       {
-        name: "Egg Cartons 12pk or 18pk",
+        name: "Egg Cartons",
         qty: "10 cartons",
         preferredStore: "Home"
       },
@@ -482,7 +487,7 @@ const games: GameEvent[] = [
         preferredStore: "Home"
       },
       {
-        name: "Lumber - 2x4x8ft (2 launchers)",
+        name: "Lumber - 2x4x8ft",
         qty: "4",
         preferredStore: "Lowes"
       },
@@ -583,7 +588,7 @@ const games: GameEvent[] = [
     order: 6,
     playTime: 75,
     gatheringTime: GATHERING_MINUTES,
-    location: "tbd",
+    location: "baseball field",
   },
   {
     kind: "GameEvent",

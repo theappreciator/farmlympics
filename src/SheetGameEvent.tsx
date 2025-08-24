@@ -57,7 +57,7 @@ const SheetGameEvent: React.FC<SheetGameEventProps> = ({ gameEvent }) => {
       <ul><li>{gameEvent?.game.what}</li></ul>
       <h3>How to win?</h3>
       <ul><li>{gameEvent?.game.winning}</li></ul>
-      <h3>How to Play:</h3>
+      <h3>How to Play</h3>
       <ul>
         {gameEvent?.game.how?.map(h => {
           if (Array.isArray(h)) {
@@ -76,7 +76,7 @@ const SheetGameEvent: React.FC<SheetGameEventProps> = ({ gameEvent }) => {
           }
         })}
       </ul>
-      <h3>Rules:</h3>
+      <h3>Rules</h3>
       <ul>
         {gameEvent?.game.rules?.map(r => {
           if (Array.isArray(r)) {
@@ -95,19 +95,19 @@ const SheetGameEvent: React.FC<SheetGameEventProps> = ({ gameEvent }) => {
           }
         })}
       </ul>
-      <h3>Setup:</h3>
+      <h3>Setup</h3>
       <ul>
         {gameEvent?.game.setup?.map(s => (
           <li>{s}</li>
         ))}
       </ul>
-      <h3>Time:</h3>
+      <h3>Time</h3>
       <ul>
         {gameEvent?.game.time?.map(t => (
           <li>{t}</li>
         ))}
       </ul>
-      <h3>Items to Bring/Purchase:</h3>
+      <h3>Items to Bring/Purchase</h3>
       <table className={styles.container}>
         <thead className={styles.header}>
           {table.getHeaderGroups().map(headerGroup => (

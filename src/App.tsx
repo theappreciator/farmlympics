@@ -3,6 +3,8 @@ import './App.css'
 // import styles from './App.module.css'
 import Arrivals from './Arrivals';
 import people, { Teams } from './data/peeps';
+import Groceries from './Groceries';
+import { getAllItems } from './helpers/eventHelper';
 import PeopleTable from './PeopleTable';
 import SleepingArrangements from './SleepingArrangements';
 import SleepingArrangementsBySite from './SleepingArrangementsBySite';
@@ -78,6 +80,8 @@ function App() {
       <WhatIsProvided />
 
       <WhatToBring />
+
+      <Groceries items={getAllItems()} />
 
       <hr />
       <h2>Logos</h2>

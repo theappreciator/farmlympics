@@ -59,7 +59,7 @@ const SheetFoodEvent: React.FC<SheetFoodEventProps> = ({ foodEvent }) => {
       <h2>Meal: {foodEvent.day} - {foodEvent.name}</h2>
       {foodEvent.info.length > 0 && (
         <>
-          <h3>Info:</h3>
+          <h3>Info</h3>
           <ul>
             {foodEvent?.info.map(i => {
               if (Array.isArray(i)) {
@@ -82,7 +82,7 @@ const SheetFoodEvent: React.FC<SheetFoodEventProps> = ({ foodEvent }) => {
       )}
       {foodEvent.menu.length > 0 && (
         <>
-          <h3>Menu:</h3>
+          <h3>Menu</h3>
           <ul>
             {foodEvent?.menu.map(m => {
               if (Array.isArray(m)) {
@@ -106,7 +106,7 @@ const SheetFoodEvent: React.FC<SheetFoodEventProps> = ({ foodEvent }) => {
       <ArrivalsForFood people={allPeople} day={foodEvent.day} meal={foodEvent.meal} />
       {foodEvent.items.length > 0 && (
         <>
-          <h3>Groceries:</h3>
+          <h3>Groceries</h3>
           <br />
           <table className={styles.container}>
             <thead className={styles.header}>

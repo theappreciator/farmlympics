@@ -69,12 +69,12 @@ a:hover {
     }
 }
 
-@media (max-width: 719px) {
+/* @media (max-width: 719px) {
     .sheetContainer {
         max-width: 800px;
         left: calc(50% - 500px) !important;
     }
-}
+} */
 
 .sheetContent {
     margin-left: 20px;

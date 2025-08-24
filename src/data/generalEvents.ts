@@ -15,28 +15,18 @@ const generalEvents: GeneralEvent[] = [
         ],
         items: [
             {
-                name: "Coffee",
-                qty: "1 1lb bag",
-                preferredStore: "Home"
-            },
-            {
-                name: "Fruit",
-                qty: "2 trays",
-                preferredStore: "Food Lion"
-            },
-            {
                 name: "Gatorades",
                 qty: "60 bottles",
                 preferredStore: "Food Lion"
             },
             {
-                name: "Other sodas",
+                name: "Soda - Other",
                 qty: "2 12 packs",
                 preferredStore: "Food Lion"
             },
             {
                 name: "Bottled Waters",
-                qty: "20 bottles",
+                qty: "48 bottles",
                 preferredStore: "Food Lion"
             },
             {
@@ -68,6 +58,11 @@ const generalEvents: GeneralEvent[] = [
                 name: "Coolers",
                 qty: "8+",
                 preferredStore: "Home"
+            },
+            {
+                name: "Airplanes",
+                qty: "4+",
+                preferredStore: "Home"
             }
         ]
     },
@@ -84,42 +79,27 @@ const generalEvents: GeneralEvent[] = [
         ],
         items: [
             {
-                name: "Coffee",
-                qty: "1 5lb bag",
-                preferredStore: "Home"
-            },
-            {
-                name: "Chips",
-                qty: "10 bags",
-                preferredStore: "Food Lion"
-            },
-            {
-                name: "Fruit",
-                qty: "2 trays",
-                preferredStore: "Food Lion"
-            },
-            {
                 name: "Gatorades",
                 qty: "60 bottles",
                 preferredStore: "Food Lion"
             },
             {
-                name: "Coke Zero",
+                name: "Soda - Coke Zero",
                 qty: "2 12 packs",
                 preferredStore: "Food Lion"
             },
             {
-                name: "Diet Dr. Pepper",
+                name: "Soda - Diet Dr. Pepper",
                 qty: "2 12 packs",
                 preferredStore: "Food Lion"
             },
             {
-                name: "Fizzy Waters",
+                name: "Soda - Fizzy Waters",
                 qty: "3 12 packs",
                 preferredStore: "Food Lion"
             },
             {
-                name: "Other sodas",
+                name: "Soda - Other",
                 qty: "4 12 packs",
                 preferredStore: "Food Lion"
             },
@@ -137,7 +117,12 @@ const generalEvents: GeneralEvent[] = [
                 name: "Macadamia Nuts",
                 qty: "1 large bag",
                 preferredStore: "Costco"
-            }
+            },
+            {
+                name: "Wet Wipes",
+                qty: "3 large packs",
+                preferredStore: "Home"
+            },
         ]
     },
 ]

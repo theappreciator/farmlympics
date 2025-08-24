@@ -27,7 +27,14 @@ export interface FoodEvent extends BaseEvent {
 export interface Grocery {
   name: string;
   qty: string;
-  preferredStore: "None" | "Home" | "Food Lion" | "Harris Teeter" | "Midtown Market" | "Lowes Foods" | "Costco" | "Lowes" | "Amazon";
+  preferredStore: "None" | "Home" | "Food Lion" | "Harris Teeter" | "Midtown Market" | "Lowes Foods" | "Costco" | "Lowes" | "Amazon" | "Chick-Fil-A";
+}
+
+export interface GroceryToBuy extends Grocery {
+  sourceType: string;
+  sourceName: string;
+  day: DayName;
+  owners: Person[];
 }
 
 export interface Menu {
@@ -88,6 +95,7 @@ export type Person = {
   };
   arrival?: Date | 'all',
   departure?: Date | 'all',
+  bringing: string[],
 }
 
 export type PersonFullName = {
@@ -102,7 +110,7 @@ export interface Team {
 }
 
 export type EventInstance = {
-    lines: string[] | BaseEvent | GameEvent | React.ReactNode;
+    lines: string[] | BaseEvent | GameEvent | FoodEvent | React.ReactNode;
     start: number;
     day: DayName;
 }

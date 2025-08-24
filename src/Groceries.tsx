@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styles from './SheetFoodEvent.module.css'
+import styles from './Groceries.module.css';
 
 import {
   createColumnHelper,
@@ -10,35 +10,43 @@ import {
   type SortingState,
 } from '@tanstack/react-table'
 
-import type { GeneralEvent, Grocery } from './types';
+import type { GroceryToBuy } from './types';
 
-import allPeople from './data/peeps';
+type GroceriesProps = {
+  items: GroceryToBuy[];
+}
 
-import ArrivalsForFood from './ArrivalsForFood';
+const Groceries: React.FC<GroceriesProps> = ({ items }) => {
 
-export type SheetGeneralEventProps = {
-  generalEvent: GeneralEvent;
-};
+  const [data, _setData] = useState(() => [...items]);
 
-const SheetGeneralEvent: React.FC<SheetGeneralEventProps> = ({ generalEvent }) => {
+  const [sorting, setSorting] = React.useState<SortingState>([{id: 'name', desc: false }]);
 
-  const [data, _setData] = useState(() => [...generalEvent.items]);
-
-  const [sorting, setSorting] = React.useState<SortingState>([]);
-
-  const columnHelper = createColumnHelper<Grocery>();
+  const columnHelper = createColumnHelper<GroceryToBuy>();
 
   const columns = [
     columnHelper.accessor('name', {
       header: () => <div style={{ textAlign: "left" }}>Item</div>,
-      cell: info => info.getValue(),
+      cell: info => <div style={{ textAlign: "left" }}>{info.getValue()}</div>,
     }),
-    columnHelper.accessor('preferredStore', {
-      header: () => <span style={{ textAlign: "center" }}>Store</span>,
-      cell: info => <div style={{ textAlign: "center" }}>{info.getValue()}</div>,
+    columnHelper.accessor('owners', {
+      header: () => <div style={{ textAlign: "left" }}>Owner</div>,
+      cell: info => <div style={{ textAlign: "left" }}>{info.getValue().map(o => <div>{o.name}</div>)}</div>,
     }),
+    columnHelper.accessor('day', {
+      header: () => <span style={{ textAlign: "left" }}>Day</span>,
+      cell: info => <span style={{ textAlign: "left" }}>{info.getValue()}</span>,
+    }),
+    columnHelper.accessor('sourceName', {
+      header: () => <span style={{ textAlign: "left" }}>Event</span>,
+      cell: info => <span style={{ textAlign: "left" }}>{info.getValue()}</span>,
+    }),
+    // columnHelper.accessor('preferredStore', {
+    //   header: () => <span style={{ textAlign: "left" }}>Store</span>,
+    //   cell: info => <span style={{ textAlign: "left" }}>{info.getValue()}</span>,
+    // }),
     columnHelper.accessor('qty', {
-      header: () => <span style={{ textAlign: "right" }}>Qty</span>,
+      header: () => <div style={{ textAlign: "right" }}>Qty</div>,
       cell: info => <div style={{ textAlign: "right" }}>{info.getValue()}</div>,
     }),
   ]
@@ -52,32 +60,19 @@ const SheetGeneralEvent: React.FC<SheetGeneralEventProps> = ({ generalEvent }) =
     state: {
       sorting,
     },
+    // initialState: {
+    //   sorting: [
+    //     {
+    //       id: 'name',
+    //       desc: false, // sort by name in descending order by default
+    //     },
+    //   ],
+    // },
   });
 
   return (
-    <>
-      <h2>{generalEvent.day} - {generalEvent.name}</h2>
-      <h3>Info</h3>
-      <ul>
-        {generalEvent?.info.map(i => {
-          if (Array.isArray(i)) {
-            return (
-              <ul>
-                {i.map(si => (
-                  <li>{si}</li>
-                ))}
-              </ul>
-            )
-          }
-          else {
-            return (
-              <li>{i}</li>
-            )
-          }
-        })}
-      </ul>
-      <h3>Purchase List</h3>
-      <br />
+    <div className={styles.container}>
+      <h2>Groceries</h2>
       <table className={styles.container}>
         <thead className={styles.header}>
           {table.getHeaderGroups().map(headerGroup => (
@@ -85,7 +80,7 @@ const SheetGeneralEvent: React.FC<SheetGeneralEventProps> = ({ generalEvent }) =
               {headerGroup.headers.map(header => (
                 <th key={header.id} colSpan={header.colSpan}>
                   {header.isPlaceholder ? null : (
-                    <div
+                    <span
                       className={
                         header.column.getCanSort()
                           ? 'cursor-pointer select-none'
@@ -110,7 +105,7 @@ const SheetGeneralEvent: React.FC<SheetGeneralEventProps> = ({ generalEvent }) =
                         asc: ' 🔼',
                         desc: ' 🔽',
                       }[header.column.getIsSorted() as string] ?? null}
-                    </div>
+                    </span>
                   )}
                 </th>
               ))}
@@ -121,7 +116,7 @@ const SheetGeneralEvent: React.FC<SheetGeneralEventProps> = ({ generalEvent }) =
           {table.getRowModel().rows.map(row => (
             <tr key={row.id}>
               {row.getVisibleCells().map(cell => (
-                <td key={row.id + "___" + cell.id + "000"}>
+                <td key={row.id + "___" + cell.id + "000"} style={{verticalAlign: "top"}}>
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
                 </td>
               ))}
@@ -143,11 +138,8 @@ const SheetGeneralEvent: React.FC<SheetGeneralEventProps> = ({ generalEvent }) =
           ))}
         </tfoot>
       </table>
-      <br/>
-      <ArrivalsForFood people={allPeople} day={generalEvent.day} meal={'Other'} />
-      <br/>
-    </>
+    </div>
   )
 }
 
-export default SheetGeneralEvent;
+export default Groceries;

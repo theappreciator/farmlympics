@@ -64,7 +64,25 @@ const people: Person[] = [
       sunday: RoomsAndSites.tuRoom,
     },
     arrival: new Date('2025-08-29T17:00:00'),
-    departure: new Date('2025-09-01T12:00:00'),
+    departure: new Date('2025-09-01T14:00:00'),
+    bringing: [
+      "aprons",
+      "balloons",
+      "canopies",
+      "sausage Patties",
+      "lumber - 2x4x8ft",
+      "flying discs",
+      "folding chairs",
+      "gatorades",
+      "hiding tokens - blue",
+      "hiding tokens - yellow",
+      "plywood panels",
+      "posterboard",
+      "stamps",
+      "stopwatch",
+      "water balloon launchers",
+      "wet wipes"
+    ],
   },
   {
     id: 2,
@@ -78,7 +96,8 @@ const people: Person[] = [
       sunday: RoomsAndSites.tuRoom,
     },
     arrival: new Date('2025-08-29T17:00:00'),
-    departure: new Date('2025-09-01T12:00:00'),
+    departure: new Date('2025-09-01T14:00:00'),
+    bringing: [],
   },
   {
     id: 3,
@@ -92,7 +111,8 @@ const people: Person[] = [
       sunday: RoomsAndSites.tuRoom,
     },
     arrival: new Date('2025-08-29T17:00:00'),
-    departure: new Date('2025-09-01T12:00:00'),
+    departure: new Date('2025-09-01T14:00:00'),
+    bringing: [],
   },
   {
     id: 4,
@@ -106,7 +126,8 @@ const people: Person[] = [
       sunday: RoomsAndSites.tuRoom,
     },
     arrival: new Date('2025-08-29T17:00:00'),
-    departure: new Date('2025-09-01T12:00:00'),
+    departure: new Date('2025-09-01T14:00:00'),
+    bringing: [],
   },
   {
     id: 5,
@@ -120,7 +141,8 @@ const people: Person[] = [
       sunday: RoomsAndSites.tuRoom,
     },
     arrival: new Date('2025-08-29T17:00:00'),
-    departure: new Date('2025-09-01T12:00:00'),
+    departure: new Date('2025-09-01T14:00:00'),
+    bringing: [],
   },
   {
     id: 6,
@@ -135,6 +157,16 @@ const people: Person[] = [
     },
     arrival: 'all',
     departure: 'all',
+    bringing: [
+      "canopies",
+      "coolers",
+      "egg cartons",
+      "farmer hats",
+      "farmer overalls",
+      "folding chairs",
+      "marking paint",
+      "water buckets"
+    ],
   },
   {
     id: 7,
@@ -149,6 +181,23 @@ const people: Person[] = [
     },
     arrival: 'all',
     departure: 'all',
+    bringing: [
+      "aprons",
+      "bananas",
+      "bread",
+      "eggs",
+      "blindfolds",
+      "graham crackers",
+      "hershey mini chocolate bars",
+      "marshmallows",
+      "midtown market chicken salad",
+      "pencil and paper",
+      "reese's peanut butter cups",
+      "rope",
+      "tennis balls",
+      "throwing rings 7\"",
+      "washable paint"
+    ],
   },
   {
     id: 8,
@@ -163,6 +212,13 @@ const people: Person[] = [
     },
     arrival: new Date('2025-08-30T12:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
+    bringing: [
+      "coffee",
+      "croissants",
+      "macadamia nuts",
+      "peanuts",
+      "yogurt"
+    ],
   },
   {
     id: 9,
@@ -175,8 +231,9 @@ const people: Person[] = [
       saturday: RoomsAndSites.coffeeHouse,
       sunday: RoomsAndSites.coffeeHouse,
     },
-    arrival: new Date('2025-08-30T12:00:00'),
+    arrival: new Date('2025-08-30T18:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
+    bringing: [],
   },
   {
     id: 10,
@@ -191,6 +248,7 @@ const people: Person[] = [
     },
     arrival: new Date('2025-08-30T12:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
+    bringing: [],
   },
   {
     id: 11,
@@ -205,6 +263,10 @@ const people: Person[] = [
     },
     arrival: new Date('2025-08-30T12:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
+    bringing: [
+      "airplanes",
+      "water balloon launchers"
+    ],
   },
   {
     id: 12,
@@ -219,6 +281,7 @@ const people: Person[] = [
     },
     arrival: new Date('2025-08-30T12:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
+    bringing: [],
   },
   {
     id: 13,
@@ -233,6 +296,10 @@ const people: Person[] = [
     },
     arrival: new Date('2025-08-30T14:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
+    bringing: [
+      "chicken minis",
+      "chick-fil-a chicken sandwich"
+    ],
   },
   {
     id: 14,
@@ -247,6 +314,7 @@ const people: Person[] = [
     },
     arrival: new Date('2025-08-31T08:00:00'),
     departure: new Date('2025-08-31T18:00:00'),
+    bringing: [],
   },
   {
     id: 15,
@@ -257,10 +325,11 @@ const people: Person[] = [
     sleeping: {
       friday: RoomsAndSites.none,
       saturday: RoomsAndSites.nanaJs,
-      sunday: RoomsAndSites.nanaJs
+      sunday: RoomsAndSites.none
     },
     arrival: new Date('2025-08-30T14:00:00'),
-    departure: new Date('2025-09-01T12:00:00'),
+    departure: new Date('2025-08-31T21:00:00'),
+    bringing: [],
   },
   {
     id: 16,
@@ -271,10 +340,11 @@ const people: Person[] = [
     sleeping: {
       friday: RoomsAndSites.none,
       saturday: RoomsAndSites.nanaJs,
-      sunday: RoomsAndSites.nanaJs
+      sunday: RoomsAndSites.none
     },
     arrival: new Date('2025-08-30T14:00:00'),
-    departure: new Date('2025-09-01T12:00:00'),
+    departure: new Date('2025-08-31T21:00:00'),
+    bringing: [],
   },
   {
     id: 17,
@@ -285,10 +355,11 @@ const people: Person[] = [
     sleeping: {
       friday: RoomsAndSites.none,
       saturday: RoomsAndSites.nanaJs,
-      sunday: RoomsAndSites.nanaJs
+      sunday: RoomsAndSites.none
     },
     arrival: new Date('2025-08-30T14:00:00'),
-    departure: new Date('2025-09-01T12:00:00'),
+    departure: new Date('2025-08-31T21:00:00'),
+    bringing: [],
   },
   {
     id: 18,
@@ -299,10 +370,11 @@ const people: Person[] = [
     sleeping: {
       friday: RoomsAndSites.none,
       saturday: RoomsAndSites.nanaJs,
-      sunday: RoomsAndSites.nanaJs
+      sunday: RoomsAndSites.none
     },
     arrival: new Date('2025-08-30T14:00:00'),
-    departure: new Date('2025-09-01T12:00:00'),
+    departure: new Date('2025-08-31T21:00:00'),
+    bringing: [],
   },
   {
     id: 19,
@@ -313,10 +385,11 @@ const people: Person[] = [
     sleeping: {
       friday: RoomsAndSites.none,
       saturday: RoomsAndSites.nanaJs,
-      sunday: RoomsAndSites.nanaJs
+      sunday: RoomsAndSites.none
     },
     arrival: new Date('2025-08-30T14:00:00'),
-    departure: new Date('2025-09-01T12:00:00'),
+    departure: new Date('2025-08-31T21:00:00'),
+    bringing: [],
   },
   {
     id: 20,
@@ -327,10 +400,11 @@ const people: Person[] = [
     sleeping: {
       friday: RoomsAndSites.nanaJs,
       saturday: RoomsAndSites.nanaJs,
-      sunday: RoomsAndSites.nanaJs,
+      sunday: RoomsAndSites.none,
     },
     arrival: 'all',
     departure: 'all',
+    bringing: [],
   },
   {
     id: 21,
@@ -345,6 +419,7 @@ const people: Person[] = [
     },
     arrival: new Date('2025-08-30T12:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
+    bringing: [],
   },
   {
     id: 22,
@@ -359,6 +434,7 @@ const people: Person[] = [
     },
     arrival: new Date('2025-08-30T12:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
+    bringing: [],
   },
   {
     id: 23,
@@ -373,6 +449,7 @@ const people: Person[] = [
     },
     arrival: new Date('2025-08-30T12:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
+    bringing: [],
   },
   {
     id: 24,
@@ -387,6 +464,7 @@ const people: Person[] = [
     },
     arrival: new Date('2025-08-31T08:00:00'),
     departure: new Date('2025-08-31T20:00:00'),
+    bringing: [],
   },
   {
     id: 25,
@@ -401,6 +479,7 @@ const people: Person[] = [
     },
     arrival: new Date('2025-08-31T08:00:00'),
     departure: new Date('2025-08-31T20:00:00'),
+    bringing: [],
   },
   {
     id: 26,
@@ -415,6 +494,7 @@ const people: Person[] = [
     },
     arrival: new Date('2025-08-31T08:00:00'),
     departure: new Date('2025-08-31T20:00:00'),
+    bringing: [],
   },
   {
     id: 27,
@@ -429,6 +509,7 @@ const people: Person[] = [
     },
     arrival: new Date('2025-08-31T08:00:00'),
     departure: new Date('2025-08-31T20:00:00'),
+    bringing: [],
   },
   {
     id: 28,
@@ -443,6 +524,7 @@ const people: Person[] = [
     },
     arrival: new Date('2025-08-31T08:00:00'),
     departure: new Date('2025-08-31T20:00:00'),
+    bringing: [],
   },
   {
     id: 29,
@@ -457,6 +539,7 @@ const people: Person[] = [
     },
     arrival: new Date('2025-08-31T08:00:00'),
     departure: new Date('2025-08-31T20:00:00'),
+    bringing: [],
   },
   {
     id: 30,
@@ -471,6 +554,7 @@ const people: Person[] = [
     },
     arrival: new Date('2025-08-31T08:00:00'),
     departure: new Date('2025-08-31T20:00:00'),
+    bringing: [],
   },
   {
     id: 31,
@@ -485,6 +569,7 @@ const people: Person[] = [
     },
     arrival: new Date('2025-08-30T12:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
+    bringing: [],
   },
   {
     id: 32,
@@ -499,6 +584,7 @@ const people: Person[] = [
     },
     arrival: new Date('2025-08-31T08:00:00'),
     departure: new Date('2025-08-31T20:00:00'),
+    bringing: [],
   },
   {
     id: 33,
@@ -513,6 +599,7 @@ const people: Person[] = [
     },
     arrival: new Date('2025-08-31T08:00:00'),
     departure: new Date('2025-08-31T20:00:00'),
+    bringing: [],
   },
   {
     id: 34,
@@ -521,12 +608,13 @@ const people: Person[] = [
     shirt: ShirtSizes.xxlarge,
     team: Teams.TeamAMain,
     sleeping: {
-      friday: RoomsAndSites.unknown,
+      friday: RoomsAndSites.none,
       saturday: RoomsAndSites.camper,
       sunday: RoomsAndSites.camper
     },
     arrival: new Date('2025-08-30T14:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
+    bringing: [],
   },
   {
     id: 35,
@@ -535,12 +623,13 @@ const people: Person[] = [
     shirt: ShirtSizes.xlarge,
     team: Teams.TeamBMain,
     sleeping: {
-      friday: RoomsAndSites.unknown,
+      friday: RoomsAndSites.none,
       saturday: RoomsAndSites.camper,
       sunday: RoomsAndSites.camper
     },
     arrival: new Date('2025-08-30T14:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
+    bringing: [],
   },
 ]
 

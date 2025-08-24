@@ -37,15 +37,15 @@ export const timeDisplay = (time: number, displayType: "long" | "short" = "long"
     default: {
       let hundreds = Math.floor(time / 100);
       let tens = ((time - (hundreds * 100)) / 100) * 60;
-      const amPm = hundreds >= 13 ? "pm" : "am";
-      let hours = hundreds >= 13 ? hundreds - 12 : hundreds;
-      let mintues = tens < 10 ? `0${tens}` : tens;
+      const amPm = hundreds >= 12 ? "pm" : "am";
+      let hours = hundreds > 12 ? hundreds - 12 : hundreds;
+      let minutes = tens < 10 ? `0${tens}` : tens;
 
       if (displayType === "long") {
-        return `${hours}:${mintues}${amPm}`;
+        return `${hours}:${minutes}${amPm}`;
       }
       else {
-        return `${mintues} min`;
+        return `${minutes} min`;
       }
     }
   }
@@ -97,7 +97,7 @@ const activityDisplay = (info: CellContext<EventInstance, string[] | BaseEvent |
         const foodEvent = (value as FoodEvent);
         return (
           <div style={{ textAlign: "left" }}>
-            {foodEvent.name} {(foodEvent.items.length > 0 || foodEvent.showDetail) && (<a onClick={() => dispatcher(foodEvent)}>Detail</a>)}
+            {foodEvent.meal}: {foodEvent.name} {(foodEvent.items.length > 0 || foodEvent.showDetail) && (<a onClick={() => dispatcher(foodEvent)}>Detail</a>)}
             {foodEvent.info.length > 0 && (
               <div>
                 <ul style={{ marginTop: 0 }}>

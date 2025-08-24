@@ -23,7 +23,7 @@ const columnHelper = createColumnHelper<ArrivalsForToday>()
 
 const columns = [
   columnHelper.accessor('person.name', {
-    header: () => <span>Name</span>,
+    header: () => <div style={{textAlign: "left"}}>Name</div>,
     cell: info => info.getValue(),
   }),
   // columnHelper.accessor('sleeping', {
@@ -73,8 +73,6 @@ const arrivalTimeHelper = (day: DayName, meal: MealType, arrivalDate?: Date | 'a
 
   const otherEvening = 19;
 
-  console.log(arrivals);
-  console.log(meal);
   switch (meal) {
     case "Breakfast":
       if ((arrivals?.todayArrivalNumber !== undefined && arrivals.todayArrivalNumber <= breakfastTime) &&
