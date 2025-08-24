@@ -28,6 +28,7 @@ const anchorLinks: AnchorLink[] = [
   { anchor: "sleeping", displayText: "Sleeping Arrangements" },
   { anchor: "agenda", displayText: "Agenda" },
   { anchor: "tobring", displayText: "Wear/Bring" },
+  { anchor: "tobuy", displayText: "Buy List" },
 ];
 
 function App() {
@@ -79,8 +80,10 @@ function App() {
 
       <WhatIsProvided />
 
+      <a id="tobring" />
       <WhatToBring />
 
+      <a id="tobuy" />
       <Groceries items={getAllItems()} />
 
       <hr />
