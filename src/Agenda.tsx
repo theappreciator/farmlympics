@@ -55,7 +55,7 @@ const defaultData: EventInstance[] = [
     day: "Saturday",
   },
   {
-    lines: ['Dry Run/Walkthrough'],
+    lines: getGeneralEventOrThrow("Saturday", "1p"),
     start: 1300,
     day: "Saturday",
   },
@@ -160,8 +160,11 @@ const defaultData: EventInstance[] = [
           Every day ends by planning ahead for tomorrow
         </div>
         <div>
-          location → baseball field
+          location → pond
         </div>
+        <ul style={{marginTop: 0}}>
+          <li>Need car drivers</li>
+        </ul>
       </div>
     ),
     start: (() => {const time=sundayRunningStartTime; sundayRunningStartTime+=50; return time})(),

@@ -50,27 +50,27 @@ const generalEvents: GeneralEvent[] = [
                 "microphone stand",
                 "speakers only on baseball field side?"
             ],
-            'Setup - Farmer Says',
+            'Setup - Farmer Says [15 min, 1 person]',
             [
                 ...allGames.find(g => g.game.id === "farmersays")?.game.setup || []
             ],
-            'Setup - Cow Branding',
+            'Setup - Cow Branding [15 min, 1 person, +cow making]',
             [
                 ...allGames.find(g => g.game.id === "cowbranding")?.game.setup || []
             ],
-            'Setup - Cow Banding',
+            'Setup - Cow Banding [15 min, 1 person, +cow making]',
             [
                 ...allGames.find(g => g.game.id === "cowbanding")?.game.setup || []
             ],
-            'Setup - Scavenger Hunt',
+            'Setup - Scavenger Hunt [15 min, 1 person, +cow making]',
             [
                 ...allGames.find(g => g.game.id === "scavenger")?.game.setup || []
             ],
-            'Setup - Eggs to Market',
+            'Setup - Eggs to Market [30 min, 1 person, +water balloon launcers]',
             [
                 ...allGames.find(g => g.game.id === "eggstomarket")?.game.setup || []
             ],
-            'Setup - Cow Patty Toss',
+            'Setup - Cow Patty Toss [30 min, 1 person]',
             [
                 ...allGames.find(g => g.game.id === "cowpatty")?.game.setup || []
             ]
@@ -140,13 +140,34 @@ const generalEvents: GeneralEvent[] = [
     },
     {
         kind: "GeneralEvent",
+        name: "Dry Run/Walkthrough and Rules Questions",
+        day: "Saturday",
+        time: "1p",
+        info: [
+            "Get group of people together to play all the games",
+            "Ask questions on rules"
+        ],
+        items: []
+    },
+    {
+        kind: "GeneralEvent",
         name: "Last Minute Setup Activities",
         day: "Sunday",
         time: "7a",
         info: [
-            'get ice',
-            'game setup',
-            'drink station setup',
+            'get ice [1 hour, 2 people]',
+            'game setup [1 hour, 2 people]',
+            [
+                "Papers for score",
+                "Pencils for score",
+                "Stopwatch",
+                "Game items (hats, overalls, tokens, etc)",
+                "Posterboards on cow stands",
+                "Posterboards on predators stands",
+                "Tables in place"
+            ],
+            "verify spray lines [15 min, 2 people]",
+            "sound check [15 min, 1 person]",
             'last minute questions'
         ],
         items: [
