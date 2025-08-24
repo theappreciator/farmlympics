@@ -63,6 +63,16 @@ const generalEvents: GeneralEvent[] = [
                 name: "Airplanes",
                 qty: "4+",
                 preferredStore: "Home"
+            },
+            {
+                name: "Tables",
+                qty: "4+",
+                preferredStore: "Home",
+            },
+            {
+                name: "Ice",
+                qty: "6 bags",
+                preferredStore: "Home"
             }
         ]
     },

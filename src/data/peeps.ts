@@ -81,7 +81,8 @@ const people: Person[] = [
       "stamps",
       "stopwatch",
       "water balloon launchers",
-      "wet wipes"
+      "wet wipes",
+      "tables"
     ],
   },
   {
@@ -165,7 +166,8 @@ const people: Person[] = [
       "farmer overalls",
       "folding chairs",
       "marking paint",
-      "water buckets"
+      "water buckets",
+      "tables"
     ],
   },
   {
