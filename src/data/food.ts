@@ -262,9 +262,11 @@ const meals: FoodEvent[] = [
         meal: "Other",
         name: "Cocktail Hour",
         day: "Sunday",
-        time: "4p",
+        time: "5p",
         info: [
-            "Formal attire",
+            "Wear your field day finest, Pitchfork Formal meets Tractor Chic",
+            "You could say this is your....Farmal Attire",
+            "BYOB!"
         ],
         menu: [],
         items: []

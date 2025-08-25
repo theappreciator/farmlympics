@@ -167,12 +167,12 @@ const defaultData: EventInstance[] = [
         </ul>
       </div>
     ),
-    start: (() => {const time=sundayRunningStartTime; sundayRunningStartTime+=50; return time})(),
+    start: (() => {const time=sundayRunningStartTime; sundayRunningStartTime+=75; return time})(),
     day: "Sunday",
   },
   {
-    lines: getMenuOrThrow("Sunday", "4p"),
-    start: (() => {const time=sundayRunningStartTime; sundayRunningStartTime+=125; return time})(),
+    lines: getMenuOrThrow("Sunday", "5p"),
+    start: (() => {const time=sundayRunningStartTime; sundayRunningStartTime+=100; return time})(),
     day: "Sunday",
   },
   {
