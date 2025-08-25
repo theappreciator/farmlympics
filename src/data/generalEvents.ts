@@ -226,6 +226,11 @@ const generalEvents: GeneralEvent[] = [
                 qty: "3 large packs",
                 preferredStore: "Home"
             },
+            {
+                name: "Megaphone",
+                qty: "1",
+                preferredStore: "Home"
+            }
         ]
     },
     {

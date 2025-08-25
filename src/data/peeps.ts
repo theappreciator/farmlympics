@@ -92,7 +92,8 @@ const people: Person[] = [
       "soda - other",
       "fruit - oranges",
       "screws",
-      "long, smooth nails"
+      "long, smooth nails",
+      "megaphone"
     ],
   },
   {
@@ -315,11 +316,11 @@ const people: Person[] = [
     shirt: ShirtSizes.xlargeTall,
     team: Teams.TeamBMain,
     sleeping: {
-      friday: RoomsAndSites.basement,
+      friday: RoomsAndSites.none,
       saturday: RoomsAndSites.basement,
       sunday: RoomsAndSites.basement
     },
-    arrival: new Date('2025-08-29T14:00:00'),
+    arrival: new Date('2025-08-30T10:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
     bringing: [
       "airplanes",
@@ -337,7 +338,7 @@ const people: Person[] = [
       saturday: RoomsAndSites.basement,
       sunday: RoomsAndSites.basement
     },
-    arrival: new Date('2025-08-29T14:00:00'),
+    arrival: new Date('2025-08-30T10:00:00'),
     departure: new Date('2025-09-01T12:00:00'),
     bringing: [],
   },
