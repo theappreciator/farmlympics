@@ -15,6 +15,7 @@ const generalEvents: GeneralEvent[] = [
             'spray field boundaries and lines [30 min, 1 person]',
             'setup fans [30 min, 1 person]',
             'setup scoreboard [15 min, 1 person]',
+            'setup whiteboard, easel, and markers [15 min, 1 person]',
             'coordinate first aid kits [30 min, 1 person]',
             [
                 "bandaids",
