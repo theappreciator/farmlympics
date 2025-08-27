@@ -13,6 +13,16 @@ const generalEvents: GeneralEvent[] = [
         info: [
             'setup canopies [30 min, 1 person]',
             'spray field boundaries and lines [30 min, 1 person]',
+            'setup fans [30 min, 1 person]',
+            'setup scoreboard [15 min, 1 person]',
+            'coordinate first aid kits [30 min, 1 person]',
+            [
+                "bandaids",
+                "ointment",
+                "tweezers",
+                "pain relivers (Advil, Aspirin, Tylenol, Ibuprofen)",
+                "wet wupes"
+            ],
             'create water balloon launcher [2 hours, 2 people]',
             [
                 "Game - Eggs to Market",
@@ -172,6 +182,7 @@ const generalEvents: GeneralEvent[] = [
                 "Tables in place"
             ],
             "verify spray lines [15 min, 2 people]",
+            "setup fans [30 min, 1 person]",
             "sound check [15 min, 1 person]",
             'last minute questions'
         ],
