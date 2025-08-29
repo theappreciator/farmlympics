@@ -11,7 +11,8 @@ const items = [
   "comfy play shoes",
   "hat",
   "sunglasses",
-  "sunscreen" 
+  "sunscreen" ,
+  "extra clothes"
 ]
 
 const WhatToBring: React.FC<WhatToBringProps> = () => {

@@ -12,7 +12,7 @@ const WeatherForecast: React.FC<WeatherForecastProps> = () => {
     return (
         <div className={styles.container}>
             <h2>Weather Forecast</h2>
-            <img width={threeDayForecastWidth} src="weather-2025-08-28.png"/>
+            <img width={threeDayForecastWidth} src="weather-2025-08-29.png"/>
         </div>  
     )
 }
