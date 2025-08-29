@@ -250,8 +250,8 @@ const people: Person[] = [
       saturday: RoomsAndSites.coffeeHouse,
       sunday: RoomsAndSites.coffeeHouse,
     },
-    arrival: new Date('2025-08-30T12:00:00'),
-    departure: new Date('2025-09-01T12:00:00'),
+    arrival: new Date('2025-08-30T10:00:00'),
+    departure: new Date('2025-09-01T10:00:00'),
     bringing: [
       "coffee",
       "croissants",
@@ -305,8 +305,8 @@ const people: Person[] = [
       saturday: RoomsAndSites.coffeeHouse,
       sunday: RoomsAndSites.coffeeHouse,
     },
-    arrival: new Date('2025-08-30T12:00:00'),
-    departure: new Date('2025-09-01T12:00:00'),
+    arrival: new Date('2025-08-30T10:00:00'),
+    departure: new Date('2025-09-01T10:00:00'),
     bringing: [],
   },
   {
