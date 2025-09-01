@@ -4,6 +4,7 @@ import {
 
 const meals: FoodEvent[] = [
     {
+        id: "1",
         kind: "FoodEvent",
         meal: "Breakfast",
         name: "Breakfast Special",
@@ -25,6 +26,7 @@ const meals: FoodEvent[] = [
         showDetail: true
     },
     {
+        id: "2",
         kind: "FoodEvent",
         meal: "Lunch",
         name: "Serve Yourself Sammies",
@@ -87,6 +89,7 @@ const meals: FoodEvent[] = [
         showDetail: true
     },
     {
+        id: "3",
         kind: "FoodEvent",
         meal: "Dinner",
         name: "Mexican",
@@ -101,6 +104,7 @@ const meals: FoodEvent[] = [
         items: []
     },
     {
+        id: "4",
         kind: "FoodEvent",
         meal: "Breakfast",
         name: "Chicken Minis, Fruit, Yogurt",
@@ -169,6 +173,7 @@ const meals: FoodEvent[] = [
         ]
     },
     {
+        id: "5",
         kind: "FoodEvent",
         meal: "Lunch",
         name: "Walking Taco",
@@ -258,6 +263,7 @@ const meals: FoodEvent[] = [
         ]
     },
     {
+        id: "6",
         kind: "FoodEvent",
         meal: "Other",
         name: "Cocktail Hour",
@@ -272,6 +278,7 @@ const meals: FoodEvent[] = [
         items: []
     },
     {
+        id: "7",
         kind: "FoodEvent",
         meal: "Dinner",
         name: "Campfire Hotdogs",
@@ -356,6 +363,7 @@ const meals: FoodEvent[] = [
         showDetail: true,
     },
     {
+        id: "8",
         kind: "FoodEvent",
         meal: "Other-Evening",
         name: "Campfire",
@@ -404,6 +412,7 @@ const meals: FoodEvent[] = [
         ]
     },
     {
+        id: "9",
         kind: "FoodEvent",
         meal: "Breakfast",
         name: "Breakfast",

@@ -6,6 +6,7 @@ export const GATHERING_MINUTES = 25;
 
 const games: GameEvent[] = [
   {
+    
     kind: "GameEvent",
     game: {
       kind: "Game",

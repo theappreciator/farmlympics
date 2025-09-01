@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Sheet } from 'react-modal-sheet';
 import styles from './AgendaDay.module.css'
 import { DayNames } from './types';
 
@@ -13,10 +12,6 @@ import {
 
 import useEscapeKey from './hooks/useEscPress';
 import type { BaseEvent, GameEvent, FoodEvent, GeneralEvent, DayName, EventInstance } from './types';
-
-import SheetGameEvent from './SheetGameEvent';
-import SheetFoodEvent from './SheetFoodEvent';
-import SheetGeneralEvent from './SheetGeneralEvent';
 
 type AgendaDayProps = {
   day: DayName,
@@ -53,18 +48,17 @@ export const timeDisplay = (time: number, displayType: "long" | "short" = "long"
 
 type GameNameHeadingProps = {
   gameEvent: GameEvent;
-  dispatcher: React.Dispatch<React.SetStateAction<BaseEvent | GameEvent | undefined>>;
 };
 
-const GameNameHeading: React.FC<GameNameHeadingProps> = ({ gameEvent, dispatcher }) => {
+const GameNameHeading: React.FC<GameNameHeadingProps> = ({ gameEvent }) => {
   return (
     <div style={{ fontWeight: "700" }}>
-      Game #{gameEvent.order}: {gameEvent.game.name} ({timeDisplay(gameEvent.playTime, "short")}) <a onClick={() => dispatcher(gameEvent)}>Rules</a>
+      Game #{gameEvent.order}: {gameEvent.game.name} ({timeDisplay(gameEvent.playTime, "short")}) (<a href={`#/game-details?id=${gameEvent.game.id}`}>Detail</a>)
     </div>
   );
 };
 
-const activityDisplay = (info: CellContext<EventInstance, string[] | BaseEvent | GameEvent | React.ReactNode>, dispatcher: React.Dispatch<React.SetStateAction<BaseEvent | GameEvent | undefined>>) => {
+const activityDisplay = (info: CellContext<EventInstance, string[] | BaseEvent | GameEvent | React.ReactNode>) => {
   const value = info.getValue();
 
   if (Array.isArray(value)) { // it's string[]
@@ -83,7 +77,7 @@ const activityDisplay = (info: CellContext<EventInstance, string[] | BaseEvent |
         const gameEvent = (value as GameEvent);
         return (
           <div style={{ textAlign: "left" }}>
-            <GameNameHeading gameEvent={gameEvent} dispatcher={dispatcher} />
+            <GameNameHeading gameEvent={gameEvent} />
             <div style={{ fontStyle: "italic" }}>
               {gameEvent.game.intro}
             </div>
@@ -97,7 +91,7 @@ const activityDisplay = (info: CellContext<EventInstance, string[] | BaseEvent |
         const foodEvent = (value as FoodEvent);
         return (
           <div style={{ textAlign: "left" }}>
-            {!['Other'].includes(foodEvent.meal) ? `${foodEvent.meal}: ` : ``}{foodEvent.name} {(foodEvent.items.length > 0 || foodEvent.showDetail) && (<a onClick={() => dispatcher(foodEvent)}>Detail</a>)}
+            {!['Other'].includes(foodEvent.meal) ? `${foodEvent.meal}: ` : ``}{foodEvent.name} {(foodEvent.items.length > 0 || foodEvent.showDetail) && (<a href={`#/food-details?id=${foodEvent.id}`}>Detail</a>)}
             {foodEvent.info.length > 0 && (
               <div>
                 <ul style={{ marginTop: 0 }}>
@@ -123,7 +117,7 @@ const activityDisplay = (info: CellContext<EventInstance, string[] | BaseEvent |
         const generalEvent = (value as GeneralEvent);
         return (
           <div style={{ textAlign: "left" }}>
-            {generalEvent.name} {generalEvent.items.length > 0 && (<a onClick={() => dispatcher(generalEvent)}>Detail</a>)}
+            {generalEvent.name} {generalEvent.items.length > 0 && (<a href={`#/general-details?id=${generalEvent.id}`}>Detail</a>)}
             {generalEvent.info.length > 0 && (
               <div>
                 <ul style={{ marginTop: 0 }}>
@@ -144,9 +138,6 @@ const activityDisplay = (info: CellContext<EventInstance, string[] | BaseEvent |
     }
   }
 }
-
-const snapPoints = [1, -300, 0.3, 0];
-const initialSnap = 0; // Initial snap point when sheet is opened
 
 const AgendaDay: React.FC<AgendaDayProps> = ({ day, agenda }) => {
 
@@ -169,7 +160,7 @@ const AgendaDay: React.FC<AgendaDayProps> = ({ day, agenda }) => {
     }),
     columnHelper.accessor('lines', {
       header: () => <div style={{ textAlign: "left" }}>Activity</div>,
-      cell: info => activityDisplay(info, setSelectedEvent),
+      cell: info => activityDisplay(info),
     }),
   ]
 
@@ -215,30 +206,6 @@ const AgendaDay: React.FC<AgendaDayProps> = ({ day, agenda }) => {
 
           </table>
 
-          <Sheet
-            isOpen={selectedEvent !== undefined}
-            onClose={() => setSelectedEvent(undefined)}
-            snapPoints={snapPoints}
-            initialSnap={initialSnap}
-          >
-            <Sheet.Container className={styles.sheetContainer}>
-              <Sheet.Header />
-              <Sheet.Content className={styles.sheetContent}>
-                <Sheet.Scroller>
-                  {selectedEvent?.kind === "GameEvent" && (
-                    <SheetGameEvent gameEvent={selectedEvent as GameEvent} />
-                  )}
-                  {selectedEvent?.kind === "FoodEvent" && (
-                    <SheetFoodEvent foodEvent={selectedEvent as FoodEvent} />
-                  )}
-                  {selectedEvent?.kind === "GeneralEvent" && (
-                    <SheetGeneralEvent generalEvent={selectedEvent as GeneralEvent} />
-                  )}
-                </Sheet.Scroller>
-              </Sheet.Content>
-            </Sheet.Container>
-            <Sheet.Backdrop onTap={() => setSelectedEvent(undefined)} />
-          </Sheet>
         </>
       )}
     </div>

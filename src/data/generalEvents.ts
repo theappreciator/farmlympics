@@ -6,6 +6,7 @@ import allGames from "./games";
 
 const generalEvents: GeneralEvent[] = [
     {
+        id: "1",
         kind: "GeneralEvent",
         name: "Setup Activities",
         day: "Saturday",
@@ -150,6 +151,7 @@ const generalEvents: GeneralEvent[] = [
         ]
     },
     {
+        id: "2",
         kind: "GeneralEvent",
         name: "Dry Run/Walkthrough and Rules Questions",
         day: "Saturday",
@@ -161,6 +163,7 @@ const generalEvents: GeneralEvent[] = [
         items: []
     },
     {
+        id: "3",
         kind: "GeneralEvent",
         name: "Final Setup Activities",
         day: "Sunday",
@@ -246,6 +249,7 @@ const generalEvents: GeneralEvent[] = [
         ]
     },
     {
+        id: "4",
         kind: "GeneralEvent",
         name: "Clean up!",
         day: "Monday",
@@ -264,6 +268,7 @@ const generalEvents: GeneralEvent[] = [
         showDetail: true
     },
     {
+        id: "5",
         kind: "GeneralEvent",
         name: "Hugs and goodbyes",
         day: "Monday",

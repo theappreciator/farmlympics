@@ -9,6 +9,7 @@ export const DayNames: Record<DayName, string> = {
 export type MealType = "Breakfast" | "Lunch" | "Dinner" | "Other" | "Other-Evening";
 
 export interface BaseEvent {
+  id: string;
   kind: "FoodEvent" | "GameEvent" | "GeneralEvent"
   name: string;
   day: DayName;
@@ -60,7 +61,7 @@ export interface Game {
 
 export type GameLocation = "field" | "front yard" | "back yard" | "baseball field" | "whole yard" | "tbd";
 
-export interface GameEvent extends Omit<BaseEvent, "name" | "day" | "time"> {
+export interface GameEvent extends Omit<BaseEvent, "id" | "name" | "day" | "time"> {
   kind: "GameEvent";
   game: Game;
   order: number;
