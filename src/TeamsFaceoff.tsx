@@ -37,7 +37,7 @@ const TeamsFaceoff: React.FC<TeamsFaceoffProps> = () => {
       <br/>
       <hr/>
       <div className={styles.closingWords}>
-        Great games played with heart handshakes all around. Congratulations to everyone for another well-done year!
+        Great games played with hearty handshakes all around. Congratulations to everyone for another well-done year!
         <br/>
         <br/>
         Thank you 2025, see you in 2026!
