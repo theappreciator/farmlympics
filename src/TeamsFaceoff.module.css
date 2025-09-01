@@ -1,5 +1,11 @@
 .intro {
-  font-style: italic;
+  /* font-style: italic; */
+  font-size: 24px;
+  font-weight: 600;
+  /* text-transform: uppercase; */
+  font-family: "Futura", "Courier";
+  letter-spacing: -2px;
+  transform: scale(0.9,1);
 }
 
 .team {
@@ -30,9 +36,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.vsContainer {
   margin-top: 40px;
   margin-bottom: 20px;
+}
+
+.closingWords {
+  font-size: 24px;
+  font-weight: 600;
+  /* text-transform: uppercase; */
+  font-family: "Futura", "Courier";
+  letter-spacing: -2px;
+  transform: scale(0.9,1);
 }

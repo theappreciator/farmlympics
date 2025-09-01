@@ -1,0 +1,33 @@
+.vsEventContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.vsEvent {
+  width: 100px;
+  font-size: 40px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: "Futura", "Courier";
+  letter-spacing: -2px;
+  transform: scale(0.9,1);
+  text-align: center;
+}
+
+.vsEventSeparator {
+  margin-left: "20px";
+  margin-right: "20px";
+  width: 400px;
+  font-size: 32px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: "Futura", "Courier";
+  letter-spacing: -2px;
+  transform: scale(0.9,1);
+}
+
+.eventFiller {
+  width: calc((100% / 2) - (400px / 2) - 100px - 20px);
+}
