@@ -31,8 +31,8 @@ const GameDetailsPage: React.FC<GameDetailsPageProps> = ({ eventId }) => {
 
   const columns = [
     columnHelper.accessor('name', {
-      header: () => <span style={{ textAlign: "left" }}>Item</span>,
-      cell: info => info.getValue(),
+      header: () => <div style={{ textAlign: "left" }}>Item</div>,
+      cell: info => <div style={{ textAlign: "left" }}>{info.getValue()}</div>
     }),
     columnHelper.accessor('preferredStore', {
       header: () => <span style={{ textAlign: "center" }}>Store</span>,

@@ -35,7 +35,7 @@ const FoodDetailsPage: React.FC<FoodDetailsPageProps> = ({ eventId }) => {
   const columns = [
     columnHelper.accessor('name', {
       header: () => <div style={{ textAlign: "left" }}>Item</div>,
-      cell: info => info.getValue(),
+      cell: info => <div style={{ textAlign: "left" }}>{info.getValue()}</div>,
     }),
     columnHelper.accessor('preferredStore', {
       header: () => <div style={{ textAlign: "center" }}>Store</div>,
