@@ -16,7 +16,7 @@ const TeamsFaceoffEvent: React.FC<TeamsFaceoffEventProps> = ({eventName, scoring
 
   return (
     <div className={styles.vsEventContainer}>
-      <div className={styles.eventFiller}>.</div>
+      <div className={styles.eventFiller}></div>
       <div className={styles.vsEvent} style={allStyle}>
         {leftTeam}
       </div>
@@ -24,7 +24,7 @@ const TeamsFaceoffEvent: React.FC<TeamsFaceoffEventProps> = ({eventName, scoring
       <div className={styles.vsEvent} style={allStyle}>
         {rightTeam}
       </div>
-      <div className={styles.eventFiller}>.</div>
+      <div className={styles.eventFiller}></div>
     </div>
   )
 }
