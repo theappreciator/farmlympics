@@ -50,6 +50,10 @@ const Groceries: React.FC<GroceriesProps> = ({ items }) => {
       header: () => <div style={{ textAlign: "right" }}>Qty</div>,
       cell: info => <div style={{ textAlign: "right" }}>{info.getValue()}</div>,
     }),
+    columnHelper.accessor('percentUsed', {
+      header: () => <div style={{ textAlign: "right" }}>% Used</div>,
+      cell: info => <div style={{ textAlign: "right" }}>{info.getValue() !== undefined ? info.getValue() + "%" : ""}</div>,
+    }),
   ]
 
   const table = useReactTable({

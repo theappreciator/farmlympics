@@ -91,36 +91,37 @@ const generalEvents: GeneralEvent[] = [
             {
                 name: "Gatorades",
                 qty: "60 bottles",
+                percentUsed: 25,
                 preferredStore: "Food Lion"
             },
             {
                 name: "Soda - Other",
                 qty: "2 12 packs",
+                percentUsed: 25,
                 preferredStore: "Food Lion"
             },
             {
                 name: "Bottled Waters",
                 qty: "48 bottles",
+                percentUsed: 50,
                 preferredStore: "Food Lion"
             },
             {
-                name: "Peanuts",
-                qty: "1 giant tin, large peanuts",
-                preferredStore: "Costco"
-            },
-            {
                 name: "Macadamia Nuts",
-                qty: "1 large bag",
+                qty: "2 large bag",
+                percentUsed: 40,
                 preferredStore: "Costco"
             },
             {
                 name: "Marking Paint",
                 qty: "8 bottles",
+                percentUsed: 80,
                 preferredStore: "Lowes"
             },
             {
                 name: "Canopies",
-                qty: "4+",
+                qty: "3",
+                percentUsed: 100,
                 preferredStore: "Home"
             },
             {
@@ -135,7 +136,8 @@ const generalEvents: GeneralEvent[] = [
             },
             {
                 name: "Airplanes",
-                qty: "4+",
+                qty: "5",
+                percentUsed: 100,
                 preferredStore: "Home"
             },
             {
@@ -194,56 +196,55 @@ const generalEvents: GeneralEvent[] = [
             {
                 name: "Gatorades",
                 qty: "60 bottles",
+                percentUsed: 25,
                 preferredStore: "Food Lion"
             },
             {
                 name: "Soda - Coke Zero",
-                qty: "2 12 packs",
+                qty: "5 12 packs",
+                percentUsed: 25,
                 preferredStore: "Food Lion"
             },
             {
                 name: "Soda - Coke (regular)",
                 qty: "2 12 packs",
+                percentUsed: 50,
                 preferredStore: "Food Lion"
             },
             {
                 name: "Soda - Diet Dr. Pepper",
-                qty: "2 12 packs",
-                preferredStore: "Food Lion"
-            },
-            {
-                name: "Soda - Starry",
-                qty: "2 12 packs",
+                qty: "1 12 packs",
+                percentUsed: 100,
                 preferredStore: "Food Lion"
             },
             {
                 name: "Soda - Fizzy Waters",
                 qty: "3 12 packs",
+                percentUsed: 15,
                 preferredStore: "Food Lion"
             },
             {
                 name: "Soda - Other",
                 qty: "4 12 packs",
+                percentUsed: 25,
                 preferredStore: "Food Lion"
             },
             {
                 name: "Bottled Waters",
                 qty: "100 bottles",
+                percentUsed: 33,
                 preferredStore: "Food Lion"
             },
             {
-                name: "Peanuts",
-                qty: "1 giant tin, large peanuts",
-                preferredStore: "Costco"
-            },
-            {
                 name: "Wet Wipes",
-                qty: "3 large packs",
+                qty: "2 large packs",
+                percentUsed: 50,
                 preferredStore: "Home"
             },
             {
                 name: "Megaphone",
                 qty: "1",
+                percentUsed: 100,
                 preferredStore: "Home"
             }
         ]

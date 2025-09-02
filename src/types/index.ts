@@ -28,6 +28,7 @@ export interface FoodEvent extends BaseEvent {
 export interface Grocery {
   name: string;
   qty: string;
+  percentUsed?: number;
   preferredStore: "None" | "Home" | "Food Lion" | "Harris Teeter" | "Midtown Market" | "Lowes Foods" | "Costco" | "Lowes" | "Amazon" | "Chick-Fil-A";
 }
 
