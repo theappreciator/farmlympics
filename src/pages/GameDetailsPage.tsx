@@ -9,6 +9,7 @@ import type { Grocery, GameEvent } from '../types';
 
 import allGames from '../data/games';
 import SortableTable from '../components/SortableTable';
+import NestedList from '../components/NestedList';
 
 export type GameDetailsPageProps = {
   eventId?: string;
@@ -47,55 +48,13 @@ const GameDetailsPage: React.FC<GameDetailsPageProps> = ({ eventId }) => {
           <h3>How to win?</h3>
           <ul><li>{foundEvent?.game.winning}</li></ul>
           <h3>How to Play</h3>
-          <ul>
-            {foundEvent?.game.how?.map(h => {
-              if (Array.isArray(h)) {
-                return (
-                  <ul>
-                    {h.map(sh => (
-                      <li>{sh}</li>
-                    ))}
-                  </ul>
-                )
-              }
-              else {
-                return (
-                  <li>{h}</li>
-                )
-              }
-            })}
-          </ul>
+          <NestedList data={foundEvent.game.how} accessorFn={d => d.toString()}/>
           <h3>Rules</h3>
-          <ul>
-            {foundEvent?.game.rules?.map(r => {
-              if (Array.isArray(r)) {
-                return (
-                  <ul>
-                    {r.map(sr => (
-                      <li>{sr}</li>
-                    ))}
-                  </ul>
-                )
-              }
-              else {
-                return (
-                  <li>{r}</li>
-                )
-              }
-            })}
-          </ul>
+          <NestedList data={foundEvent.game.rules} accessorFn={d => d.toString()}/>
           <h3>Setup</h3>
-          <ul>
-            {foundEvent?.game.setup?.map(s => (
-              <li>{s}</li>
-            ))}
-          </ul>
+          <NestedList data={foundEvent.game.setup} accessorFn={d => d.toString()}/>
           <h3>Time</h3>
-          <ul>
-            {foundEvent?.game.time?.map(t => (
-              <li>{t}</li>
-            ))}
-          </ul>
+          <NestedList data={foundEvent.game.time} accessorFn={d => d.toString()}/>
           <h3>Items to Bring/Purchase</h3>
           <SortableTable data={foundEvent.items || []} columns={columns} />
           <div>

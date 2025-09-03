@@ -1,0 +1,21 @@
+.container {
+    width: 730px;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.header th {
+    border-bottom: thin solid;
+}
+
+.header th:first-child {
+    width: 50%;
+}
+
+.footer th {
+    border-top: thin solid;
+}
+
+ul {
+    text-align: left;
+}

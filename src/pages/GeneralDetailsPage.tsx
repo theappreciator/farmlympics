@@ -12,6 +12,7 @@ import allEvents from '../data/generalEvents';
 
 import ArrivalsForFood from '../components/ArrivalsForFood';
 import SortableTable from '../components/SortableTable';
+import NestedList from '../components/NestedList';
 
 export type GeneralDetailsPageProps = {
   eventId?: string
@@ -46,24 +47,7 @@ const GeneralDetailsPage: React.FC<GeneralDetailsPageProps> = ({ eventId }) => {
         <>
           <h2>{foundEvent.day} - {foundEvent.name}</h2>
           <h3>Info</h3>
-          <ul>
-            {foundEvent?.info.map(i => {
-              if (Array.isArray(i)) {
-                return (
-                  <ul>
-                    {i.map(si => (
-                      <li>{si}</li>
-                    ))}
-                  </ul>
-                )
-              }
-              else {
-                return (
-                  <li>{i}</li>
-                )
-              }
-            })}
-          </ul>
+          <NestedList data={foundEvent.info} accessorFn={d => d.toString()}/>
           <h3>Purchase List</h3>
           <br />
           <SortableTable data={foundEvent.items || []} columns={columns} />

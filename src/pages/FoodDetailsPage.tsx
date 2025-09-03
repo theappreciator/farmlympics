@@ -11,6 +11,7 @@ import allFood from '../data/food';
 
 import ArrivalsForFood from '../components/ArrivalsForFood';
 import SortableTable from '../components/SortableTable';
+import NestedList from '../components/NestedList';
 
 export type FoodDetailsPageProps = {
   eventId?: string
@@ -47,47 +48,13 @@ const FoodDetailsPage: React.FC<FoodDetailsPageProps> = ({ eventId }) => {
           {foundEvent.info.length > 0 && (
             <>
               <h3>Info</h3>
-              <ul>
-                {foundEvent?.info.map(i => {
-                  if (Array.isArray(i)) {
-                    return (
-                      <ul>
-                        {i.map(si => (
-                          <li>{si}</li>
-                        ))}
-                      </ul>
-                    )
-                  }
-                  else {
-                    return (
-                      <li>{i}</li>
-                    )
-                  }
-                })}
-              </ul>
+              <NestedList data={foundEvent.info} accessorFn={d => d.toString()}/>
             </>
           )}
           {foundEvent.menu.length > 0 && (
             <>
               <h3>Menu</h3>
-              <ul>
-                {foundEvent?.menu.map(m => {
-                  if (Array.isArray(m)) {
-                    return (
-                      <ul>
-                        {m.map(sm => (
-                          <li>{sm.name}</li>
-                        ))}
-                      </ul>
-                    )
-                  }
-                  else {
-                    return (
-                      <li>{m.name}</li>
-                    )
-                  }
-                })}
-              </ul>
+              <NestedList data={foundEvent.menu} accessorFn={d => d.name}/>
             </>
           )}
           <ArrivalsForFood people={allPeople} day={foundEvent.day} meal={foundEvent.meal} />
