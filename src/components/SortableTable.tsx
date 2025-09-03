@@ -15,7 +15,7 @@ export type SortableTableProps<T> = {
   columns: ColumnDef<T, any>[];
 };
 
-const SortableTable = <T extends object>({ data, columns }: SortableTableProps<T>) => {
+const SortableTable = <T,>({ data, columns }: SortableTableProps<T>) => {
 
   const [stateData, _setStateData] = useState(() => [...data || []]);
 
