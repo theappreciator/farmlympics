@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 interface HashRoute {
   route: string;
   queryParams: {[key: string]: string};
+  isHome: boolean;
 }
 
 const getRoute = () => {
@@ -40,15 +41,20 @@ const useHashRoute = () => {
   const [route, setRoute] = useState<HashRoute>(
     {
       route: getRoute(),
-      queryParams: getQueryParams()
+      queryParams: getQueryParams(),
+      isHome: window.location.hash.slice(1)[0] === undefined
     }
   );
 
   useEffect(() => {
-    const onHashChange = () => setRoute({
-      route: getRoute(),
-      queryParams: getQueryParams()
-    });
+    const onHashChange = () => {
+      setRoute({
+        route: getRoute(),
+        queryParams: getQueryParams(),
+        isHome: window.location.hash.slice(1)[0] === undefined
+      });
+    }
+
     window.addEventListener("hashchange", onHashChange);
     return () => window.removeEventListener("hashchange", onHashChange);
   }, []);

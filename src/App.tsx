@@ -1,4 +1,5 @@
 import './App.css'
+import useEscapeKey from './hooks/useEscPress';
 import useHashRoute from './hooks/useHashRouter';
 import FoodDetailsPage from './pages/FoodDetailsPage';
 import GameDetailsPage from './pages/GameDetailsPage';
@@ -10,9 +11,14 @@ function App() {
 
   const route = useHashRoute();
 
-  console.log("route: ", route);
+  useEscapeKey(() => {
+    if (!route.isHome) {
+      window.location.href = "/#";
+    }
+  });
 
   let Page;
+
   switch (route.route) {
     case "/game-details":
       Page = <GameDetailsPage eventId={route.queryParams.id}/>;
@@ -24,7 +30,7 @@ function App() {
       Page = <GeneralDetailsPage eventId={route.queryParams.id}/>;
       break;
     default:
-      Page = <HomePage />
+      Page = <HomePage />;
   }
 
   return (
