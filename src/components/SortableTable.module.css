@@ -1,0 +1,34 @@
+.container {
+    min-width: 730px;
+    width: 100%;
+    /* table-layout: fixed; */
+}
+
+.container tbody td:first-child {
+    text-align: left;
+}
+
+.container td {
+    vertical-align: top;
+}
+
+
+.header th {
+    border-bottom: thin solid;
+}
+
+/* .header th:first-child {
+    width: 50%;
+} */
+
+.footer th {
+    border-top: thin solid;
+}
+
+.footer th {
+    border-top: thin solid;
+}
+
+.cursorPointer {
+    cursor: pointer;
+}

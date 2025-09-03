@@ -1,17 +1,14 @@
-import React, { useState } from 'react'
-import styles from './AgendaDay.module.css'
+import React from 'react'
+// import styles from './AgendaDay.module.css'
 import { DayNames } from '../types';
 
 import {
   createColumnHelper,
-  flexRender,
-  getCoreRowModel,
-  useReactTable,
   type CellContext,
 } from '@tanstack/react-table'
 
-import useEscapeKey from '../hooks/useEscPress';
 import type { BaseEvent, GameEvent, FoodEvent, GeneralEvent, DayName, EventInstance } from '../types';
+import SortableTable from './SortableTable';
 
 type AgendaDayProps = {
   day: DayName,
@@ -141,71 +138,25 @@ const activityDisplay = (info: CellContext<EventInstance, string[] | BaseEvent |
 
 const AgendaDay: React.FC<AgendaDayProps> = ({ day, agenda }) => {
 
-  const [data, _setData] = useState(() => [...agenda])
-  // const [isOpen, setOpen] = useState(false);
-  const [selectedEvent, setSelectedEvent] = useState<BaseEvent | GameEvent>();
-
   const columnHelper = createColumnHelper<EventInstance>()
-
-  useEscapeKey(() => {
-    if (selectedEvent) {
-      setSelectedEvent(undefined);
-    }
-  });
 
   const columns = [
     columnHelper.accessor('start', {
-      header: () => <span>Time</span>,
-      cell: info => timeDisplay(info.getValue())
+      header: () => <div style={{width: "300px"}}>Time</div>,
+      cell: info => <div style={{textAlign: "center", width: "300px", fontWeight: 700}}>{timeDisplay(info.getValue())}</div>
     }),
     columnHelper.accessor('lines', {
       header: () => <div style={{ textAlign: "left" }}>Activity</div>,
       cell: info => activityDisplay(info),
     }),
-  ]
-
-  const table = useReactTable({
-    data,
-    columns,
-    getCoreRowModel: getCoreRowModel(),
-  });
+  ];
 
   return (
     <div>
-      {data.length > 0 && (
+      {agenda.length > 0 && (
         <>
           <h2>Agenda: {DayNames[day]}</h2>
-          <table className={styles.container}>
-            <thead className={styles.header}>
-              {table.getHeaderGroups().map(headerGroup => (
-                <tr key={headerGroup.id}>
-                  {headerGroup.headers.map(header => (
-                    <th key={header.id}>
-                      {header.isPlaceholder
-                        ? null
-                        : flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )}
-                    </th>
-                  ))}
-                </tr>
-              ))}
-            </thead>
-            <tbody>
-              {table.getRowModel().rows.map(row => (
-                <tr key={row.id}>
-                  {row.getVisibleCells().map(cell => (
-                    <td key={cell.id}>
-                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                    </td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-
-          </table>
-
+          <SortableTable data={agenda} columns={columns} />
         </>
       )}
     </div>

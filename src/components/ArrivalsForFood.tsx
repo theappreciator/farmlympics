@@ -1,17 +1,13 @@
 import React from 'react'
-import styles from './ArrivalsForFood.module.css'
+// import styles from './ArrivalsForFood.module.css'
 
 import {
   createColumnHelper,
-  flexRender,
-  getCoreRowModel,
-  useReactTable,
-  getSortedRowModel,
-  type SortingState,
 } from '@tanstack/react-table'
 
 import type { DayName, Person, MealType, Room } from '../types';
 import { arrivalHelper } from '../helpers/arrivalHelper';
+import SortableTable from './SortableTable';
 
 type ArrivalsForFoodProps = {
   people: Person[];
@@ -135,91 +131,12 @@ const ArrivalsForFood: React.FC<ArrivalsForFoodProps> = ({ people, day, meal }) 
     }
   }).filter(a => a.today !== undefined);
 
-  const [data, _setData] = React.useState(() => [...arrivalsForToday])
-
-  const [sorting, setSorting] = React.useState<SortingState>([]);
-
-  const table = useReactTable({
-    data,
-    columns,
-    getCoreRowModel: getCoreRowModel(),
-    getSortedRowModel: getSortedRowModel(),
-    onSortingChange: setSorting,
-    state: {
-      sorting,
-    },
-  })
-
   return (
     <>
-    {data.length > 0 && (
+    {arrivalsForToday.length > 0 && (
       <>
-      <h3>People in Attendence = {arrivalsForToday.length}</h3>
-        <table className={styles.container}>
-        <thead className={styles.header}>
-          {table.getHeaderGroups().map(headerGroup => (
-            <tr key={headerGroup.id}>
-              {headerGroup.headers.map(header => (
-                <th key={header.id} colSpan={header.colSpan}>
-                  {header.isPlaceholder ? null : (
-                    <div
-                      className={
-                        header.column.getCanSort()
-                          ? 'cursor-pointer select-none'
-                          : ''
-                      }
-                      onClick={header.column.getToggleSortingHandler()}
-                      title={
-                        header.column.getCanSort()
-                          ? header.column.getNextSortingOrder() === 'asc'
-                            ? 'Sort ascending'
-                            : header.column.getNextSortingOrder() === 'desc'
-                              ? 'Sort descending'
-                              : 'Clear sort'
-                          : undefined
-                      }
-                    >
-                      {flexRender(
-                        header.column.columnDef.header,
-                        header.getContext()
-                      )}
-                      {{
-                        asc: ' 🔼',
-                        desc: ' 🔽',
-                      }[header.column.getIsSorted() as string] ?? null}
-                    </div>
-                  )}
-                </th>
-              ))}
-            </tr>
-          ))}
-        </thead>
-        <tbody>
-          {table.getRowModel().rows.map(row => (
-            <tr key={row.id}>
-              {row.getVisibleCells().map(cell => (
-                <td key={row.id + "___" + cell.id + "000"}>
-                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-        <tfoot className={styles.footer}>
-          {table.getFooterGroups().map(footerGroup => (
-            <tr key={footerGroup.id}>
-              {footerGroup.headers.map(header => (
-                <td key={header.id} className={styles.footer}>
-                  {flexRender(
-                    header.column.columnDef.footer,
-                    header.getContext(),
-                  )}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tfoot>
-      </table>
+        <h3>People in Attendence = {arrivalsForToday.length}</h3>
+        <SortableTable data={arrivalsForToday || []} columns={columns} />
       </>
     )}
     </>

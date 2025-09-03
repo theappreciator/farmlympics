@@ -1,16 +1,14 @@
 import React from 'react'
-import styles from './Arrivals.module.css'
+// import styles from './Arrivals.module.css'
 
 import {
   createColumnHelper,
-  flexRender,
-  getCoreRowModel,
-  useReactTable,
 } from '@tanstack/react-table'
 
 // import { Days } from './Agenda';
 import type { Person } from '../types';
 import { arrivalHelper } from '../helpers/arrivalHelper';
+import SortableTable from './SortableTable';
 
 
 type ArrivalsProps = {
@@ -76,64 +74,12 @@ const Arrivals: React.FC<ArrivalsProps> = ({ people }) => {
     }
   });
 
-  const [data, _setData] = React.useState(() => [...arrivalsByDay])
-
-  const table = useReactTable({
-    data,
-    columns,
-    getCoreRowModel: getCoreRowModel(),
-  })
-
   return (
     <>
-    {data.length > 0 && ( 
+    {arrivalsByDay.length > 0 && ( 
       <>
-      <h2>Arrivals by Day</h2>
-        <table className={styles.container}>
-          <thead className={styles.header}>
-            {table.getHeaderGroups().map(headerGroup => (
-              <tr key={headerGroup.id}>
-                {headerGroup.headers.map(header => (
-                  <th key={header.id}>
-                    {header.isPlaceholder
-                      ? null
-                      : flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )}
-                  </th>
-                ))}
-              </tr>
-            ))}
-          </thead>
-          <tbody>
-            {table.getRowModel().rows.map(row => (
-              <tr key={row.id}>
-                {row.getVisibleCells().map(cell => (
-                  <td key={cell.id}>
-                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-          <tfoot className={styles.footer}>
-            {table.getFooterGroups().map(footerGroup => (
-              <tr key={footerGroup.id}>
-                {footerGroup.headers.map(header => (
-                  <th key={header.id}>
-                    {header.isPlaceholder
-                      ? null
-                      : flexRender(
-                          header.column.columnDef.footer,
-                          header.getContext()
-                        )}
-                  </th>
-                ))}
-              </tr>
-            ))}
-          </tfoot>
-        </table>
+        <h2>Arrivals by Day</h2>
+        <SortableTable data={arrivalsByDay || []} columns={columns} />
       </>
     )}
     </>
