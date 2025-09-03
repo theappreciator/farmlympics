@@ -1,18 +1,18 @@
-import Agenda from '../Agenda';
 import styles from './HomePage.module.css'
-import Arrivals from '../Arrivals';
+import Agenda from '../components/Agenda';
+import Arrivals from '../components/Arrivals';
 import people, { Teams } from '../data/peeps';
-import Groceries from '../Groceries';
+import Groceries from '../components/Groceries';
 import { getAllItems } from '../helpers/eventHelper';
-import PeopleTable from '../PeopleTable';
-import SleepingArrangements from '../SleepingArrangements';
-import SleepingArrangementsBySite from '../SleepingArrangementsBySite';
-import TeamsFaceoff from '../TeamsFaceoff';
-import TeamTable from '../TeamTable';
-import TShirts from '../TShirts';
-import WeatherForecast from '../WeatherForecast';
-import WhatIsProvided from '../WhatIsProvided';
-import WhatToBring from '../WhatToBring';
+import PeopleTable from '../components/PeopleTable';
+import SleepingArrangements from '../components/SleepingArrangements';
+import SleepingArrangementsBySite from '../components/SleepingArrangementsBySite';
+import TeamsFaceoff from '../components/TeamsFaceoff';
+import TeamTable from '../components/TeamTable';
+import TShirts from '../components/TShirts';
+import WeatherForecast from '../components/WeatherForecast';
+import WhatIsProvided from '../components/WhatIsProvided';
+import WhatToBring from '../components/WhatToBring';
 
 interface AnchorLink {
   anchor: string;

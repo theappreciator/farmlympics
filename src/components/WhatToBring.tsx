@@ -1,6 +1,6 @@
 import React from 'react'
 // import styles from './WhatIsProvided.module.css';
-import TwoColumnList from './components/TwoColumnList';
+import TwoColumnList from '../components/TwoColumnList';
 
 type WhatToBringProps = {
 

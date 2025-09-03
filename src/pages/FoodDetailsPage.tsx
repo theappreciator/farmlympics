@@ -15,7 +15,7 @@ import type { FoodEvent, Grocery } from '../types';
 import allPeople from '../data/peeps';
 import allFood from '../data/food';
 
-import ArrivalsForFood from '../ArrivalsForFood';
+import ArrivalsForFood from '../components/ArrivalsForFood';
 
 export type FoodDetailsPageProps = {
   eventId?: string

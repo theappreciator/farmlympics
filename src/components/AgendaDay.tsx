@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styles from './AgendaDay.module.css'
-import { DayNames } from './types';
+import { DayNames } from '../types';
 
 import {
   createColumnHelper,
@@ -10,8 +10,8 @@ import {
   type CellContext,
 } from '@tanstack/react-table'
 
-import useEscapeKey from './hooks/useEscPress';
-import type { BaseEvent, GameEvent, FoodEvent, GeneralEvent, DayName, EventInstance } from './types';
+import useEscapeKey from '../hooks/useEscPress';
+import type { BaseEvent, GameEvent, FoodEvent, GeneralEvent, DayName, EventInstance } from '../types';
 
 type AgendaDayProps = {
   day: DayName,

@@ -15,7 +15,7 @@ import type { GeneralEvent, Grocery } from '../types';
 import allPeople from '../data/peeps';
 import allEvents from '../data/generalEvents';
 
-import ArrivalsForFood from '../ArrivalsForFood';
+import ArrivalsForFood from '../components/ArrivalsForFood';
 
 export type GeneralDetailsPageProps = {
   eventId?: string

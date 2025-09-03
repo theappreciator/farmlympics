@@ -10,8 +10,8 @@ import {
   type SortingState,
 } from '@tanstack/react-table'
 
-import type { DayName, Person, MealType, Room } from './types';
-import { arrivalHelper } from './helpers/arrivalHelper';
+import type { DayName, Person, MealType, Room } from '../types';
+import { arrivalHelper } from '../helpers/arrivalHelper';
 
 type ArrivalsForFoodProps = {
   people: Person[];

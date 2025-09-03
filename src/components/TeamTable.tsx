@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './PeopleTable.module.css'
+import styles from './TeamTable.module.css'
 
 import {
   createColumnHelper,
@@ -9,12 +9,10 @@ import {
   useReactTable,
   type SortingState,
 } from '@tanstack/react-table'
-import { format } from 'date-fns'
+import type { Person, Team } from '../types';
 
-import type { Person } from './types';
-import { sleepingDisplay } from './helpers/tableUtility';
-
-type PeopleTableProps = {
+type TeamTableProps = {
+  team: Team[];
   people: Person[];
 };
 
@@ -33,43 +31,19 @@ const columns = [
     header: () => <span>Generation</span>,
     cell: info => info.getValue(),
   }),
-  columnHelper.accessor('shirt', {
-    header: () => <span>Shirt<br/>Size</span>,
-    cell: info => info.getValue().display,
-  }),
   columnHelper.accessor('team', {
     header: () => <span>Team</span>,
     cell: info => info.getValue().name,
+    id: "team"
   }),
-  columnHelper.accessor('arrival', {
-    header: () => <span>Arrive<br/>Time</span>,
-    cell: info => {
-      const value = info.getValue()
-      return !value ? '?' : value === 'all' ? value : format(new Date(value), 'eee, haaaaa')
-    }
-  }),
-  columnHelper.accessor('departure', {
-    header: () => <span>Depart<br/>Time</span>,
-    cell: info => {
-      const value = info.getValue()
-      return !value ? '?' : value === 'all' ? value : format(new Date(value), 'eee, haaaaa')
-    }
-  }),
-  columnHelper.accessor('sleeping.friday', {
-    header: () => <span>Friday<br/>Sleep</span>,
-    cell: info => sleepingDisplay(info.getValue()),
-  }),
-  columnHelper.accessor('sleeping.saturday', {
-    header: () => <span>Saturday<br/>Sleep</span>,
-    cell: info => sleepingDisplay(info.getValue()),
-  }),
-  columnHelper.accessor('sleeping.sunday', {
-    header: () => <span>Sunday<br/>Sleep</span>,
-    cell: info => sleepingDisplay(info.getValue()),
+  columnHelper.accessor('team', {
+    header: () => <span>Confirmed</span>,
+    cell: info => info.getValue().type === "main" ? "✓" : "",
+    id: "conf"
   }),
 ]
 
-const PeopleTable: React.FC<PeopleTableProps> = ({ people }) => {
+const TeamTable: React.FC<TeamTableProps> = ({ team, people }) => {
 
   const [data, _setData] = React.useState(() => [...people])
 
@@ -90,7 +64,7 @@ const PeopleTable: React.FC<PeopleTableProps> = ({ people }) => {
     <>
     {data.length > 0 && (
       <>
-      <h2>People</h2>
+      <h2>TEAM {team[0].name}</h2>
         <table className={styles.container}>
           <thead className={styles.header}>
             {table.getHeaderGroups().map(headerGroup => (
@@ -134,13 +108,27 @@ const PeopleTable: React.FC<PeopleTableProps> = ({ people }) => {
             {table.getRowModel().rows.map(row => (
               <tr key={row.id}>
                 {row.getVisibleCells().map(cell => (
-                  <td key={cell.id}>
+                  <td key={row.id+"___"+cell.id+"000"}>
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </td>
                 ))}
               </tr>
             ))}
           </tbody>
+          <tfoot className={styles.footer}>
+            {table.getFooterGroups().map(footerGroup => (
+              <tr key={footerGroup.id}>  
+                {footerGroup.headers.map(header => (
+                  <td key={header.id} className={styles.footer}>
+                    {flexRender(
+                      header.column.columnDef.footer,
+                      header.getContext(),
+                    )}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tfoot>
         </table>
       </>
     )}
@@ -148,4 +136,4 @@ const PeopleTable: React.FC<PeopleTableProps> = ({ people }) => {
   )
 }
 
-export default PeopleTable
+export default TeamTable

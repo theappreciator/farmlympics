@@ -3,11 +3,11 @@ import React from 'react'
 
 import AgendaDay, { timeDisplay } from './AgendaDay'
 // import { makeBrandedType } from './helpers/brandedType';
-import type { DayName, GameEvent, GeneralEvent } from './types';
-import allGames, { GATHERING_MINUTES } from './data/games';
-import allMenu from "./data/food";
-import allGeneral from "./data/generalEvents";
-import type { FoodEvent, EventInstance } from "./types";
+import type { DayName, GameEvent, GeneralEvent } from '../types';
+import allGames, { GATHERING_MINUTES } from '../data/games';
+import allMenu from "../data/food";
+import allGeneral from "../data/generalEvents";
+import type { FoodEvent, EventInstance } from "../types";
 
 type AgendaProps = {
 };

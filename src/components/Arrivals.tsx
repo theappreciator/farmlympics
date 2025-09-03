@@ -9,8 +9,8 @@ import {
 } from '@tanstack/react-table'
 
 // import { Days } from './Agenda';
-import type { Person } from './types';
-import { arrivalHelper } from './helpers/arrivalHelper';
+import type { Person } from '../types';
+import { arrivalHelper } from '../helpers/arrivalHelper';
 
 
 type ArrivalsProps = {

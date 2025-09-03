@@ -10,7 +10,7 @@ import {
   type SortingState,
 } from '@tanstack/react-table'
 
-import type { GroceryToBuy } from './types';
+import type { GroceryToBuy } from '../types';
 
 type GroceriesProps = {
   items: GroceryToBuy[];

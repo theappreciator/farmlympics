@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './TeamTable.module.css'
+import styles from './SleepingArrangements.module.css'
 
 import {
   createColumnHelper,
@@ -9,43 +9,70 @@ import {
   useReactTable,
   type SortingState,
 } from '@tanstack/react-table'
-import type { Person, Team } from './types';
+import { RoomsAndSites } from '../data/peeps';
+import type { Person } from '../types';
 
-type TeamTableProps = {
-  team: Team[];
-  people: Person[];
+type SleepingSiteByDay = {
+  site: string;
+  days: {
+    friday: Person[],
+    saturday: Person[],
+    sunday: Person[],
+  }
+}
+
+type SleepingArrangementsProps = {
+    people: Person[];
 };
 
-const columnHelper = createColumnHelper<Person>()
+const columnHelper = createColumnHelper<SleepingSiteByDay>()
 
 const columns = [
-  columnHelper.accessor('id', {
-    header: () => <span>#</span>,
-    cell: info => info.row.index + 1,
-  }),
-  columnHelper.accessor('name', {
-    header: () => <span style={{textAlign: "left"}}>Name</span>,
-    cell: info => <div style={{textAlign: "left"}}>{info.getValue()}</div>,
-  }),
-  columnHelper.accessor('generation', {
-    header: () => <span>Generation</span>,
+  columnHelper.accessor('site', {
+    header: () => <span>Site</span>,
     cell: info => info.getValue(),
   }),
-  columnHelper.accessor('team', {
-    header: () => <span>Team</span>,
-    cell: info => info.getValue().name,
-    id: "team"
+  columnHelper.accessor("days.friday", {
+    header: () => <span>Friday</span>,
+    cell: info => info.getValue().length,
+    footer: info => `Total: ${info.table.getFilteredRowModel().rows.filter(r => !['?', 'no need', 'Wayne\'s'].includes(r.original.site)).map(r => r.original.days.friday).map(p => p.length).reduce((acc, val) => acc + val, 0)} people`
   }),
-  columnHelper.accessor('team', {
-    header: () => <span>Confirmed</span>,
-    cell: info => info.getValue().type === "main" ? "✓" : "",
-    id: "conf"
+  columnHelper.accessor("days.saturday", {
+    header: () => <span>Saturday</span>,
+    cell: info => info.getValue().length,
+    footer: info => `Total: ${info.table.getFilteredRowModel().rows.filter(r => !['?', 'no need', 'Wayne\'s'].includes(r.original.site)).map(r => r.original.days.saturday).map(p => p.length).reduce((acc, val) => acc + val, 0)} people`
   }),
+  columnHelper.accessor("days.sunday", {
+    header: () => <span>Sunday</span>,
+    cell: info => info.getValue().length,
+    footer: info => `Total: ${info.table.getFilteredRowModel().rows.filter(r => !['?', 'no need', 'Wayne\'s'].includes(r.original.site)).map(r => r.original.days.sunday).map(p => p.length).reduce((acc, val) => acc + val, 0)} people`
+  })
 ]
 
-const TeamTable: React.FC<TeamTableProps> = ({ team, people }) => {
+const SleepingArrangements: React.FC<SleepingArrangementsProps> = ({ people }) => {
+  const allSites = Object.values(RoomsAndSites).reduce((acc, val) => {
+    if (!acc.includes(val.site)) {
+      acc.push(val.site);
+    }
+    return acc;
+  }, [] as string[]);
 
-  const [data, _setData] = React.useState(() => [...people])
+  const peopleInRoomsByDay: SleepingSiteByDay[] = allSites.map(site => {
+    const peopleInRoomFriday: Person[] = people.filter(p => p.sleeping.friday.site === site);
+    const peopleInRoomSaturday: Person[] = people.filter(p => p.sleeping.saturday.site === site);
+    const peopleInRoomSunday: Person[] = people.filter(p => p.sleeping.sunday.site === site);
+
+    return {
+      site: site,
+      days: {
+        friday: peopleInRoomFriday,
+        saturday: peopleInRoomSaturday,
+        sunday: peopleInRoomSunday,
+      }
+    }
+  });
+
+  const [data, _setData] = React.useState(() => [...peopleInRoomsByDay])
 
   const [sorting, setSorting] = React.useState<SortingState>([])
 
@@ -56,16 +83,14 @@ const TeamTable: React.FC<TeamTableProps> = ({ team, people }) => {
     getSortedRowModel: getSortedRowModel(),
     onSortingChange: setSorting,
     state: {
-      sorting,
+        sorting,
     },
-  })
+  });
 
   return (
     <>
-    {data.length > 0 && (
-      <>
-      <h2>TEAM {team[0].name}</h2>
-        <table className={styles.container}>
+      <h2>Sleeping Arrangements by Site</h2>
+      <table className={styles.container}>
           <thead className={styles.header}>
             {table.getHeaderGroups().map(headerGroup => (
               <tr key={headerGroup.id}>
@@ -108,7 +133,7 @@ const TeamTable: React.FC<TeamTableProps> = ({ team, people }) => {
             {table.getRowModel().rows.map(row => (
               <tr key={row.id}>
                 {row.getVisibleCells().map(cell => (
-                  <td key={row.id+"___"+cell.id+"000"}>
+                  <td key={cell.id}>
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </td>
                 ))}
@@ -119,21 +144,19 @@ const TeamTable: React.FC<TeamTableProps> = ({ team, people }) => {
             {table.getFooterGroups().map(footerGroup => (
               <tr key={footerGroup.id}>  
                 {footerGroup.headers.map(header => (
-                  <td key={header.id} className={styles.footer}>
+                  <th key={header.id} className={styles.footer}>
                     {flexRender(
                       header.column.columnDef.footer,
                       header.getContext(),
                     )}
-                  </td>
+                  </th>
                 ))}
               </tr>
             ))}
           </tfoot>
         </table>
-      </>
-    )}
     </>
   )
 }
 
-export default TeamTable
+export default SleepingArrangements

@@ -10,84 +10,66 @@ import {
   type SortingState,
 } from '@tanstack/react-table'
 
-import { Teams } from './data/peeps';
-import type { Person, Shirt } from './types';
+import { RoomsAndSites } from '../data/peeps';
+import type { Person, Room } from '../types';
 
-type TShirtsCountBySize = {
-  shirt: Shirt;
-  teamA: Person[],
-  teamB: Person[],
-  unk: Person[],
+type SleepingRoomByDay = {
+  room: Room;
+  days: {
+    friday: Person[],
+    saturday: Person[],
+    sunday: Person[],
+  }
 }
 
-type TShirtsProps = {
+type SleepingArrangementsProps = {
     people: Person[];
 };
 
-const columnHelper = createColumnHelper<TShirtsCountBySize>()
+const columnHelper = createColumnHelper<SleepingRoomByDay>()
 
 const columns = [
-  columnHelper.accessor('shirt', {
-    header: () => <span>Shirt Size</span>,
-    cell: info => info.getValue().display,
-    id: "shirt-name"
+  columnHelper.accessor('room', {
+    header: () => <span>Room</span>,
+    cell: info => info.getValue().name,
   }),
-  columnHelper.accessor('shirt', {
-    header: () => <span>Shirt Size</span>,
-    cell: info => info.getValue().code,
-    id: "shirt-code"
-  }),
-  columnHelper.accessor('teamA', {
-    header: () => <span>Team Horns</span>,
+  columnHelper.accessor("days.friday", {
+    header: () => <span>Friday</span>,
     cell: info => info.getValue().length,
-    footer: info => `Team Horns: ${info.table.getFilteredRowModel().rows.map(r => r.original.teamA.length).reduce((acc, val) => acc + val, 0)} shirts`
+    footer: info => `Total: ${info.table.getFilteredRowModel().rows.filter(r => !['?', 'no need'].includes(r.original.room.name)).map(r => r.original.days.friday).map(p => p.length).reduce((acc, val) => acc + val, 0)} people`
   }),
-  columnHelper.accessor('teamB', {
-    header: () => <span>Team Flock</span>,
+  columnHelper.accessor("days.saturday", {
+    header: () => <span>Saturday</span>,
     cell: info => info.getValue().length,
-    footer: info => `Team Flock: ${info.table.getFilteredRowModel().rows.map(r => r.original.teamB.length).reduce((acc, val) => acc + val, 0)} shirts`
+    footer: info => `Total: ${info.table.getFilteredRowModel().rows.filter(r => !['?', 'no need'].includes(r.original.room.name)).map(r => r.original.days.saturday).map(p => p.length).reduce((acc, val) => acc + val, 0)} people`
   }),
-  columnHelper.accessor('unk', {
-    header: () => <span>?</span>,
+  columnHelper.accessor("days.sunday", {
+    header: () => <span>Sunday</span>,
     cell: info => info.getValue().length,
-    footer: info => `TBD: ${info.table.getFilteredRowModel().rows.map(r => r.original.unk.length).reduce((acc, val) => acc + val, 0)} shirts`
-  }),
+    footer: info => `Total: ${info.table.getFilteredRowModel().rows.filter(r => !['?', 'no need'].includes(r.original.room.name)).map(r => r.original.days.sunday).map(p => p.length).reduce((acc, val) => acc + val, 0)} people`
+  })
 ]
 
-const TShirts: React.FC<TShirtsProps> = ({ people }) => {
+const SleepingArrangements: React.FC<SleepingArrangementsProps> = ({ people }) => {
 
-  const shirtsBySize: TShirtsCountBySize[] = [];
-  
-  people.forEach(p => {
+  const allRooms = Object.values(RoomsAndSites);
 
-    let shirtBySize = shirtsBySize.find(s => s.shirt.code === p.shirt.code);
-    if (!shirtBySize) {
-        shirtBySize = {
-            shirt: p.shirt,
-            teamA: [],
-            teamB: [],
-            unk: [],
-        };
-        shirtsBySize.push(shirtBySize);
+  const peopleInRoomsByDay: SleepingRoomByDay[] = allRooms.map(room => {
+    const peopleInRoomFriday: Person[] = people.filter(p => p.sleeping.friday === room);
+    const peopleInRoomSaturday: Person[] = people.filter(p => p.sleeping.saturday === room);
+    const peopleInRoomSunday: Person[] = people.filter(p => p.sleeping.sunday === room);
+
+    return {
+      room: room,
+      days: {
+        friday: peopleInRoomFriday,
+        saturday: peopleInRoomSaturday,
+        sunday: peopleInRoomSunday,
+      }
     }
-
-    switch (p.team.name) {
-        case Teams.TeamAMain.name:
-            shirtBySize.teamA.push(p);
-            break;
-        case Teams.TeamBMain.name:
-            shirtBySize.teamB.push(p);
-            break;
-        default:
-            shirtBySize.unk.push(p);
-            break;
-    }
-
   });
 
-  const sortedShirtsBySize = shirtsBySize.sort((a, b) => a.shirt.order - b.shirt.order);
-
-  const [data, _setData] = React.useState(() => [...sortedShirtsBySize])
+  const [data, _setData] = React.useState(() => [...peopleInRoomsByDay])
 
   const [sorting, setSorting] = React.useState<SortingState>([])
 
@@ -104,7 +86,7 @@ const TShirts: React.FC<TShirtsProps> = ({ people }) => {
 
   return (
     <>
-      <h2>Shirt Size Count</h2>
+      <h2>Sleeping Arrangements by Room</h2>
       <table className={styles.container}>
           <thead className={styles.header}>
             {table.getHeaderGroups().map(headerGroup => (
@@ -174,4 +156,4 @@ const TShirts: React.FC<TShirtsProps> = ({ people }) => {
   )
 }
 
-export default TShirts;
+export default SleepingArrangements
