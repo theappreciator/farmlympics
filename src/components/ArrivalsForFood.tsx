@@ -107,7 +107,6 @@ const arrivalTimeHelper = (day: DayName, meal: MealType, arrivalDate?: Date | 'a
 const ArrivalsForFood: React.FC<ArrivalsForFoodProps> = ({ people, day, meal }) => {
 
   const arrivalsForToday: ArrivalsForToday[] = people.map(person => {
-    console.log("Working ", person.name, person.sleeping.friday.site, person.sleeping.saturday.site, person.sleeping.sunday.site);
     const today = arrivalTimeHelper(day, meal, person.arrival, person.departure);
 
     let sleepDay = day.toLowerCase() as "friday" | "saturday" | "sunday" | "monday";
@@ -120,9 +119,6 @@ const ArrivalsForFood: React.FC<ArrivalsForFoodProps> = ({ people, day, meal }) 
     else if (sleepDay === "saturday") {
       sleepDay = "friday";
     }
-
-    console.log(sleepDay, person.sleeping[sleepDay]);
-    console.log(today);
 
     return {
       person,
